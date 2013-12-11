@@ -151,7 +151,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 		dataSource.filterStore = new _SPDEV.FilterSelectionStore(dataSource.DEFAULT_CLUSTER_TAXONOMY_ID,
 			  																 dataSource.UPDATE_CHANNEL, {classificationPrefilters: [ dataSource.DATAGROUP_IDS, dataSource.COUNTRY_IDS]});
 		
-		dataSource.listView = new _SPDEV.ListView.Manager(dataSource.UPDATE_CHANNEL, dataSource.DATAGROUP_IDS[0]);
+		dataSource.listView = new _SPDEV.ListView.Manager(dataSource.UPDATE_CHANNEL, dataSource.DATAGROUP_IDS[0], sectorLanguage);
 		
 		$('#listView').append(dataSource.listView.el);
 		

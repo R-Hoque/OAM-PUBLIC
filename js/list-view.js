@@ -1,6 +1,6 @@
 _SPDEV.ListView = {};
 
-_SPDEV.ListView.Manager = function(updateChannel, dataGroupId){
+_SPDEV.ListView.Manager = function(updateChannel, dataGroupId, sectorLanguage){
 	var self = this;
 	this.el =  $('<div class="list-view-wrapper"> \
 					   <div class="list-view-content"></div> \
@@ -29,7 +29,7 @@ _SPDEV.ListView.Manager = function(updateChannel, dataGroupId){
 	this.params.sectorcode = 15;
 	this.params.sector = 15; // Sector taxonomy ID
 	this.params.donor = 9; // Organisation taxonomy ID
-	
+	this.params.sectorLanguage = sectorLanguage;
 	// Create the header
 	 this.header = this.createHeader();
 	 
@@ -121,7 +121,8 @@ _SPDEV.ListView.Manager.prototype.loadData = function(offset, orderby, order) {
 		'sector' : this.params.filterSector,
 		'orgs' : this.params.filterOrg,
 		'src' : this.params.src,
-		'sectorcode' : this.params.sectorcode
+		'sectorcode' : this.params.sectorcode,
+		'language' : this.params.sectorLanguage
 	}; 
     
     $('#listViewloading').show();

@@ -3,6 +3,7 @@
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 	require('db.inc');
+	require('translate.inc');
 	
 	  $sectorcode = $_POST['sectorcode'];
 	  $src = $_POST['src'];
@@ -11,7 +12,8 @@
 	  $order = $_POST['order'];
 	  $sectors = $_POST['sector'];
 	  $orgs = $_POST['orgs'];
-	
+	  $language = $_POST['language'];
+	  
 	$impossibleId = "~~~999~~~";
 	
 	$classificationsArr = explode(",", $sectors);
@@ -25,7 +27,7 @@
 		return;	
 	}
 	
-	$records = getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset);
+	$records = getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $language);
 	$cnt = getCount($src, $sectors, $orgs, $orderby, $order, $offset);
 	
 	$page = $offset/100 + 1;
@@ -34,8 +36,9 @@
 	echo json_encode($a, JSON_NUMERIC_CHECK);
 	
 	
-	function getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset) {
+	function getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $lang) {
 	      global $dbPostgres;
+		  global $sectorDictionary;
 	      // Get the data
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
@@ -46,8 +49,17 @@
 		    $r = array();
 		    while($rows = pg_fetch_object($result)) {
 		      $r2 = array();
+		      
 		      foreach(json_decode($rows->response) as $key=>$val) {
-			$r2[$key] = ucwords(strtolower($val));
+		      	
+				
+				if($key == 'r_name' && $lang == 'spanish') {
+
+					$val = $sectorDictionary[$val];;
+					
+				}
+				
+				$r2[$key] = ucwords(strtolower($val));
 		      }
 		      $r[] = (Object)$r2;
 		    }
