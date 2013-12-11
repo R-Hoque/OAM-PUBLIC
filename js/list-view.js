@@ -209,11 +209,11 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 		      var content = "";
 		      content += data.desc ? '<div class="listview_details"><div class="listview_lbl">Descripci&oacute;n: </div>'+data.desc+'</div>' : '';
 		      content += data.amount ? '<div class="listview_details"><div class="listview_lbl">Costa Total: </div>'+parseInt(data.amount).formatMoney(2,'.',',')+' USD</div>' : '';
-		      content += data.start_date && data.end_date ? '<div class="listview_details"><div class="listview_lbl">Fechas: </div>'+data.start_date + ' - ' + data.end_date +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul0_name ? '<div class="listview_details"><div class="listview_lbl">Pa&iacute;s: </div>'+data.locations[0].gaul0_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul1_name ? '<div class="listview_details"><div class="listview_lbl">Departamento: </div>'+data.locations[0].gaul1_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul2_name ? '<div class="listview_details"><div class="listview_lbl">Municipalidad: </div>'+data.locations[0].gaul2_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].lat && data.locations[0].long ? '<div class="listview_details"><div class="listview_lbl">Coordenadas Geogr&aacute;ficas:: </div>'+data.locations[0].lat + ', ' + data.locations[0].long +'</div>' : '';
+		      content += data.start_date && data.end_date ? '<div class="listview_details"><div class="listview_lbl">' + _lang.dates + ': </div>'+data.start_date + ' - ' + data.end_date +'</div>' : '';
+		      content += data.locations[0] && data.locations[0].gaul0_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.country + ': </div>'+data.locations[0].gaul0_name +'</div>' : '';
+		      content += data.locations[0] && data.locations[0].gaul1_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.department + ': </div>'+data.locations[0].gaul1_name +'</div>' : '';
+		      content += data.locations[0] && data.locations[0].gaul2_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.muni + ': </div>'+data.locations[0].gaul2_name +'</div>' : '';
+		      content += data.locations[0] && data.locations[0].lat && data.locations[0].long ? '<div class="listview_details"><div class="listview_lbl">' + _lang.coordinates+ ': </div>'+data.locations[0].lat + ', ' + data.locations[0].long +'</div>' : '';
 		      var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);
 		},
 		'error': function(response) {

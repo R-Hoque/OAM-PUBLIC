@@ -39,7 +39,7 @@ _SPDEV.MapsControl.init = function(map, appendToEl, headerHTML, appendLegendToEl
 	
 	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_indicators+'</header>')
 	
-	_SPDEV.MapsControl.ContextualLayers.init(map, this.contentsWrapper, appendLegendToEl);
+	this.contextLayersMenu = _SPDEV.MapsControl.ContextualLayers.init(map, this.contentsWrapper, appendLegendToEl);
 	
 	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_basemaps+'</header>')
 	
@@ -103,7 +103,7 @@ _SPDEV.MapsControl.init = function(map, appendToEl, headerHTML, appendLegendToEl
 			
 		});
 	
-	
+	return this;
 };
 
 
@@ -216,7 +216,7 @@ _SPDEV.MapsControl.ContextualLayers.init = function(map, appendToEl, appendLegen
 	$(appendToEl).append(collView.el);
 
 	// Create a Backbone Collection View that holds all the legends for the WMS in the collection (all legends hidden on load) 
-	var legCollView = new _SPDEV.LeafletWMSLayers.LegendCollectionView({'collection': coll});
+	legCollView = new _SPDEV.LeafletWMSLayers.LegendCollectionView({'collection': coll});
 	
 	// render the collection view
 	legCollView.render();
@@ -225,5 +225,7 @@ _SPDEV.MapsControl.ContextualLayers.init = function(map, appendToEl, appendLegen
 	
 	// Append the legend collection view to the DOM
 	$(appendLegendTo).append(legCollView.el);
+	
+	return collView.el;
 
 };
