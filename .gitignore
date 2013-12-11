@@ -9,3 +9,9 @@
 .sass-cache/*
 css/.sass-cache/*
 .scssc
+
+#resources
+php/login_salted.php
+php/db.inc
+php/login.php
+php/spatialdev.pem
