@@ -2,26 +2,15 @@ _SPDEV.Config = {};
 _SPDEV.Config.ControlPanel = {};
 _SPDEV.Config.ControlPanel.SECTION_HEADER = '<div class="clearfix section-header"><div class="label">###label###</div></div>';
 
-$(document).ready(function(){
+_SPDEV.loadApp = function(dg){
 	
 	// Do layout stuff for main page
 	_SPDEV.Layout.init();
 	_SPDEV.DownloadBtn.init();
-	//parse querystring if any
-	var url = document.URL;
-	var queryPars = $.parseParams( url.split('?')[1] || '' );
 	
-	if(typeof queryPars.dg === 'undefined') {
-		window.location = './index.html';
-		return;
-	} else if (typeof _SPDEV.DataSources.DataGroups[queryPars.dg] === 'undefined') {
-		window.location = './index.html';
-		return;
-	}
-	
-	_SPDEV.DataSources.Data.Gov = _SPDEV.DataSources.DataGroups[queryPars.dg];
+	_SPDEV.DataSources.Data.Gov = _SPDEV.DataSources.DataGroups[dg];
 	_SPDEV.DataSources.Data.Donor.COUNTRY_IDS = _SPDEV.DataSources.Data.Gov.COUNTRY_IDS;
-	$('#locationButton').html(queryPars.dg.toString().toUpperCase());
+	$('#locationButton').html(dg.toString().toUpperCase());
 
 	
 	_SPDEV.subscribeOnLoad();
@@ -54,6 +43,29 @@ $(document).ready(function(){
 	    if (e.keyCode == 13) {
 			$('#uxLogin_submit').click();
 	    }
+	});
+	
+};
+
+$(document).ready(function(){
+	
+	
+	//parse querystring if any
+	var url = document.URL;
+	var queryPars = $.parseParams( url.split('?')[1] || '' );
+	
+	if(typeof queryPars.dg === 'undefined') {
+		window.location = './index.html';
+		return;
+	} else if (typeof _SPDEV.DataSources.DataGroups[queryPars.dg] === 'undefined') {
+		window.location = './index.html';
+		return;
+	}
+	
+	$.getJSON( "js/lang/es.json", function( data ) {
+		_lang = data;
+		
+		_SPDEV.loadApp(queryPars.dg);
 	});
 	
 });
