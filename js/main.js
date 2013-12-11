@@ -49,6 +49,7 @@ _SPDEV.loadApp = function(dg){
 
 $(document).ready(function(){
 	
+	var langFile;
 	
 	//parse querystring if any
 	var url = document.URL;
@@ -62,7 +63,13 @@ $(document).ready(function(){
 		return;
 	}
 	
-	$.getJSON( "js/lang/es.json", function( data ) {
+	if(queryPars.dg === 'Bolivia') {
+		langFile = "js/lang/es.json";
+	} else {
+		langFile =  "js/lang/en.json"
+	}
+	
+	$.getJSON( langFile, function( data ) {
 		_lang = data;
 		
 		_SPDEV.loadApp(queryPars.dg);
