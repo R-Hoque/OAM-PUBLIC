@@ -42,6 +42,7 @@ _SPDEV.DataSources.Data = {
 _SPDEV.DataSources.DataGroups  = {
 	
 	'Bolivia' : {
+		ID: 'Bolivia',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateGovData',
@@ -60,6 +61,7 @@ _SPDEV.DataSources.DataGroups  = {
 	},
 	
 	'Nepal' : {
+		ID: 'Nepal',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateGovData',
@@ -78,6 +80,7 @@ _SPDEV.DataSources.DataGroups  = {
 	},
 	
 	'Malawi' : {
+		ID: 'Malawi',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateGovData',
@@ -96,6 +99,7 @@ _SPDEV.DataSources.DataGroups  = {
 	},
 	
 	'Kenya' : {
+		ID: 'Kenya',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateGovData',
@@ -116,6 +120,9 @@ _SPDEV.DataSources.DataGroups  = {
 
 _SPDEV.DataSources.init = function(map, filterControlWrapper){
 	
+	var dataSource, sectorLanguage;
+	
+
 	amplify.publish('waitingForData');
 	
 	_loadingCtr = new _SPDEV.DataSources.countdownThenCall(function(){
@@ -124,14 +131,18 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 	
 	// Add a "Charts" section to control panel
 	var chartsContentWrapper = _SPDEV.ActivityChart.chartControl('#controls', _SPDEV.Config.ControlPanel.SECTION_HEADER.replace('###label###', 'CHARTS')) 
+
+	sectorLanguage = 'english'; 
+		
+	if(_SPDEV.DataSources.Data.Gov.ID === 'Bolivia') {
+		sectorLanguage = 'spanish';
+	}
 	
 	// Loop thru data sources
 	for(var i in _SPDEV.DataSources.Data) {
 		
 		// Increment the loading counter once for ever data source
 		_loadingCtr('++');
-		
-		var dataSource;
 		
 		// Namespace shortcut
 		dataSource = _SPDEV.DataSources.Data[i];
@@ -148,11 +159,12 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 			$(dataSource.listView.el).show();
 		}
 		
+		
 		// Some of the app features are dependent on the returns of multiple ajax calls; $.when fires callback only when ALL have returned
 		$.when( 	
 			$.ajax({
 				'type': 'POST',
-				'data': {'taxonomyIds': dataSource.FILTER_TAXONOMY_IDS, 'dataGroupId': dataSource.DATAGROUP_IDS.toString(), 'countryIds': dataSource.COUNTRY_IDS.toString()},
+				'data': {'taxonomyIds': dataSource.FILTER_TAXONOMY_IDS, 'dataGroupId': dataSource.DATAGROUP_IDS.toString(), 'countryIds': dataSource.COUNTRY_IDS.toString(), language: sectorLanguage},
 				'dataType': "json",
 			  	'url': 'php/getTaxonomyClassifications.php',
 				}),
