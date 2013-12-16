@@ -1608,13 +1608,13 @@ body {
 #downloadBTN {
   background-color: #ea7820;
   right: 25px;
-  position: fixed;
-  top: 43px;
+  position: absolute;
+  top: 6px;
   padding: 4px 25px 2px 8px;
   font-family: 'Gotham-Bold';
   font-size: 13px;
   color: #fff;
-  z-index: 2000;
+  z-index: 1000;
   background-image: url("../img/download_down.png");
   background-repeat: no-repeat;
   background-position: 100px 9px;

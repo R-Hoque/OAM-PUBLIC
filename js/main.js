@@ -39,6 +39,7 @@ _SPDEV.loadApp = function(dg){
 	_SPDEV.infobox = new _SPDEV.Infobox.Manager('#mapView');
 	
 	// Grant ADD ... not really sure where this should go
+	
 	$('#uploadIATI').on('click', function() { _SPDEV.Upload.createForm(); });
 	$('#uxLogin_email').val('username').css('font-style','italic');
 	$('#uxLogin_pass').val('password');

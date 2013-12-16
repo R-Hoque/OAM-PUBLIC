@@ -46,4 +46,8 @@
 "name" : "Nombre",
 "activitiesby" : "ACTIVIDATES DE",
 "upload" : "SUBIR IATI",
-"uploadtext" : "ADVERTENCIA: usted está tratando de cargar nuevos datos a la base de datos de OAP. Si continúa, se eliminarán todos los datos existentes para el país que va a actualizar y sustituida por los nuevos datos. Haga clic en el botón de abajo para eliminar y reemplazar los datos existentes con los datos nuevos. El proceso de carga puede tardar algún tiempo, dependiendo de la cantidad de datos."}
+"uploadtext" : "ADVERTENCIA: usted está tratando de cargar nuevos datos a la base de datos de OAP. Si continúa, se eliminarán todos los datos existentes para el país que va a actualizar y sustituida por los nuevos datos. Haga clic en el botón de abajo para eliminar y reemplazar los datos existentes con los datos nuevos. El proceso de carga puede tardar algún tiempo, dependiendo de la cantidad de datos.",
+"refresh_page": "Actualice la página",
+"upload_success": "Su nuevo archivo IATI se cargó correctamente.",
+"upload_error": "Lo sentimos, hubo un error. Inténtalo de subir de nuevo.",
+"upload_notiati": "Tipo de archivo no coincide. IATI archivo debe estar en XML." }

@@ -14,7 +14,7 @@
   if (sendFile($dbserver, $filename) == 1) {
     // Execute the PostGres data load query
     $resp = loadFile($country, $filename);
-    if ($resp)
+    if ($resp == "t")
       echo true;
     else
       echo false;
@@ -53,7 +53,7 @@
     $result = pg_query($dbPostgresWrite, $query) or die();
     $r = false;
     while ($row = pg_fetch_row($result)) {
-      $r = $row->pmt_iati_import;
+      $r = $row[0];
     }
     return $r;
  }

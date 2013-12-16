@@ -46,4 +46,8 @@
 "name" : "Name",
 "activitiesby" : "ACTIVITIES BY",
 "upload" : "UPLOAD IATI",
-"uploadtext" : "WARNING:  you are attempting to upload new data to the OAP database. If you proceed, all existing data for the country you are updating will be deleted and replaced by the new data. Click the button below to delete and replace existing data with new data. The upload process may take some time depending on the amount of data."}
+"uploadtext" : "WARNING:  you are attempting to upload new data to the OAP database. If you proceed, all existing data for the country you are updating will be deleted and replaced by the new data. Click the button below to delete and replace existing data with new data. The upload process may take some time depending on the amount of data.",
+"refresh_page": "Refresh Site",
+"upload_success": "Your new IATI File was successfully loaded.",
+"upload_error": "Sorry, there was an error.  Please try uploading again.",
+"upload_notiati": "File type does not match.  IATI File should be in XML" }

@@ -39,9 +39,10 @@ _SPDEV.Upload.createForm = function() {
 	'<form method="post" enctype="multipart/form-data"  action="php/uploadIATI.php">' +
 	'<input type="file" name="upload_iati_file" id="upload_iati_file" multiple />' +
         '<button type="submit" id="upload_btn">Upload</button>' +
-	'</form><div id="upload_response" style="text-align:center;width:100%;margin-top:5px"></div> </div>';
+	'</form><div id="upload_response" style="text-align:center;width:100%;margin-top:5px"></div><div id="upload_close"></div></div>';
     $('#viewContent').append(content);
     
+    $('#upload_close').on('click', function() { $('#upload_form').fadeOut(); });
     var formdata = false;
     if (window.FormData) {
       formdata = new FormData(); 
@@ -67,10 +68,11 @@ _SPDEV.Upload.createForm = function() {
 			    formdata.append("iati", file);
 		    }
 	    } else {
-		$("#upload_response").html("File type does not match.  IATI File should be in XML"); 
+		$("#upload_response").html(_lang.upload_notiati); 
 	    }
     
 	    if (formdata) {
+		    $('#upload_iati_file').hide();
 		    $.ajax({
 			    url: "php/uploadIATI.php?country=Bolivia",
 			    type: "POST",
@@ -78,12 +80,12 @@ _SPDEV.Upload.createForm = function() {
 			    processData: false,
 			    contentType: false,
 			    success: function (res) {
-				if ($res == true) {
-				    $("#upload_response").html("Success"); 
+				if (res == "1") {
+				    $("#upload_response").html(_lang.upload_success); 
 				} else {
-				    $("#upload_response").html("Sorry, there was an error uploading your IATI file, please try again");
+				    $("#upload_response").html(_lang.upload_error);
 				}
-				var btn = "<button id='btn_reload' onclick='location.reload();'></button>";
+				var btn = "<button id='btn_reload' onclick='location.reload();'>"+_lang.refresh_page+"</button>";
 				$("#upload_response").append("<br/>"+btn); 
 			    }
 		    });
@@ -91,12 +93,3 @@ _SPDEV.Upload.createForm = function() {
     });
  
 }
-
-    function showUploadedItem (source) {
-	    var list = document.getElementById("image-list"),
-		    li   = document.createElement("li"),
-		    img  = document.createElement("img");
-	    img.src = source;
-	    li.appendChild(img);
-	    list.appendChild(li);
-    }  

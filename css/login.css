@@ -83,16 +83,26 @@
 #upload_form {
   z-index: 1000;
   width: 360px;
-  height: 300px;
+  height: 330px;
   background-color: #ffffff;
   overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
   top:80px;
-  padding: 20px;
+  padding: 30px 20px;
   margin-left: 50%;
   left: -200px;
   box-shadow: 0 0 8px #888888;
   -moz-box-shadow: 0 0 8px #888888;
   -webkit-box-shadow: 0 0 8px #888888;
+}
+#upload_close {
+  position: absolute;
+  right: 5px;
+  width: 16px;
+  height: 16px;
+  z-index: 2000;
+  cursor: pointer;
+  top: 5px;
+  background: url("../img/upload_close.png");
 }
