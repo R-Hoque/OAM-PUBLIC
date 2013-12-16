@@ -1,49 +1,61 @@
 <?php
 
-  ini_set('display_errors', 'On');
-  error_reporting(E_ALL);
   
   include('db.inc');
   
+  // Get the appropriate country for data replacement
   $country = $_GET['country'];
-  // echo $country . "\n";
+  
+  // Change the uploaded file name to reflect the country as well as the current timestamp
   $filename = $country."-".time().".xml";
   move_uploaded_file( $_FILES["iati"]["tmp_name"], "../../oam-iati/" . $filename);
 
-  // echo "Successfully uploaded new IATI file for ".$country;
-
-  sendFile($dbserver, $filename);
+  // Execute the upload.  Database server name comes from the db.inc file
+  if (sendFile($dbserver, $filename) == 1) {
+    // Execute the PostGres data load query
+    $resp = loadFile($country, $filename);
+    if ($resp)
+      echo true;
+    else
+      echo false;
+  }
   
-  echo "Successfully uploaded new IATI file for ".$country;
   
-  loadFile($country, $filename);
-  
-  
-    
   function sendFile($dbserver, $filename) {
-      global $dbserver;
       set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib');
 
+      // Secure FTP for file transfer and RSA Crypt for access key encryption
       include('Net/SFTP.php');
       include('Crypt/RSA.php');
-      // include('Crypt/RSA.php');
 
       $key = new Crypt_RSA();
-
       $key->loadKey(file_get_contents('spatialdev.pem'));
 
       $sftp = new Net_SFTP($dbserver);
       if (!$sftp->login('ubuntu', $key)) {
-	  exit('Login Failed');
+          exit('Login Failed');
       }
+      
+      // Set appropriate directories (from & to respectively)
       $ap_directory = "/var/www/oam-iati/";
       $db_directory = "/usr/local/pmt_iati/";
-      $sftp->put($db_directory.$filename, $ap_directory.$filename, NET_SFTP_LOCAL_FILE);
+      
+      // SFTP transfer the file from the APPLICATION SERVER to the DATABASE SERVER
+      $r = $sftp->put($db_directory.$filename, $ap_directory.$filename, NET_SFTP_LOCAL_FILE);
+      return $r;
   }
+
   
   function loadFile($country, $filename) {
-    global $dbPostgres;
+    // Purge the existing data and load the new file with the appropriate country name.
+    global $dbPostgresWrite;
     $query = "SELECT * FROM pmt_iati_import('/usr/local/pmt_iati/".$filename."', '".$country."', true);";
-    $result = pg_query($dbPostgres, $query) or die();
-  }
+    $result = pg_query($dbPostgresWrite, $query) or die();
+    $r = false;
+    while ($row = pg_fetch_row($result)) {
+      $r = $row->pmt_iati_import;
+    }
+    return $r;
+ }
   
+?>

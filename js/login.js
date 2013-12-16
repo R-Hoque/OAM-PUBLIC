@@ -78,7 +78,13 @@ _SPDEV.Upload.createForm = function() {
 			    processData: false,
 			    contentType: false,
 			    success: function (res) {
-				    $("#upload_response").html(res); 
+				if ($res == true) {
+				    $("#upload_response").html("Success"); 
+				} else {
+				    $("#upload_response").html("Sorry, there was an error uploading your IATI file, please try again");
+				}
+				var btn = "<button id='btn_reload' onclick='location.reload();'></button>";
+				$("#upload_response").append("<br/>"+btn); 
 			    }
 		    });
 	    }
