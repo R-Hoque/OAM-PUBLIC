@@ -13,18 +13,24 @@
 		public $user_id;
 		public $first_name;
 		public $last_name;
-		public $active;
 		public $email;
+		public $organization;
+		public $organization_id;
+		public $data_group;
+		public $response;
+			
+		public function parseresponse() {
+		  $u = json_decode($this->response);
+		  $this->username = $u->username;
+		  $this->user_id = $u->user_id;
+		  $this->first_name = $u->first_name;
+		  $this->last_name = $u->last_name;
+		  $this->email = $u->email;
+		  $this->organization = $u->organization;
+		  $this->organization_id = $u->organization_id;
+		  $this->data_group = $u->data_group;
+		  unset($this->response);
+		}
 		
-		public function __construct() {
-			/*
-			$this->id=$row->user_id;
-			$this->email=$row->email;
-			$this->first=$row->name_first;
-			$this->last=$row->name_last;
-			$this->lang=$row->lang;
-			$this->role=$row->role;
-			$this->org=$row->organisation; */
-		}	
 	}	
 ?>
