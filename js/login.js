@@ -1,5 +1,5 @@
 _SPDEV.Login = {};
-
+_SPDEV.Login.user = {};
 
  
 _SPDEV.Login.authenticate = function () {
@@ -13,6 +13,7 @@ _SPDEV.Login.authenticate = function () {
 		if (data.status != 200) {
 		    alert(data.message);
 		} else {
+		   _SPDEV.Login.user = data.data;
 		   $('#login_name').html(data.data.username);
 		   $('#wrapperLogin').toggle();
 		   $('#uploadIATI').fadeIn();
@@ -40,6 +41,7 @@ _SPDEV.Upload.createForm = function() {
 	'<input type="file" name="upload_iati_file" id="upload_iati_file" multiple />' +
         '<button type="submit" id="upload_btn">Upload</button>' +
 	'</form><div id="upload_response" style="text-align:center;width:100%;margin-top:5px"></div><div id="upload_close"></div></div>';
+	
     $('#viewContent').append(content);
     
     $('#upload_close').on('click', function() { $('#upload_form').fadeOut(); });
@@ -73,8 +75,9 @@ _SPDEV.Upload.createForm = function() {
     
 	    if (formdata) {
 		    $('#upload_iati_file').hide();
+		    var url = "php/uploadIATI.php?country="+_SPDEV.Login.user.data_group;
 		    $.ajax({
-			    url: "php/uploadIATI.php?country=Bolivia",
+			    url: url,
 			    type: "POST",
 			    data: formdata,
 			    processData: false,
