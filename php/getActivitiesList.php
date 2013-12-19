@@ -54,8 +54,17 @@
 		      	
 				
 				if($key == 'r_name' && $lang == 'spanish') {
+					
+					// Values can be a comma separated string
+					$sectors = explode(",", $val);
+					$tmpString = '';
+					foreach ($sectors as $s) {
 
-					$val = $sectorDictionary[$val];;
+						$tmpString = $tmpString + $sectorDictionary[$s];
+						
+					}
+
+					$val = $tmpString;
 					
 				}
 				
