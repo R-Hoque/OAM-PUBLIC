@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 		},
 		
 		includeUpdater : {
-			inputFile: 'index.php',
+			inputFile: 'application.html',
 			output: {
 				css: 'css/css-min.css',
 				js: 'js/js-min.js'

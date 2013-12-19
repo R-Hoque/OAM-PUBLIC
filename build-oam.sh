@@ -48,6 +48,8 @@ fi
 # Export from git repo and stuff into the build directory
 (cd $1 && git archive HEAD) | (cd $2 && tar -xf -)
 
+echo "Exported from git repo."
+
 #move into build directory
 (cd $2 && grunt)
 
