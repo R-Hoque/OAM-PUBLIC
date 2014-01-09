@@ -793,7 +793,12 @@ textarea {
     font-family: 'Gotham-Bold';
     font-size: 1.2em;
     color: #81a33b;
-    clear: both; }
+    clear: both; 
+    } 
+    
+  .mmtitle  a, .mmactivities a {
+      color:inherit;
+  }
 
   .mmactivities {
     font-family: 'Gotham-Book';
