@@ -299,11 +299,9 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 			  		});
 	}	
 
-	// Click events for data source toggle
-	$('#viewControl_donor').on('click', function(){
-		
+	var donorState = function() {
 		// If this data source already active, exit
-		if($(this).hasClass('VCactive')) {
+		if($('#viewControl_donor').hasClass('VCactive')) {
 			return
 		}
 		
@@ -311,23 +309,38 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 		_SPDEV.DataSources.switchSource('Gov', 'Donor', map);
 		
 		// Toggle CSS for the toggler
-		$(this).toggleClass('VCactive', true);
+		$('#viewControl_donor').toggleClass('VCactive', true);
 		$('#viewControl_gov').toggleClass('VCactive', false);
 		$('#viewControl_toggle').toggleClass('donor', true);
+	};
+	
+	var govState = function() {
+		if($('#viewControl_gov').hasClass('VCactive')) {
+			return;
+		}
+		_SPDEV.DataSources.switchSource('Donor', 'Gov', map);
 		
+		$('#viewControl_gov').toggleClass('VCactive', true);
+		$('#viewControl_donor').toggleClass('VCactive', false);
+		$('#viewControl_toggle').toggleClass('donor', false);
+	};
+	
+	// Click events for data source toggle
+	$('#viewControl_donor').on('click', function(){
+		donorState();
+	});
+	
+	$('#viewControl_toggle').on('click', function() {
+		if ($('#viewControl_donor').hasClass('VCactive')) {
+			govState();
+		} else {
+			donorState();
+		}
 	});
 	
 	// See comments above
 	$('#viewControl_gov').on('click', function(){
-		
-		if($(this).hasClass('VCactive')) {
-			return
-		}
-		_SPDEV.DataSources.switchSource('Donor', 'Gov', map);
-		
-		$(this).toggleClass('VCactive', true);
-		$('#viewControl_donor').toggleClass('VCactive', false);
-		$('#viewControl_toggle').toggleClass('donor', false);
+		govState();
 	});
 
 	
