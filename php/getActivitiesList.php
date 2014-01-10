@@ -42,9 +42,9 @@
 	      // Get the data
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
-		    $sql = "SELECT * FROM pmt_activity_listview(".$sectorcode.",'496,".$src.$sectors."','".$orgs."', null,'".$orderby." ".$order."', 100, ".$offset.")";
+		    $sql = "SELECT * FROM pmt_activity_listview(".$sectorcode.",'496,".$src.$sectors."','".$orgs."', null, null, null, '".$orderby." ".$order."', 100, ".$offset.")";
 		    
-		    // echo $sql;
+		     //echo $sql;
 		    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 		    $r = array();
 		    while($rows = pg_fetch_object($result)) {
@@ -84,7 +84,7 @@
 	
 	function getCount($src, $sectors, $orgs) {
 	    global $dbPostgres;
-	    $sql = "SELECT * FROM pmt_activity_listview_ct('496,".$src.$sectors."','".$orgs."','')";
+	    $sql = "SELECT * FROM pmt_activity_listview_ct('496,".$src.$sectors."','".$orgs."','', null, null)";
 	    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 	    $rows = pg_fetch_object($result);
 	    pg_free_result($result);
