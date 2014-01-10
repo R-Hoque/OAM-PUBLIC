@@ -86,7 +86,8 @@ _SPDEV.LBasemapSwitcher.ModelView =  Backbone.View.extend({
  				this.$el.addClass('selected');
  				
  				// Add the wms layer to the map
- 				this.model.collection.map.addLayer(this.model.get('mapLayer'));				
+ 				this.model.collection.map.addLayer(this.model.get('mapLayer'));	
+ 				this.model.get('mapLayer').bringToBack();			
  			}
  			else {
  				this.$el.removeClass('selected');
