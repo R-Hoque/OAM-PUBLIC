@@ -50,6 +50,13 @@ _SPDEV.loadApp = function(dg){
 			$('#uxLogin_submit').click();
 	    }
 	});
+	$('#uxLogin_email').on('keypress', function(e) {
+	    if (e.keyCode == 13) {
+			$('#uxLogin_submit').click();
+	    }
+	});
+	$('#uxLoginForgot').on('click', _SPDEV.Login.forgotPassword);
+	$('#uxLoginRegistration').on('click', _SPDEV.Login.registration);
 	
 };
 

@@ -50,4 +50,10 @@
 "refresh_page": "Refresh Site",
 "upload_success": "Your new IATI File was successfully loaded.",
 "upload_error": "Sorry, there was an error.  Please try uploading again.",
-"upload_notiati": "File type does not match.  IATI File should be in XML" }
+"upload_notiati": "File type does not match.  IATI File should be in XML",
+"login_forgot": "Please enter the email address with which you registered.",
+"login_needhelp": "Need help?",
+"login_mailto": "Contact OAP Map support",
+"login_forgot_thankyou": "We've sent password reset instructions to your email address.  If you don't receive instructions within a few minutes, check your email's spam and junk filters.",
+"login_register": "New to the World Bank - Open Aid Map? Register"
+}

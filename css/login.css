@@ -21,6 +21,33 @@
   float: left;
   color: #b2b2b2;
 }
+input.login_forgot {
+  background-color: #f8f8f8;
+  height: 23px;
+  padding: 10px 15px;
+  border: 0px solid #f8f8f8;
+  margin-bottom: 15px;
+  width: 220px;
+  border-radius: 2px;
+  float: left;
+  color: #b2b2b2;
+}
+input.login_forgot.long {
+    width:320px;
+}
+div.login_forgot_submit {
+  width: 100px;
+  padding:10px 0px;
+  float:left;
+  background-color: #ec7721;
+  color: #ffffff;
+  font-family: 'Gotham-Bold';
+  cursor: pointer;
+  text-align: center;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
 #wrapperLogin > div.user {
   background: url('../img/login_user.png') no-repeat;
   width: 45px;
@@ -52,7 +79,7 @@
   background-color: #cccccc;
   color: #ec7721;
 }
-#wrapperLogin > div.sub_notes  {
+div.sub_notes  {
   float: left;
   font-size: 0.7em;
   color: #e87352;
@@ -80,7 +107,7 @@
     cursor: pointer;
     display: none;
 }
-#upload_form {
+.upload_form {
   z-index: 1000;
   width: 360px;
   height: 330px;
@@ -96,7 +123,7 @@
   -moz-box-shadow: 0 0 8px #888888;
   -webkit-box-shadow: 0 0 8px #888888;
 }
-#upload_close {
+.upload_close {
   position: absolute;
   right: 5px;
   width: 16px;

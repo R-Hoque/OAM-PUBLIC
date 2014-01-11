@@ -10,12 +10,12 @@ _SPDEV.Upload = {};
 _SPDEV.Upload.createForm = function() {
   
     // Dynamically generate the content for the "upload form"
-    var content = '<div id="upload_form" style="text-align:justify">'+_lang.uploadtext+'<br/><br/>' +
+    var content = '<div id="upload_form" class="upload_form" style="text-align:justify">'+_lang.uploadtext+'<br/><br/>' +
 	'<form method="post" enctype="multipart/form-data"  action="php/uploadIATI.php">' +
 	'<input type="file" name="upload_iati_file" id="upload_iati_file" multiple />' +
         '<button type="submit" id="upload_btn">Upload</button>' +
 	'</form><div id="upload_response" style="text-align:center;width:100%;margin-top:5px">' +
-	'</div><div id="upload_close"></div></div>';
+	'</div><div id="upload_close" class="upload_close"></div></div>';
     $('#viewContent').append(content);
     
     // Add "close button"
