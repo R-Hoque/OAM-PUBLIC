@@ -12,6 +12,7 @@
 
   // Execute the upload.  Database server name comes from the db.inc file
   if (sendFile($dbserver, $filename) == 1) {
+  
     // Execute the PostGres data load query
     $resp = loadFile($country, $filename);
     if ($resp == "t")
@@ -42,6 +43,7 @@
       
       // SFTP transfer the file from the APPLICATION SERVER to the DATABASE SERVER
       $r = $sftp->put($db_directory.$filename, $ap_directory.$filename, NET_SFTP_LOCAL_FILE);
+
       return $r;
   }
 
@@ -49,13 +51,17 @@
   function loadFile($country, $filename) {
     // Purge the existing data and load the new file with the appropriate country name.
     global $dbPostgresWrite;
-    $query = "SELECT * FROM pmt_iati_import('/usr/local/pmt_iati/".$filename."', '".$country."', true);";
-    $result = pg_query($dbPostgresWrite, $query) or die();
+    
+    // Execute the query
+    $query = "SELECT * FROM pmt_iati_import('/usr/local/pmt_iati/".$filename."', '".$country."', true);";	
+    $result = pg_query($dbPostgresWrite, $query) or die(pg_last_error());
+    
+    // Make sure the query returns true
     $r = false;
     while ($row = pg_fetch_row($result)) {
       $r = $row[0];
     }
-    return $r;
+    return $r; 
  }
   
 ?>
