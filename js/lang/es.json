@@ -55,5 +55,9 @@
 "login_needhelp": "&iquest;Necesita ayuda&quest;",
 "login_mailto": "Contactar Soporte OAP Mapa",
 "login_forgot_thankyou": "Hemos enviado instrucciones para restablecer la contraseña a su dirección de correo electrónico. Si usted no recibe instrucciones a los pocos minutos, compruebe el spam y los filtros de la chatarra de su correo electrónico.",
-"login_register": "Nuevo en el Banco Mundial - Open Aid Mapa? Registrar"
+"login_register": "Nuevo en el Banco Mundial - Open Aid Mapa? Registrar",
+"se_tab_head": "Lista de sectores de archivo subido:",
+"se_h_title": "CESIÓN DEL SECTOR",
+"se_col_head1": "Sector del archivo subido:",
+"se_col_head2": "Sector IATI asignado actual:"
 }

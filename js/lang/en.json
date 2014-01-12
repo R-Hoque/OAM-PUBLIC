@@ -55,5 +55,9 @@
 "login_needhelp": "Need help?",
 "login_mailto": "Contact OAP Map support",
 "login_forgot_thankyou": "We've sent password reset instructions to your email address.  If you don't receive instructions within a few minutes, check your email's spam and junk filters.",
-"login_register": "New to the World Bank - Open Aid Map? Register"
+"login_register": "New to the World Bank - Open Aid Map? Register",
+"se_tab_head": "List of sectors from uploaded file:",
+"se_h_title": "SECTOR ASSIGNOR",
+"se_col_head1": "Sector from uploaded file:",
+"se_col_head2": "Current assigned IATI Sector:"
 }

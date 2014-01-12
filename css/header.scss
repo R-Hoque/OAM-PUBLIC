@@ -40,6 +40,9 @@ $oamGreen: #9DBB2D;
 
       }
     }
+    .pt {
+	  padding-top:3px;
+      }
     
     #locationButton {
       background-color: $oamGreen;
@@ -65,4 +68,8 @@ $oamGreen: #9DBB2D;
   a {
     display: block;
   }
+}
+img.lb {
+ padding-right:20px;
+ border-right:2px solid #cccccc;
 }

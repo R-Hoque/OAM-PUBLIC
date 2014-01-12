@@ -1,0 +1,31 @@
+body {
+    font-size: 14px;
+    background-color: #eaeaea;
+}
+div.tabhead {
+  background: url('../img/h.png');
+  height: 24px;
+  padding: 8px 0px 6px 0px;
+  width: 66%;
+  font-family: 'Gotham-Book';
+  color: #fcfdfd;
+  font-size: 1.1em;
+  text-shadow: 1px 1px #3f4043;
+}
+div.se_col {
+    width: 33%;
+    height: 17px;
+    padding: 8px 0px 6px 0px;
+    font-family: 'Gotham-Medium';
+    font-size: 0.9em;
+    color: #3f4043;
+    float: left;
+}
+div.se_col.head {
+    background: url('../img/h2.png'); 
+    border-left: solid 1px #999999;
+    margin-left: -1px;
+}
+span.titles {
+    padding-left: 20px;
+}

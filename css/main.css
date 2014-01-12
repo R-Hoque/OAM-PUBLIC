@@ -1003,6 +1003,8 @@ body {
         text-decoration: none; }
       #appHeader .header-nav ul li.separator {
         border-left: 1px solid #4c4951; }
+  #appHeader .header-nav .pt {
+    padding-top: 3px; }
   #appHeader .header-nav #locationButton {
     background-color: #9dbb2d;
     color: #FFF;
@@ -1017,6 +1019,10 @@ body {
   line-height: 38px; }
   #logo a {
     display: block; }
+
+img.lb {
+  padding-right: 20px;
+  border-right: 2px solid #cccccc; }
 
 #footerContainer {
   position: absolute;
