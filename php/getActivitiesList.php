@@ -22,12 +22,14 @@
 	
 	// client wants no selection === no data returned; but our db function thinks no classification or org ids mean 'all data'; so this is a work around
 	if(in_array ( $impossibleId, $classificationsArr ) || in_array($impossibleId, $orgArr)) {
+	  
 		echo json_encode(null, JSON_NUMERIC_CHECK);
 		pg_close($dbPostgres);
 		return;	
 	}
 	
 	$records = getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $language);
+	
 	$cnt = getCount($src, $sectors, $orgs, $orderby, $order, $offset);
 	
 	$page = $offset/100 + 1;
@@ -37,41 +39,35 @@
 	
 	
 	function getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $lang) {
-	      global $dbPostgres;
-		  global $sectorDictionary;
+	      global $dbPostgres, $sectorDictionary;
 	      // Get the data
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
-		    $sql = "SELECT * FROM pmt_activity_listview(".$sectorcode.",'496,".$src.$sectors."','".$orgs."', null, null, null, '".$orderby." ".$order."', 100, ".$offset.")";
-		    
-		     //echo $sql;
+		    $sql = "SELECT * FROM pmt_activity_listview('".$src.$sectors."','".$orgs."','', null, null, '".$orderby." ".$order."', 10, ".$offset.")";
 		    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 		    $r = array();
 		    while($rows = pg_fetch_object($result)) {
 		      $r2 = array();
 		      
 		      foreach(json_decode($rows->response) as $key=>$val) {
-		      	
-				
-				if($key == 'r_name' && $lang == 'spanish') {
-					
-					// Values can be a comma separated string
-					$sectors = explode(",", $val);
-					$tmpString = '';
-					foreach ($sectors as $s) {
-
-						$tmpString = $tmpString + $sectorDictionary[$s];
-						
-					}
-
-					$val = $tmpString;
-					
-				}
-				
-				$r2[$key] = ucwords(strtolower($val));
+			  if($key == "taxonomy") {
+			    foreach($val as $k=>$v) {
+			      if($v->t == 'Sector' && $lang == 'spanish') {
+				  $tmpString = translateSector($sectorDictionary, $v->c);
+			      }
+			    } 
+			    $key = 'r_name';
+			    $val = $tmpString;
+			  } else if($key == "orgs") {
+			    $tmpString = combineOrgs($val);
+			    $key = 'o_name';
+			    $val = $tmpString;
+			  }
+			  $r2[$key] = ucwords(strtolower($val)); 
 		      }
 		      $r[] = (Object)$r2;
 		    }
+		    
 		    pg_free_result($result);
 		    return $r;
 			      
@@ -82,9 +78,30 @@
 		  pg_close($dbPostgres);
 	}
 	
+	function translateSector($sectorDictionary, $v) {
+	  $sectors = explode(",", $v);
+	  $tmpString = '';
+	  for($i=0;$i<count($sectors);$i++) {
+	      $tmpString .= $sectorDictionary[$sectors[$i]];
+	      if ($i < count($sectors)-1)
+		$tmpString .= ", ";
+	  }
+	  return $tmpString;
+	}
+	
+	function combineOrgs($orgs) {
+	  $tmpString = '';
+	  for($i=0;$i<count($orgs);$i++) {
+	      $tmpString .= $orgs[$i]->name;
+	      if ($i < count($orgs)-1)
+		$tmpString .= ", ";
+	  }
+	  return $tmpString;
+	}
+	
 	function getCount($src, $sectors, $orgs) {
 	    global $dbPostgres;
-	    $sql = "SELECT * FROM pmt_activity_listview_ct('496,".$src.$sectors."','".$orgs."','', null, null)";
+	    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.$sectors."','".$orgs."','', null, null)";
 	    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 	    $rows = pg_fetch_object($result);
 	    pg_free_result($result);
