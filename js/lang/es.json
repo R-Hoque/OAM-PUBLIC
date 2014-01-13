@@ -59,5 +59,6 @@
 "se_tab_head": "Lista de sectores de archivo subido:",
 "se_h_title": "CESIÓN DEL SECTOR",
 "se_col_head1": "Sector del archivo subido:",
-"se_col_head2": "Sector IATI asignado actual:"
+"se_col_head2": "Sector IATI asignado actual:",
+"se_chooser_head": "Por favor elija un Sector IATI válida:"
 }
