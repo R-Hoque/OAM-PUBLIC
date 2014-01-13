@@ -5,8 +5,7 @@
   @functionality = Main file for the Sector Editor (HTML/PHP)
   =========================================================== -->
 
-  
-  <?php $dg = $_GET['dg']; // Require the country name ?>
+  <?php if (!isset($_GET['dg'])) header('index.html'); $dg = $_GET['dg']; // Require the country name ?>
 
   <!DOCTYPE html>
   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
