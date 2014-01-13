@@ -10,6 +10,7 @@
 css/.sass-cache/*
 .scssc
 
+node_modules/*
 #resources
 php/login_salted.php
 php/db.inc
