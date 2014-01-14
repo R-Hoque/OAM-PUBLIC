@@ -213,9 +213,11 @@ _SPDEV.Locations.Collection = Backbone.Collection.extend({
 		//clusterLayerManager.map._SPDEV_infobox_.hide();
 		//clusterLayerManager.map._SPDEV_infobox_.clearContent();
 
-		if(cluster.l_ids.length < 40 ||  clusterLayerManager.map.getMaxZoom() === clusterLayerManager.map.getZoom()){
+		if(cluster.l_ids.length < 40 
+			||  clusterLayerManager.map.getMaxZoom() === clusterLayerManager.map.getZoom()
+				|| cluster.stacked === true){
 			
-			if(clusterLayerManager.activeClusterLatlng) {
+			if(clusterLayerManager.activeCluster) {
 				priorActiveCluster = true;
 			} else {
 				priorActiveCluster = false;
@@ -223,7 +225,7 @@ _SPDEV.Locations.Collection = Backbone.Collection.extend({
 			
 			// Store the lat lng of this cluster in the cluster layer manager; when the layer is reclustered (as after the pan event below) we will use it
 			// to ensure the marker we originally clicked gets 'highlighted'
-			clusterLayerManager.activeClusterLatlng = cluster._latlng;
+			clusterLayerManager.activeCluster = cluster;
 			
 			// Center the map on this cluster; panning the map, however, re-clusters the layer...which kills this cluster we just clicked!!! 
 			// Which means it is useless to add the active-marker CSS to the cluster div we just clicked.  Look at clusterPoints() and markActiveCluster to
@@ -232,7 +234,7 @@ _SPDEV.Locations.Collection = Backbone.Collection.extend({
 			clusterLayerManager.markActiveCluster();
 			
 
-				amplify.publish('showInfobox', cluster.l_ids.toString());
+			amplify.publish('showInfobox', cluster.l_ids.toString());
 
 			
 	    }
