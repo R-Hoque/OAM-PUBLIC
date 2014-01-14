@@ -61,6 +61,11 @@ _SPDEV.Locations.Collection = Backbone.Collection.extend({
 
 		_.each(points, function(loc){
 	 		self.allLocs[loc['l_id']] = loc;
+
+	 		var dd = QClusterLeafletLayer.webMercatorToGeographic(loc.x, loc.y);
+	 		loc.lat = dd[0];
+	 		loc.lng = dd[1];
+
 	  	}, this);	  	
 		
 		this.layerOptions = {
