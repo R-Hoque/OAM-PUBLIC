@@ -216,7 +216,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 							options.showColors = false;
 							
 						// Package up facet info in a form we can use 
-						var facet = QClusterLeafletLayer.colorFacetValues(tax.t_id, tax.name, tax.classifications, {id: 'c_id', name: 'name'}, {maxColors : 15});
+						var facet = new QClusterLeafletLayer.FacetColorLibrary(tax.t_id, tax.name, tax.classifications, {id: 'c_id', name: 'name'}, {maxColors : 15});
 						
 						// store this facet
 						dataSource.facets[facet.id] = facet;
@@ -251,7 +251,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 					options = {topN : 15};
 					
 					// See comments above; same routine as a taxonomy facet
-					facet = QClusterLeafletLayer.colorFacetValues('org', 'Organization', dbOrgs[0], {id: 'o_id', name: 'name'}, {maxColors : 15});
+					facet = new QClusterLeafletLayer.FacetColorLibrary('org', 'Organization', dbOrgs[0], {id: 'o_id', name: 'name'}, {maxColors : 15});
 					
 					dataSource.facets['org'] = facet;				
 					

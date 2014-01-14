@@ -65,11 +65,12 @@ _SPDEV.Locations.Collection = Backbone.Collection.extend({
 		
 		this.layerOptions = {
 						'useClassificationColors': this.useClassificationColors, 
-						'pointClassifications': this.pointTaxonomyClassifications[this.reportByTaxonomyId].values_keyVal,
+						'dataDictionary': this.pointTaxonomyClassifications[this.reportByTaxonomyId].values_keyVal,
 						'clickHandler': this.clusterClickHandler,
 						'layerDataLoadedPublish': this.layerDataLoadedPublish,
 						'clusterClassificationChart': this.clusterChartType,
-						'displayState': this.displayState
+						'displayState': this.displayState,
+						summarizationProperty: 'r_ids'
 						};
 								
 		// Perform initial point clustering
