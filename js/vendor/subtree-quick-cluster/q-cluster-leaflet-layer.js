@@ -9,7 +9,7 @@ QClusterLeafletLayer.Manager =  function(pointArr, id, map, opts){
 	this.pointData = pointArr;
 	this.map = map;
 	this.clusters = {};
-	this.activeClusterLatlng = null;
+	this.activeCluster = null;
 	  
 	var self,
 		options,
@@ -89,9 +89,9 @@ QClusterLeafletLayer.Manager.prototype.clusterPoints = function() {
 		points,
 		clusterMarker,
 		classificationId,
-		clusterMarkers = [];
-	
-	var self = this;
+		clusterMarkers = [],
+		lat, lng, lats = [], lngs = [],
+		self = this;
 	
 	if(!$(this.map._container).is(":visible")) {
 		return;
@@ -160,6 +160,24 @@ QClusterLeafletLayer.Manager.prototype.clusterPoints = function() {
 			// instaniate the leaflet marker
 			clusterMarker = L.marker(latlon, {icon:myIcon});
 			
+			// Determine if all points within a cluster have the approximately same coordinates
+			clusterMarker['stacked'] = true;
+			
+			lats[0] = Math.round(points[0].lat*10000)/10000;
+			lngs[0] = Math.round(points[0].lng*10000)/10000;
+			
+			for (var n = 1, nMax = points.length; n < nMax; n++) {
+				
+				lats[n] = 	Math.round(points[n].lat * 10000)/10000;
+				lngs[n] = Math.round(points[n].lng * 10000)/10000;
+				if( lats[n] !== lats[0] 
+					|| lngs[n] !== lngs[0]){
+				
+					clusterMarker['stacked'] = false;
+					break;
+				}
+			}
+
 			// Deal with cluster click event
 			if(this.hasClusterClick) {
 				
@@ -199,7 +217,7 @@ QClusterLeafletLayer.Manager.prototype.clusterPoints = function() {
 		
 	}
 	
-	if(this.activeClusterLatlng) {
+	if(this.activeCluster) {
 		this.markActiveCluster();
 	}
 	//amplify.publish('clusteringFinished');
@@ -384,16 +402,24 @@ QClusterLeafletLayer.Manager.prototype.makeDonuts = function() {
 
 };
 
-QClusterLeafletLayer.Manager.prototype.hideDonuts = function(){
+QClusterLeafletLayer.Manager.prototype.removeLayer = function(){
 	
-	$('.' + this.layerId + ' .clusterDonut').hide();
-	
+	this.map.off('moveend', this.mapMove, this);
+	this.map.off('click', this.removeActiveCluster, this);
+    this.map.removeLayer(this.layer);
+
 };
 
-QClusterLeafletLayer.Manager.prototype.showDonuts = function(){
+QClusterLeafletLayer.Manager.prototype.replaceLayer = function(){
 	
-	$('.' + this.layerId + ' .clusterDonut').show();
+	this.map.on('moveend', this.mapMove, this);
+	this.map.on('click', function(){
+		// Remove the active marker and publish notification
+		this.removeActiveCluster(true);
+	}, this);
 	
+    this.clusterPoints();
+
 };
 
 // Check whether an x,y (web mercator is within the buffered extent of the passed Leaflet map)
@@ -458,7 +484,10 @@ QClusterLeafletLayer.Manager.prototype.getResolution = function() {
 };
 
 QClusterLeafletLayer.Manager.prototype.markActiveCluster = function() {
-	
+		
+		if(this.activeCluster === null) {
+			return;
+		}
 		// When the user click on a cluster that can be made active (i.e., less than 20 points), the map centers on that cluster
 		// Of course, when that happens, the old clusters/layer gets destoyed and remade.  Thus we lose reference to the cluster
 		// that we clicked to make active.  However, the lat/lng of the orginally clicked cluster, will be identical to the new
@@ -469,8 +498,8 @@ QClusterLeafletLayer.Manager.prototype.markActiveCluster = function() {
 			
 			var latlng = this.layer._layers[i]._latlng;
 			
-			// If this marker's latlng === the clicked cluster latlng, add active-marker class to the divIcon
-			if(latlng.lat === this.activeClusterLatlng.lat && latlng.lng === this.activeClusterLatlng.lng ) {
+			// If this marker's latlng & point count === the clicked cluster's properties, add active-marker class to the divIcon
+			if(latlng.lat === this.activeCluster._latlng.lat && latlng.lng === this.activeCluster._latlng.lng ) {
 				$(this.layer._layers[i]._icon).toggleClass('active-marker', true);
 			}
 		}
@@ -479,7 +508,7 @@ QClusterLeafletLayer.Manager.prototype.markActiveCluster = function() {
 
 QClusterLeafletLayer.Manager.prototype.removeActiveCluster = function(publishRemovalNotice) {
 	
-		this.activeClusterLatlng = null;
+		this.activeCluster = null;
 		
 		$('.leaflet-marker-pane .active-marker').toggleClass('active-marker', false);
 		
