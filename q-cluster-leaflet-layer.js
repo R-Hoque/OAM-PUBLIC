@@ -608,3 +608,20 @@ QClusterLeafletLayer.FacetColorLibrary = function(facetId, facetName, facetValue
 
 	return facet;
 };
+
+QClusterLeafletLayer.webMercatorToGeographic = function(mercatorX, mercatorY) {
+	
+	var x,
+		y,
+		lon,
+		lat;
+	
+    if ((Math.abs(mercatorX) > 20037508.3427892) || (Math.abs(mercatorY) > 20037508.3427892)){
+        return;
+	}
+	
+    lon = ((mercatorX / 6378137.0) * 57.295779513082323) - (Math.floor( ( (((mercatorX / 6378137.0) * 57.295779513082323) + 180.0) / 360.0)) * 360.0);
+    lat = (1.5707963267948966 - (2.0 * Math.atan(Math.exp((-1.0 * mercatorY) / 6378137.0)))) * 57.295779513082323;
+	
+    return [lat, lon];
+};
