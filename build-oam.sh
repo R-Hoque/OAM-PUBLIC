@@ -1,8 +1,5 @@
 #!/bin/bash          
 
-# NPMT example
-# ./build-npmt.sh ./ ../npmt-build dev ../spatialdev.pem
-
 # USAGE
 usage="
 
@@ -15,7 +12,7 @@ where:
     <pem file> : path to pem file (if necessary)
     -h : show this help text
 
-example: ./build-oam.sh ./ ../oam-public-build dev ../spatialdev.pem"
+example: ./build-oam.sh ./ ../oam-public-build local ../spatialdev.pem"
 
 while getopts ':hs:' option; do
   case "$option" in
@@ -36,8 +33,6 @@ if [ -d $2 ];then
     echo 
   	echo "Removing any prior contents of build directory."
     rm -r $2/*
-    find $2 -iname '.*' -maxdepth 1 -type f -exec rm {} \;
-    exit
   fi
 
 else
