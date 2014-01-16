@@ -5,10 +5,10 @@
 	require('db.inc');*/
 	
 	
-	$host = "ec2-54-243-220-251.compute-1.amazonaws.com";
-	$database = "oam4";
-	$username = "pmt_read";
-	$password = "password";
+	$host = "";
+	$database = "";
+	$username = "";
+	$password = "";
 	
 	# DB connection string
 	$dbPostgres = pg_connect("host=$host port=5432 dbname=$database user=$username password=$password")

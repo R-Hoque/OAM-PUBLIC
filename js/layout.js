@@ -91,7 +91,7 @@ _SPDEV.Layout.setLanguage = function() {
   $('.allNone > a').each(function() {
       $(this).text(_lang.allnone);
   });
-  $('#downloadBTN').html(_lang.download);
+  $('#downloadBTN > span').html(_lang.download);
   $('#viewControl_donor').html(_lang.main_chart_dropdown1);
   $('#viewControl_gov').html(_lang.government);
   $('.listviewheadertitle')[0].innerHTML = _lang.name;

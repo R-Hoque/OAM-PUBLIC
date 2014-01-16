@@ -1,6 +1,6 @@
 <?php
 
-  
+  //The IATI upload through the UI overwrites the existing data for a specific data group with new data.
   include('db.inc');
   
   // Get the appropriate country for data replacement

@@ -1,5 +1,9 @@
 _SPDEV.DataSources = {};
 
+
+//For data to show up on the map you must load the IATI data into the database
+//and then configure a new 'data group' here.
+
 _SPDEV.DataSources.Data = {
 	Donor : {
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,

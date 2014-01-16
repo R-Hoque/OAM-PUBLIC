@@ -3,7 +3,7 @@ _SPDEV.DownloadBtn = {};
 _SPDEV.DownloadBtn.init = function(){
 	$('#downloadBTN').on('click', function() {
 		$('#emailError').empty();
-		$('#downloadFORM').slideDown("fast");
+		$('.downloadElement').slideDown("fast");
 	});
 	$('#download_submit').on('click', function() {
 		var filters = _SPDEV.DownloadBtn.getFilters();
@@ -20,15 +20,15 @@ _SPDEV.DownloadBtn.init = function(){
 		_SPDEV.DownloadBtn.SendExportRequest(filters);
 	});
 	$('#download_cancel').on('click', function(){
-		$('#downloadFORM').slideUp("fast");
+		$('.downloadElement').slideUp("fast");
 		$('#formElements').show();
 		$('#dataProcessing').hide();
 	});
 	$('#download_ok').on('click', function(){
-		$('#downloadFORM').slideUp("fast", function(){
-			$('#downloadText').hide();
-			$('#formElements').show();
-		});
+		$('.downloadElement').slideUp("fast", function(){
+    		$('#downloadText').hide();
+    		$('#formElements').show();
+    	});
 	});
 };
 
