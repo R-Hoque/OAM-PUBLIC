@@ -200,14 +200,14 @@ _SPDEV.MapsControl.ContextualLayers.data = [
 _SPDEV.MapsControl.ContextualLayers.init = function(map, appendToEl, appendLegendTo) {
 	
 	// Create a Backbone collection ohbject
-	var coll = new _SPDEV.LeafletWMSLayers.Collection();
+	var coll = new _SPDEV.LeafletOverlays.Collection();
 		//var coll = new _SPDEV.LBasemapSwitcher.Collection({'map': map});
 	
 	// Fill the collection with the data array
 	coll.init(map, _SPDEV.MapsControl.ContextualLayers.data);
 	
 	// Create a Backbone Collection View that serves as the WMS checkbox list
-	var collView = new _SPDEV.LeafletWMSLayers.SelectionListCollectionView({'collection': coll});
+	var collView = new _SPDEV.LeafletOverlays.SelectionListCollectionView({'collection': coll});
 	
 	// render that collection view
 	collView.render();
@@ -216,7 +216,7 @@ _SPDEV.MapsControl.ContextualLayers.init = function(map, appendToEl, appendLegen
 	$(appendToEl).append(collView.el);
 
 	// Create a Backbone Collection View that holds all the legends for the WMS in the collection (all legends hidden on load) 
-	legCollView = new _SPDEV.LeafletWMSLayers.LegendCollectionView({'collection': coll});
+	legCollView = new _SPDEV.LeafletOverlays.LegendCollectionView({'collection': coll});
 	
 	// render the collection view
 	legCollView.render();
