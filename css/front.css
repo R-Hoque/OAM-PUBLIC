@@ -507,6 +507,13 @@ textarea {
   bottom: 0;
   right: 0; }
 
+.wall-to-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
 .cloak {
   display: none; }
 
@@ -793,12 +800,7 @@ textarea {
     font-family: 'Gotham-Bold';
     font-size: 1.2em;
     color: #81a33b;
-    clear: both; 
-    } 
-    
-  .mmtitle  a, .mmactivities a {
-      color:inherit;
-  }
+    clear: both; }
 
   .mmactivities {
     font-family: 'Gotham-Book';
@@ -940,24 +942,10 @@ span.bottomtitle {
     padding: 10px 10px 10px 10px;
     text-align: left;
     white-space: nowrap; } }
-#contactsBox {
-  padding: 10px;
-  color: #fff;
-  border-width: 0;
-}
-#frontQuickStats, #contact {
+#frontQuickStats {
   background-color: #fff;
   border-top: 1px solid #E7E7E7;
   border-bottom: 1px solid #E7E7E7; }
-#frontPartnership ul {
-  padding: 0 0 0 20px;
-}
-.qsnewsContainer {
-  padding-bottom:35px;}
-
-.qscontactContainer {
-  padding-left:15px;
-  padding-bottom:35px;}
 
 #qslead {
   /*height: 90px;*/
@@ -973,8 +961,7 @@ span.bottomtitle {
   padding-left: 40px;
   float: left;
   color: #4d4b4b;
-/*  font-family: 'Gotham-Light';*/
-  font-size: 1.2em; }
+  font-family: 'Gotham-Light'; }
 
 #percentage {
   position: absolute;
@@ -995,7 +982,7 @@ span.bottomtitle {
 .qsTitle {
   color: #d66c27;
   font-family: 'Gotham-Bold';
-  font-size: 3.5em; }
+  font-size: 3.0em; }
 
 .qsicon {
   /*margin-top: -12px;*/ }
@@ -1037,3 +1024,6 @@ span.bottomtitle {
   font-family: 'Gotham-Book';
   font-size: 11px;
   color: #4d4b4b; }
+
+.mmtitle a, .mmactivities a {
+  color: inherit; }
