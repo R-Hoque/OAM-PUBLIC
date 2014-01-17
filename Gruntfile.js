@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 					'js/vendor/backbone-min.js',
 					'js/vendor/json2.js',
 					'js/vendor/d3.min.js',
-					'js/vendor/leaflet-overlays/leaflet-overlays.js',
+					'js/vendor/subtree-leaflet-overlays/leaflet-overlays.js',
 					'js/vendor/subtree-leaflet-bing-layer/leaflet-bing-layer.js',
 					'js/vendor/subtree-leaflet-basemap-switcher/leaflet-basemap-switcher.js',
 					'js/vendor/subtree-quick-cluster/q-cluster.js',        
