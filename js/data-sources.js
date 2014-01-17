@@ -262,7 +262,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 					postData = {'dataGroupId': dataSource.DATAGROUP_IDS.toString(), 'countryIds': dataSource.COUNTRY_IDS.toString()};
 						
 					chart = new _SPDEV.ActivityChart.Chart(null, 'php/getLocationsByOrg.php', postData, 'php/filterLocationsReportByOrg.php', facet, dataSource.chartsWrapper, dataSource.UPDATE_CHANNEL);
-									
+								
 					_SPDEV.FacetFilter.init(facet, 'organization', dataSource.filterStore, dataSource.facetFilterWrapper, options);
 		
 					// Show the facet filters and charts for the default data source
@@ -355,7 +355,7 @@ _SPDEV.DataSources.switchSource = function(from, to, map){
 		var dsFrom = _SPDEV.DataSources.Data[from];
 		
 		dsFrom.isActive = false;
-		$(dsFrom.overviewChartWrapper).hide();
+		$(dsFrom.chartsWrapper).hide();
 		$(dsFrom.facetFilterWrapper).hide();
 		$(dsFrom.listView.el).hide();
 		map.removeLayer(dsFrom.clusterLayerManager.layer);
@@ -366,7 +366,7 @@ _SPDEV.DataSources.switchSource = function(from, to, map){
 		
 		var dsTo = _SPDEV.DataSources.Data[to];
 		dsTo.isActive = true;
-		$(dsTo.overviewChartWrapper).show();
+		$(dsTo.chartsWrapper).show();
 		$(dsTo.facetFilterWrapper).show();
 		$(dsTo.listView.el).show();
 		map.addLayer(dsTo.clusterLayerManager.layer);
