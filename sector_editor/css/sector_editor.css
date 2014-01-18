@@ -14,7 +14,11 @@ div.tabhead {
 }
 div.tabwrapper {
     float:left;
-    width:66%
+    width:66%;
+    height: auto;
+    bottom: -20px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 div.se_wrapper_chooser {
     float: left;
@@ -43,14 +47,17 @@ div.se_wrapper_chooser > .head {
 div.se_wrapper_chooser > .content {
     display: block;
     position:relative;
-    height: auto;
+    height: 400px;
     width: auto;
     top:30;
     left:0;
     right:0;
     bottom: 0;
     margin: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
 div.se_col {
     width: 50%;
     height: 17px;
@@ -78,6 +85,8 @@ div.se_col.tab.even {
 div.se_col.chooser {
     background-color: #fff;
     cursor: pointer;
+    color: #dddddd;
+    padding-left: 20px;
     width:100%;
 }
 div.selected {
