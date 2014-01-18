@@ -58,49 +58,69 @@
   };
   
   _SPDEV.SectorEditor.loadStandardSectors = function(parent) {
-    
-	var data = {};
-	data.length = 10;
-	
-	var cell, c, content = "";
-	var i = 0;
-	while(i<data.length) {
-	  cell = "<div class='se_col chooser' id='c_chooser_"+i+"'></div>";
-	  content += cell;
-	  i++;
-	}
-	parent.html(content);
+      var cell, c, content = "";
+      $.ajax({
+	  type: 'POST',
+	    'dataType': "json",
+	    'url': 'sector_editor/php/getSectors.php',
+	    'success': function(data){
+		data.sort(compare);
+		var i = 0;
+		while(i<data.length) {
+		  cell = "<div class='se_col chooser' id='c_chooser_"+data[i].c_id+"'>"+data[i].name+"</div>";
+		  content += cell;
+		  i++;
+		}
+		parent.html(content);
+	    },
+	    'error': function(response) {
+		  console.error(response);
+	    }
+	});
+
   }
   
   // AJAX Call to read in DATA from FILE and DB
   _SPDEV.SectorEditor.readIATI = function() {
-     /* $.ajax({
+      var params = {'dg': '769'};
+      $.ajax({
         type: 'POST',
 	  'dataType': "json",
 	  'data': params,
-	  'url': 'sector_editor/php/getSectors_IATI.php',
+	  'url': 'sector_editor/php/getComparison.php',
 	  'success': function(data){
-		// a sign of things to come
+		$('#se_sectors_file').html(_SPDEV.SectorEditor.generateCells('import',data));
+		$('#se_sectors_iati').html(_SPDEV.SectorEditor.generateCells('sector',data));
 	  },
 	  'error': function(response) {
 	  	console.error(response);
 	  }
-      }); */
+      });
      // Replace this with real data
       var data = {};
       data.length = 10;
       
-      $('#se_sectors_file').html(this.generateCells('file',data));
-      $('#se_sectors_iati').html(this.generateCells('iati',data));
+      
   }
+  
   _SPDEV.SectorEditor.generateCells = function(type, data) {
       var cell, c, content = "";
       var i = 0;
       while(i<data.length) {
 	c = i%2 == 0 ? 'odd' : 'even';
-	cell = "<div class='se_col tab "+c+"' id='c_"+type+"_"+i+"'></div>";
+	cell = (type == "import") ? "<div class='se_col tab "+c+"' id='c_"+type+"_"+i+"'>"+data[i].import+"</div>" : "<div class='se_col tab "+c+"' id='c_"+type+"_"+i+"'>"+data[i].sector+"</div>"
 	content += cell;
 	i++;
       }
       return content;
+  }
+  
+  
+  
+  function compare(a,b) {
+    if (a.name < b.name)
+      return -1;
+    if (a.name > b.name)
+      return 1;
+    return 0;
   }

@@ -42,7 +42,7 @@
 	</div>
 	<div class="se_wrapper_chooser">
 	  <div class="head" id="se_chooser_head"></div>
-	  <div class="content" id="se_chooser_content"></div>
+	  <div class="content inactive" id="se_chooser_content"></div>
 	</div>
 	<!-- End Main Mody -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
