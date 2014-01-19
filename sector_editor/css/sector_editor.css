@@ -116,7 +116,7 @@ div.tabwrapper {
   padding: 10px 20px;
   background-color: #eb7621;
   color: #ffffff;
-  margin: 10px 80px 40px 80px;
+  margin: 20px 80px 20px 80px;
   width: 200px;
   text-align: center;
   cursor: pointer;
@@ -140,4 +140,13 @@ div.tabwrapper {
   left: 50%;
   background-color: #ffffff;
   padding: 15px 40px 30px 40px;
+}
+div.cellwrapper {
+ padding-left:20px;
+  
+}
+div.se_logout {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #eb7621;
 }

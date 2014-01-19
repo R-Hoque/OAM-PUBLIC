@@ -4,9 +4,7 @@
   @client = World Bank Open Aid Partnership
   @functionality = Main file for the Sector Editor (HTML/PHP)
   =========================================================== -->
-
-  <?php if (!isset($_GET['dg'])) header('index.html'); $dg = $_GET['dg']; // Require the country name ?>
-
+ <?php require_once("php/session.inc"); ?>
   <!DOCTYPE html>
   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
   <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->

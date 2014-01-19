@@ -13,20 +13,15 @@
   _SPDEV.SectorEditor.data_sector = null;
   _SPDEV.SectorEditor.compare_selected = null;
   _SPDEV.SectorEditor.sector_selected = null;
+  _SPDEV.SectorEditor.dg = null;
   
   $(function() {
     
     var langFile;
     //parse querystring if any
-    var url = document.URL;
-    var queryPars = $.parseParams( url.split('?')[1] || '' );
-    
-    if(typeof queryPars.dg === 'undefined') {
-	    window.location = './index.html';
-	    return;
-    }
-    
-    if(queryPars.dg === 'Bolivia') {
+    _SPDEV.SectorEditor.dg = $('#dg').html();
+
+    if(_SPDEV.SectorEditor.dg === 'BOLIVIA') {
 	    langFile = "js/lang/es.json";
     } else {
 	    langFile =  "js/lang/en.json"
@@ -34,7 +29,7 @@
     
     $.getJSON( langFile, function( data ) {
 	    _lang = data;
-	    _SPDEV.SectorEditor.loadApp(queryPars.dg);
+	    _SPDEV.SectorEditor.loadApp(_SPDEV.SectorEditor.dg);
     });
   });
 
@@ -47,12 +42,28 @@
     $('#se_col_head1').html(_lang.se_col_head1);
     $('#se_col_head2').html(_lang.se_col_head2);
     $('#se_chooser_head').html(_lang.se_chooser_head);
+    $('#assign').html(_lang.se_assign_button);
+    $("#se_logout").on('click',function() { 
+	_SPDEV.SectorEditor.logout();
+     });
     
     this.loadStandardSectors($('#se_chooser_content'));
     this.readIATI();
-    
-    
   };
+  _SPDEV.SectorEditor.logout = function() {
+      $.ajax({
+	  type: 'POST',
+	    'dataType': "json",
+	    'url': 'php/logout.php',
+	    'success': function(data){
+		  window.location = "index.html";
+	    },
+	    'error': function(response) {
+		  console.error(response);
+		  location.reload();
+	    }
+	});
+  }
   
   _SPDEV.SectorEditor.loadStandardSectors = function(parent) {
       var cell, c, content = "";
@@ -62,7 +73,7 @@
 	    'url': 'sector_editor/php/getSectors.php',
 	    'success': function(data){
 		_SPDEV.SectorEditor.data_sector = data;
-		data.sort(compare);
+		data.sort(_SPDEV.SectorEditor.compare);
 		var i = 0;
 		while(i<data.length) {
 		  cell = "<div class='se_col chooser' id='c_chooser_"+i+"'>"+data[i].name+"</div>";
@@ -80,7 +91,7 @@
   
   // AJAX Call to read in DATA from FILE and DB
   _SPDEV.SectorEditor.readIATI = function() {
-      var params = {'dg': '769'};
+      var params = {'dg': _SPDEV.SectorEditor.dg};
       $.ajax({
         type: 'POST',
 	  'dataType': "json",
@@ -104,8 +115,8 @@
       while(i<data.length) {
 	c = i%2 == 0 ? 'odd' : 'even';
 	row = "<div class='se_row "+c+"' id='row_"+i+"'>";
-	cell1 = "<div class='se_col tab' id='col_import_"+i+"'>"+data[i].import+"</div>";
-	cell2 = "<div class='se_col tab' id='col_sector_"+i+"'>"+data[i].sector+"</div>";
+	cell1 = "<div class='cellwrapper'><div class='se_col tab' id='col_import_"+i+"'>"+data[i].import+"</div></div>";
+	cell2 = "<div class='cellwrapper'><div class='se_col tab' id='col_sector_"+i+"'>"+data[i].sector+"</div></div>";
 	row += cell1+cell2+"</div>";
 	content += row;
 	i++;
@@ -117,19 +128,17 @@
       $('div.se_row').on('click',function() { 
 	_SPDEV.SectorEditor.rowClick(this.id);
       });
-      $('div.se_col.chooser').on('click',function() { 
-	_SPDEV.SectorEditor.chooseClick(this.id);
-      });
-      $('#assign').on('click',function() { 
-	_SPDEV.SectorEditor.updateSector();
-      });
+      
       _SPDEV.SectorEditor.loadingOff();
   }
   
   
   _SPDEV.SectorEditor.rowClick = function(id) {
-	$('div.se_wrapper_chooser > .head').css('color','#ffffff');
-	$('div.se_col.chooser').css('color','#333333');
+	var d = $('div.se_wrapper_chooser > .head').css('color');
+	if (d != "rgb(255, 255, 255)") {
+	  $('div.se_wrapper_chooser > .head').css('color','#ffffff');
+	  $('div.se_col.chooser').css('color','#666666');
+	}
 	if (this.prevSelect) {
 	    var c = this.prevSelect.split("_");
 	    var d = c[1]%2 == 0 ? '#f9f9fc' : '#eceef5';
@@ -140,12 +149,15 @@
 	this.prevSelect = id;
 	var x = id.split("_");
 	this.compare_selected = x[1];
+	$('div.se_col.chooser').on('click',function() { 
+	  _SPDEV.SectorEditor.chooseClick(this.id);
+	});
   }
 
   _SPDEV.SectorEditor.chooseClick = function(id) {
 	if (this.prevChooserSelect) {
 	    var c = this.prevChooserSelect.split("_");
-	    $('#'+this.prevChooserSelect).css("color","#333333");
+	    $('#'+this.prevChooserSelect).css("color","#666666");
 	    $('#'+this.prevChooserSelect).css("backgroundColor","#ffffff");
 	}
 	$('#'+id).css("backgroundColor","#333333");
@@ -153,7 +165,9 @@
 	this.prevChooserSelect = id;
 	var x = id.split("_");
 	this.sector_selected = x[2];
-	
+	$('#assign').on('click',function() { 
+	  _SPDEV.SectorEditor.updateSector();
+	});
   }
   
   _SPDEV.SectorEditor.updateSector = function() {
@@ -174,7 +188,6 @@
 		}
 	    },
 	    'error': function(response) {
-		  console.error(response);
 		  _SPDEV.SectorEditor.loadingOff();
 	    }
 	});  
@@ -187,7 +200,7 @@
       $('#loading_bg').show();
       $('#loading_main').show();
   }
-  function compare(a,b) {
+  _SPDEV.SectorEditor.compare = function(a,b) {
     if (a.name < b.name)
       return -1;
     if (a.name > b.name)
