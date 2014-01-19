@@ -11,6 +11,6 @@
 	} 
 
 	//the session variable isn't registered, the user shouldn't even be on this page
-	header( "Location: ../index.html" );
+	// header( "Location: ../index.html" );
 
 ?>

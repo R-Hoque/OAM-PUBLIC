@@ -61,5 +61,6 @@
 "se_col_head1": "Sector del archivo subido:",
 "se_col_head2": "Sector IATI asignado actual:",
 "se_chooser_head": "Por favor elija un Sector IATI válida:",
-"se_assign_button": "ASIGNAR SECTOR IATI"
+"se_assign_button": "ASIGNAR SECTOR IATI",
+"se_editsector_button": "SECTOR EDITOR"
 }

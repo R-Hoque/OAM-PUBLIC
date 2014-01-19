@@ -100,4 +100,5 @@ _SPDEV.Layout.setLanguage = function() {
   $('.listviewheadertitle')[4].innerHTML = _lang.fundor;
   $('#controlPanel > header > span').text(_lang.hide);
   $('#uploadIATI').html(_lang.upload);
+  $('#edit_sector').html(_lang.se_editsector_button);
 }

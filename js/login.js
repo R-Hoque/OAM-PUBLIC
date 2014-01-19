@@ -19,6 +19,7 @@ _SPDEV.Login.authenticate = function () {
 		   $('#login').html(data.data.username);
 		   $('#wrapperLogin').toggle();
 		   $('#uploadIATI').fadeIn();
+		   $('#edit_sector').fadeIn();
 		   $('#uxLogin_submit').html('LOG IN');
 		}
 	    },		  

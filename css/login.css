@@ -107,6 +107,20 @@ div.sub_notes  {
     cursor: pointer;
     display: none;
 }
+#edit_sector {
+    background-color: #ea7820;
+    right: 260px;
+    position:absolute;
+    top:43px;
+    padding: 4px 8px 2px 8px;
+    font-family: 'Gotham-Bold';
+    font-size: 13px;
+    color:#fff;
+    z-index:2;
+    margin-top:-37px;
+    cursor: pointer;
+    display: none;
+}
 .upload_form {
   z-index: 1000;
   width: 360px;

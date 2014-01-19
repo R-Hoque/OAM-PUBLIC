@@ -56,7 +56,11 @@ _SPDEV.loadApp = function(dg){
 	    }
 	});
 	$('#uxLoginForgot').on('click', _SPDEV.Login.forgotPassword);
-	$('#uxLoginRegistration').on('click', _SPDEV.Login.registration);
+	$('#edit_sector').on('click', function() {
+	    var win=window.open("sector_editor.php", '_blank');
+	    win.focus();
+	});
+	// $('#uxLoginRegistration').on('click', _SPDEV.Login.registration);
 	
 };
 
