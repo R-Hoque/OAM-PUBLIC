@@ -60,5 +60,6 @@
 "se_h_title": "SECTOR ASSIGNOR",
 "se_col_head1": "Sector from uploaded file:",
 "se_col_head2": "Current assigned IATI Sector:",
-"se_chooser_head": "Please choose a valid IATI Sector:"
+"se_chooser_head": "Please choose a valid IATI Sector:",
+"se_assign_button": "ASSIGN THIS IATI SECTOR"
 }
