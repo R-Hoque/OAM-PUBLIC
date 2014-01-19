@@ -21,14 +21,16 @@
 		foreach($rows as $r) {
 		  $c = json_decode($r['response']);
 		  $match = false;
-		  foreach($a as $ar) {
-		    if ($ar->sector == $c->sector && $ar->import == $c->import) {
-		      "match<br/>";
+		  foreach($a as &$ar) {
+		    if ($ar->import == $c->import) {
+		      $ar->a_id .= ",".$c->a_id;
 		      $match = true;
 		    }
 		  }
 		  if (!$match) {
 		    $ar = (Object)array();
+		    $ar->a_id = $c->a_id;
+		    $ar->c_id = $c->c_id;
 		    $ar->sector = $c->sector;
 		    $ar->import = $c->import;
 		    $a[] = $ar;

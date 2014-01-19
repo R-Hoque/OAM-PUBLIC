@@ -31,18 +31,20 @@
 	  </script>
       </head>
       <body>
+	<div id="loading_bg"></div>
+	<div id="loading_main"><p>Loading...</p><div><img src="img/loading.gif"></div></div>
 	<?php include_once('sector_editor/header.inc'); ?>
 	<!-- Main Body -->
 	<div class="tabhead"><span class="titles" id="se_tab_head"></span></div>
 	<div class="tabwrapper">
-	  <div class="se_col head"><span class="titles" id="se_col_head1"></span></div>
-	  <div class="se_col head"><span class="titles" id="se_col_head2"></span></div>  
-	  <div class="se_sectors" id="se_sectors_file" style="clear:both;"></div>
-	  <div class="se_sectors" id="se_sectors_iati"></div>
+	    <div class="se_col head"><span class="titles" id="se_col_head1"></span></div>
+	    <div class="se_col head"><span class="titles" id="se_col_head2"></span></div>
+	    <div id="se_sectors"></div>
 	</div>
 	<div class="se_wrapper_chooser">
 	  <div class="head" id="se_chooser_head"></div>
 	  <div class="content inactive" id="se_chooser_content"></div>
+	  <div id="assign">ASSIGN THIS IATI SECTOR</div>
 	</div>
 	<!-- End Main Mody -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
