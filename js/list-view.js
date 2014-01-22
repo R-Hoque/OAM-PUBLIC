@@ -236,7 +236,7 @@ _SPDEV.ListView.Manager.prototype.createRow = function(row) {
       record += "<div class='cell'>"+row.r_name+"</div>";
       record += "</div>";
       return $(record);
-  }
+ };
   
   // Create the header row.  This doesn't really need to be JS, but it is simpler.
 _SPDEV.ListView.Manager.prototype.createHeader = function() {
@@ -246,7 +246,7 @@ _SPDEV.ListView.Manager.prototype.createHeader = function() {
       record += "<div class='cell header sector' id='listview_header_s'><div class='listviewheadertitle'>Sector</div><div class='arrow'></div></div>";
       record += "</div>";
       return $(record);
-  }
+ };
   
   // Sort the data by the header that is clicked.
 _SPDEV.ListView.Manager.prototype.sortByHeader = function(orderby) {
@@ -269,7 +269,7 @@ _SPDEV.ListView.Manager.prototype.sortByHeader = function(orderby) {
     this.params.orderby = orderby;
     this.params.offset = 0;	// if we are resorting by a header, return to first page
     this.loadData();
-  }
+  };
 
 _SPDEV.ListView.Manager.prototype.changeActiveHeader = function(orderByProp) {
     // this is a hack to get the correct header to show up. JQuery/CSS nightmare.
