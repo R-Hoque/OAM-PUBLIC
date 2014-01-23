@@ -37,10 +37,10 @@ _SPDEV.ListView.Manager = function(updateChannel, dataGroupId, sectorLanguage){
 	 	this.sortByHeader('a_name');
 	 }, this));
 	 $(this.header).find('.org').on('click', $.proxy(function(){
-	 	this.sortByHeader('o_name');
+	 	this.sortByHeader('f_orgs');
 	 }, this));
 	 $(this.header).find('.sector').on('click', $.proxy(function(){
-	 	this.sortByHeader('r_name');
+	 	this.sortByHeader('tax1');
 	 }, this));
 	 
       $('<div class="list-view-header"></div>').append(this.header).prependTo(this.el);
@@ -232,8 +232,8 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 _SPDEV.ListView.Manager.prototype.createRow = function(row) {
       var record = "<div class='row data-row' data-a_id="+row.a_id+">";
       record += "<div class='cell' >"+row.a_name+"</div>";
-      record += "<div class='cell'>"+row.o_name+"</div>";
-      record += "<div class='cell'>"+row.r_name+"</div>";
+      record += "<div class='cell'>"+row.f_orgs+"</div>";
+      record += "<div class='cell'>"+row.tax1+"</div>";
       record += "</div>";
       return $(record);
  };
@@ -280,10 +280,10 @@ _SPDEV.ListView.Manager.prototype.changeActiveHeader = function(orderByProp) {
       	case 'a_name':
       		$(this.header).find('.cell.header.name').addClass('active');
       		break;
-      	case 'o_name':
+      	case 'f_orgs':
       		$(this.header).find('.cell.header.org').addClass('active');
       		break;
-      	case 'r_name':
+      	case 'tax1':
       		$(this.header).find('.cell.header.sector').addClass('active');
       		break;
 
