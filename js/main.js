@@ -40,26 +40,27 @@ _SPDEV.loadApp = function(dg){
 	
 	// Grant ADD ... not really sure where this should go
 	
-	$('#uploadIATI').on('click', function() { _SPDEV.Upload.createForm(); });
-	$('#uxLogin_email').val('username').css('font-style','italic');
-	$('#uxLogin_pass').val('password');
-	$('#uxLogin_email').on('focus', function() { $(this).val("").css('font-style','normal').css('color','#666666'); });
-	$('#uxLogin_pass').on('focus', function() { $(this).val(""); });
-	$('#uxLogin_pass').on('keypress', function(e) {
-	    if (e.keyCode == 13) {
-			$('#uxLogin_submit').click();
-	    }
-	});
-	$('#uxLogin_email').on('keypress', function(e) {
-	    if (e.keyCode == 13) {
-			$('#uxLogin_submit').click();
-	    }
-	});
-	$('#uxLoginForgot').on('click', _SPDEV.Login.forgotPassword);
-	$('#edit_sector').on('click', function() {
-	    var win=window.open("sector_editor.php", '_blank');
-	    win.focus();
-	});
+	    $('#uploadIATI').on('click', function() { _SPDEV.Upload.createForm(); });
+	    $('#uxLogin_email').val('username').css('font-style','italic');
+	    $('#uxLogin_pass').val('password');
+	    $('#uxLogin_email').on('focus', function() { $(this).val("").css('font-style','normal').css('color','#666666'); });
+	    $('#uxLogin_pass').on('focus', function() { $(this).val(""); });
+	    $('#uxLogin_pass').on('keypress', function(e) {
+		if (e.keyCode == 13) {
+			    $('#uxLogin_submit').click();
+		}
+	    });
+	    $('#uxLogin_email').on('keypress', function(e) {
+		if (e.keyCode == 13) {
+			    $('#uxLogin_submit').click();
+		}
+	    });
+	    $('#uxLoginForgot').on('click', _SPDEV.Login.forgotPassword);
+	    $('#edit_sector').on('click', function() {
+		var win=window.open("sector_editor.php", '_blank');
+		win.focus();
+	    });
+	    
 	// $('#uxLoginRegistration').on('click', _SPDEV.Login.registration);
 	
 };

@@ -47,7 +47,20 @@ _SPDEV.Layout.init = function(){
 	
 	$('#uxLogin_submit').on('click', _SPDEV.Login.authenticate);
 	
-	$('#login').on('click', _SPDEV.Login.loginToggle);
+	if(typeof _oamuser != 'undefined') {
+	    _oamuser = jQuery.parseJSON(_oamuser);
+	    $('#login').html("LOGOUT");
+	    $('#uploadIATI').fadeIn();
+	    $('#edit_sector').fadeIn();
+	    $('#login').unbind('click');
+	    $('#login').on('click', _SPDEV.Login.logout);
+	} else {
+	    $('#login').html("LOGIN");
+	    $('#login').unbind('click');
+	    $('#login').on('click', _SPDEV.Login.loginToggle);
+	}
+	
+	
 	
 	
 };
@@ -69,7 +82,6 @@ _SPDEV.Layout.controlPanelResize = function(){
 
 _SPDEV.Layout.setLanguage = function() {
  
-  $('#login').html(_lang.header_login);
   $('#menu_associations').html(_lang.header_associations);
   $('#menu_news').html(_lang.header_news);
   $('#header_country').html(_lang.country_boliva);

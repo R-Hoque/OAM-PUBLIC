@@ -1,33 +1,20 @@
 <?php
 	/*
 	@author: Grant McKenzie (gmckenzie@spatialdev.com)
-	@client: AWM Solutions
-	@project: GenderMappr
-	@date: February 2012
-	@description: makes sure user is authorized and load the appropriate language file.
+	@client: World Bank
+	@project: Open Aid Map
+	@date: January 2014
+	@description: makes sure user is authorized
 	*/
-        // Fix for removed Session functions
-       /*  function session_register(){
-                $args = func_get_args();
-                foreach ($args as $key){
-                        $_SESSION[$key]=$GLOBALS[$key];
-                }
-        }
-        function session_is_registered($key){
-                return isset($_SESSION[$key]);
-        }
-        function session_unregister($key){
-                unset($_SESSION[$key]);
-        } */
-
+	
 	session_start();
 	if (isset($_SESSION['oamuser'])) {
 		require_once 'php/user.inc';
 		$oamuser = unserialize($_SESSION['oamuser']);
-		var_dump();
+		echo "<script>var _oamuser='".json_encode($oamuser)."';</script>";
 	} else {
-	    if($_SERVER['HTTP_REFERER'])
-		header('Location: ' . $_SERVER['HTTP_REFERER']);
+	    if($_SERVER['PHP_SELF'] == "/OAM-PUBLIC/application.php")
+		$x = 1;
 	    else
 		header('Location: index.html');
 	}

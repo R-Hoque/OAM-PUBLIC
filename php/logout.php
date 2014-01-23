@@ -8,8 +8,9 @@
 		//session variable is registered, the user is ready to logout
 		session_unset();
 		session_destroy();
+		
 	} 
-
+	echo "{\"response\":\"t\"}";
 	//the session variable isn't registered, the user shouldn't even be on this page
 	// header( "Location: ../index.html" );
 
