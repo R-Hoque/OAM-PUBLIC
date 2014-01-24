@@ -16,9 +16,12 @@ _SPDEV.Login.authenticate = function () {
 		    alert(data.message);
 		} else {
 		   _SPDEV.Login.user = data.data;
-		   $('#login').html(data.data.username);
+		   $('#login').unbind('click');
+		   $('#login').html("LOGOUT");
+		   $('#login').on('click', _SPDEV.Login.logout);
 		   $('#wrapperLogin').toggle();
 		   $('#uploadIATI').fadeIn();
+		   $('#edit_sector').fadeIn();
 		   $('#uxLogin_submit').html('LOG IN');
 		}
 	    },		  
@@ -34,7 +37,7 @@ _SPDEV.Login.authenticate = function () {
 // Toggle the login drop down
 _SPDEV.Login.loginToggle = function() {
     $('#wrapperLogin').toggle();
-}
+};
 
 _SPDEV.Login.forgotPassword = function() {
     // Dynamically generate the content for the "upload form"
@@ -54,7 +57,7 @@ _SPDEV.Login.forgotPassword = function() {
           $('#wrapperLoginForgot_close').on('click', function() { $('#wrapperLoginForgot').fadeOut(); });
     });
     
-}
+};
 
 _SPDEV.Login.registration = function() {
     // Dynamically generate the content for the "upload form"
@@ -78,4 +81,27 @@ _SPDEV.Login.registration = function() {
       $('#wrapperLoginRegistration').html("todo" + '<div id="wrapperLoginRegistration_close" class="upload_close">'); 
       $('#wrapperLoginRegistration_close').on('click', function() { $('#wrapperLoginRegistration').fadeOut(); });
     });  
+};
+
+_SPDEV.Login.logout = function() {
+    $.ajax({
+	    'type': 'POST',
+	    'dataType': "json",
+	    'url': 'php/logout.php',
+	    'success': function(data){
+		if (data.response == "t") {
+		     $('#login').html("LOGIN");
+		     $('#login').unbind('click');
+		     $('#uploadIATI').hide();
+		     $('#edit_sector').hide();
+		     $('#upload_form').hide();
+		     $('#uxLogin_email').val('username').css('font-style','italic');
+		     $('#uxLogin_pass').val('password');
+		     $('#login').on('click', _SPDEV.Login.loginToggle);
+		} 
+	    },		  
+	    'error': function(response) {
+		  console.error(response);
+	    }
+    });
 }

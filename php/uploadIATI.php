@@ -1,10 +1,16 @@
 <?php
 
+  session_start();
+  if (isset($_SESSION['oamuser'])) {
+      require_once 'php/user.inc';
+      $oamuser = unserialize($_SESSION['oamuser']);
+      $country = $oamuser->data_group;
+  } else {
+      echo "Permission denied.  User must be logged in to execute this function.";
+  }
+  
   //The IATI upload through the UI overwrites the existing data for a specific data group with new data.
   include('db.inc');
-  
-  // Get the appropriate country for data replacement
-  $country = $_GET['country'];
   
   // Change the uploaded file name to reflect the country as well as the current timestamp
   $filename = $country."-".time().".xml";

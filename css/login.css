@@ -95,6 +95,7 @@ div.sub_notes  {
     right: 150px;
     position:absolute;
     top:43px;
+    width: 89px;
     padding: 4px 25px 2px 8px;
     font-family: 'Gotham-Bold';
     font-size: 13px;
@@ -103,6 +104,20 @@ div.sub_notes  {
     background-image: url('../img/upload_iati.png');
     background-repeat: no-repeat;
     background-position: 104px 9px;
+    margin-top:-37px;
+    cursor: pointer;
+    display: none;
+}
+#edit_sector {
+    background-color: #ea7820;
+    right: 280px;
+    position:absolute;
+    top:43px;
+    padding: 4px 8px 2px 8px;
+    font-family: 'Gotham-Bold';
+    font-size: 13px;
+    color:#fff;
+    z-index:2;
     margin-top:-37px;
     cursor: pointer;
     display: none;

@@ -37,11 +37,11 @@ _SPDEV.MapsControl.init = function(map, appendToEl, headerHTML, appendLegendToEl
 	// Append
 	$(mapsControl).append(this.contentsWrapper);
 	
-	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_indicators+'</header>')
+	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_indicators+'</header>');
 	
 	this.contextLayersMenu = _SPDEV.MapsControl.ContextualLayers.init(map, this.contentsWrapper, appendLegendToEl);
 	
-	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_basemaps+'</header>')
+	$(this.contentsWrapper).append('<header>'+_lang.controlDialog_basemaps+'</header>');
 	
 	
 	// Create a Backbone collection ohbject

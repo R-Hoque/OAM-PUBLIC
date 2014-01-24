@@ -461,7 +461,9 @@ textarea {
 
 body {
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.4; 
+  min-width: 900px;
+}
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -783,7 +785,7 @@ textarea {
     line-height: 26px; }
 
   .mminfo.top {
-    padding: 12px 15px 13px 15px;
+    padding: 14px 15px 13px 25px;
     background: url("../img/bubble-light.png"); }
 
   .mminfo.bottom {
@@ -945,7 +947,9 @@ span.bottomtitle {
 #frontQuickStats {
   background-color: #fff;
   border-top: 1px solid #E7E7E7;
-  border-bottom: 1px solid #E7E7E7; }
+  border-bottom: 1px solid #E7E7E7; 
+  min-width:950px;
+}
 
 #qslead {
   /*height: 90px;*/
@@ -953,7 +957,9 @@ span.bottomtitle {
 
 #qsStats {
   /*height: 280px;*/
-  padding-bottom: 35px; }
+  padding-bottom: 35px; 
+  min-width:890px;
+}
 
 .qsContent {
   width: 443px;
@@ -1015,7 +1021,7 @@ span.bottomtitle {
 
 .footerCopy {
   text-align: left;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   padding-top: 10px;
   padding-left: 5px;
   border-top: 1px solid #E7E7E7; }
