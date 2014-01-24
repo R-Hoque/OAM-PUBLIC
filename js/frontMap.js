@@ -23,13 +23,15 @@ _SPDEV.FrontMap.init = function(){
 
 	// CONSTRUCT THE STATIC COUNTRY INFOBOXES
   var tt_Bolivia = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Bolivia").attr("title", "Bolivia");
-	var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
+	//remove Kenya for now
+	//var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
 	var tt_Nepal = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Nepal").attr("title", "Nepal");
 	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Malawi").attr("title", "Malawi");
 
 	// PLACE THEM ON THE MAP RELATIVE TO THE MAP SIZE, THEN POPULATE THEM
   tt_Bolivia.attr("style", "left:" + width/4.7 + "px;top:" + height/2.2 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA <img src='img/mmLogo.png' style='margin-top:-6px;'/></a></div><div class='mmactivities'>6,568 ACTIVITIES</div>");
-	tt_Kenya.attr("style", "left:" + width/2 + "px;top:" + height/2.75 + "px").html("<div class='mmtitle'><a href='application.php?dg=Kenya'>KENYA <img src='img/mmLogo.png' style='margin-top:-6px;'/></a></div><div class='mmactivities'>2,243 ACTIVITIES</div>");
+	//Remove Kenya For now
+	//tt_Kenya.attr("style", "left:" + width/2 + "px;top:" + height/2.75 + "px").html("<div class='mmtitle'><a href='application.php?dg=Kenya'>KENYA <img src='img/mmLogo.png' style='margin-top:-6px;'/></a></div><div class='mmactivities'>2,243 ACTIVITIES</div>");
 	tt_Nepal.attr("style", "left:" + width/1.58 + "px;top:" + height/5.3 + "px").html("<div class='mmtitle'><a href='application.php?dg=Nepal'>NEPAL <img src='img/mmLogo.png' style='margin-top:-6px;'/></a></div><div class='mmactivities'>21,600 ACTIVITIES</div>");
 	tt_Malawi.attr("style", "left:" + width/2.03 + "px;top:" + height/1.4 + "px").html("<div class='mmtitle'><a href='application.php?dg=Malawi'>MALAWI <img src='img/mmLogo.png' style='margin-top:-6px;'/></a></div><div class='mmactivities'>5,500 ACTIVITIES</div>");
 	
