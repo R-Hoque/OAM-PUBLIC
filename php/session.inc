@@ -13,9 +13,8 @@
 		$oamuser = unserialize($_SESSION['oamuser']);
 		echo "<script>var _oamuser='".json_encode($oamuser)."';</script>";
 	} else {
-	    if($_SERVER['PHP_SELF'] == "/OAM-PUBLIC/application.php")
-		$x = 1;
-	    else
+	    $r = explode("/",$_SERVER['PHP_SELF']);
+	    if($r[2] != "application.php")
 		header('Location: index.html');
 	}
 ?>
