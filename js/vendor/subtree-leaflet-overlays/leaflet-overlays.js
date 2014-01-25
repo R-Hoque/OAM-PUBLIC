@@ -322,7 +322,7 @@ _SPDEV.LeafletOverlays = (function(module){
 					
 					esriLegendUrl = this.model.get('esriLegendURL');
 					
-					if(mapServer = 'ArcGIS' && esriLegendUrl !== null){
+					if(mapServer == 'ArcGIS' && esriLegendUrl !== null){
 						
 						
 						visibleLayerIndices = this.model.get('esriLegendLayers');
@@ -394,12 +394,12 @@ _SPDEV.LeafletOverlays = (function(module){
 									  }
 									});
 									
-					}else if(mapServer = 'ArcGIS') {
+					}else if(mapServer != 'ArcGIS') {
 						
 						visibleLayerIndices = this.model.get('layers').split(',');
 						
 						for(var i = 0; i < visibleLayerIndices.length; i++){
-							url = serviceURL + '?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer='+ visibleLayerIndices[i].toString();
+							url = serviceURL + '?request=GetLegendGraphic&version=1.3.0&format=image/png&layer=' + visibleLayerIndices[i].toString();
 							var img = $('<img src="'+ url +'" />');
 							
 							self.$el.append(img);
