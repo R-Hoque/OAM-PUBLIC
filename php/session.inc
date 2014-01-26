@@ -13,8 +13,7 @@
 		$oamuser = unserialize($_SESSION['oamuser']);
 		echo "<script>var _oamuser='".json_encode($oamuser)."';</script>";
 	} else {
-	    $r = explode("/",$_SERVER['PHP_SELF']);
-	    if($r[2] != "application.php")
+	    if(strpos($_SERVER['PHP_SELF'], "application.php") == 0)
 		header('Location: index.html');
 	}
 ?>
