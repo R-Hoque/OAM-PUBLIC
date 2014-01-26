@@ -8,17 +8,16 @@ ini_set('display_errors', 'On');
 	      $sql = "select * from refresh_taxonomy_lookup();";
 
 	      // Prepare a query for execution
-	      $result = pg_prepare($dbPostgres, "refresh", $sql);
+	      $result = pg_prepare($dbPostgresWrite, "refresh", $sql);
 	      
 	      // Execute the prepared query.
-	      $result = pg_execute($dbPostgres, "refresh", array());
+	      $result = pg_execute($dbPostgresWrite, "refresh", array());
 			  
-	      var_dump($result);
 			
 	} catch(Exception $e) {  
 	      die( print_r( $e->getMessage() ) );  
 	}
-	pg_close($dbPostgres);
+	pg_close($dbPostgresWrite);
 	
 ?>
 
