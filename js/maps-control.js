@@ -151,48 +151,48 @@ _SPDEV.MapsControl.Basemaps.data = [
 
 _SPDEV.MapsControl.ContextualLayers = {};
 
-_SPDEV.MapsControl.ContextualLayers.data = [
-	
-	{
-		alias: 'Total Poblacion 2001',
-		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		layers: 'oam:Total_Poblacion_2001',
-		state: false,
-		mapLayer : null,
-		format: 'img/png',
-    	transparent: true,
-		type: "WMS",
-		mapServer: 'GeoServer',
-		showLegend: true,
-		
-	},
-		{
-		alias: 'Total Poblacion 2010',
-		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		layers: 'oam:Total_Poblacion_2010',
-		state: false,
-		mapLayer : null,
-		format: 'img/png',
-    	transparent: true,
-		type: "WMS",
-		mapServer: 'GeoServer',
-		showLegend: true,
-	},
-		{
-		alias: 'Percent Extreme Pobreza',
-		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		layers: 'oam:Percent_Extreme_Pobreza',
-		state: false,
-		mapLayer : null,
-		format: 'img/png',
-    	transparent: true,
-		type: "WMS",
-		mapServer: 'GeoServer',
-		showLegend: true,
-	},
+//_SPDEV.MapsControl.ContextualLayers.data = [
+//	
+//	{
+//		alias: 'Total Poblacion 2001',
+//		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+//		layers: 'oam:Total_Poblacion_2001',
+//		state: false,
+//		mapLayer : null,
+//		format: 'img/png',
+//   	transparent: true,
+//		type: "WMS",
+//		mapServer: 'GeoServer',
+//		showLegend: true,
+//		
+///	},
+//		{
+//		alias: 'Total Poblacion 2010',
+//		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+//		layers: 'oam:Total_Poblacion_2010',
+//		state: false,
+//		mapLayer : null,
+//		format: 'img/png',
+ //   	transparent: true,
+//		type: "WMS",
+//		mapServer: 'GeoServer',
+//		showLegend: true,
+//	},
+//		{
+//		alias: 'Percent Extreme Pobreza',
+//		serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+//		layers: 'oam:Percent_Extreme_Pobreza',
+//		state: false,
+//		mapLayer : null,
+//		format: 'img/png',
+ //   	transparent: true,
+//		type: "WMS",
+//		mapServer: 'GeoServer',
+//		showLegend: true,
+//	},
 
 
-];
+//];
 
 
 

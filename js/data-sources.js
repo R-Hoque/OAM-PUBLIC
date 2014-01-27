@@ -470,5 +470,18 @@ _SPDEV.DataSources.ContextualLayers = {
 		    type: "WMS",
 		    mapServer: 'GeoServer',
 		    showLegend: true,
+	    }],
+	   'Malawi': [
+	    {
+		    alias: 'Malawi Malnutrition',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Malawi_Malnutrition',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
 	    }]
 };
