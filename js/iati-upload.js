@@ -60,7 +60,7 @@ _SPDEV.Upload.createForm = function() {
 	      $('#upload_iati_file').hide();
 	      
 	      // The url requires you submit a country via REST.
-	      var url = "php/uploadIATI.php?country="+_SPDEV.Login.user.data_group;
+	      var url = "php/uploadIATI.php";
 	      $.ajax({
 		  url: url,
 		  type: "POST",

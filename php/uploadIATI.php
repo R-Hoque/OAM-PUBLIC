@@ -2,7 +2,7 @@
 
   session_start();
   if (isset($_SESSION['oamuser'])) {
-      require_once 'php/user.inc';
+      require_once 'user.inc';
       $oamuser = unserialize($_SESSION['oamuser']);
       $country = $oamuser->data_group;
   } else {
