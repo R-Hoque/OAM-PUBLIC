@@ -40,7 +40,7 @@ div.se_wrapper_chooser > .content {
     position:relative;
     height: 400px;
     width: auto;
-    top:30;
+    top:0px;
     left:0;
     right:0;
     bottom: 0;
@@ -112,14 +112,29 @@ div.tabwrapper {
   width:66%;
 }
 
-#assign{
-  padding: 10px 20px;
+#assign {
+  padding: 10px 5px 8px 5px;
   background-color: #eb7621;
   color: #ffffff;
-  margin: 20px 80px 20px 80px;
-  width: 200px;
+  margin: 10px 0px 10px 20px;
   text-align: center;
   cursor: pointer;
+  float: left;
+}
+#alldone {
+  padding: 10px 5px 8px 5px;
+  background-color: #eb7621;
+  color: #ffffff;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+}
+#alldone:hover {
+  background-color: #666666;
+}
+#assign:hover {
+  background-color: #666666;
 }
 #loading_bg {
   z-index: 400;

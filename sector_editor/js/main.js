@@ -184,8 +184,28 @@
 	    'success': function(data){
 		if(data == "t") {
 		  $('#col_sector_'+_SPDEV.SectorEditor.compare_selected).html(_SPDEV.SectorEditor.data_sector[_SPDEV.SectorEditor.sector_selected].name);
+		  $('#alldone').on('click', function() {
+		       _SPDEV.SectorEditor.submitChanges();
+		  });
 		  _SPDEV.SectorEditor.loadingOff();
 		}
+	    },
+	    'error': function(response) {
+		  _SPDEV.SectorEditor.loadingOff();
+	    }
+	});  
+  }
+  _SPDEV.SectorEditor.submitChanges = function() {
+	_SPDEV.SectorEditor.loadingOn();
+	$.ajax({
+	  type: 'POST',
+	    'dataType': "json",
+	    'url': 'sector_editor/php/submitChanges.php',
+	    'success': function(data){
+		if(data.response == 200) {
+		    alert("Sectors successfully changed");
+		}
+		_SPDEV.SectorEditor.loadingOff();
 	    },
 	    'error': function(response) {
 		  _SPDEV.SectorEditor.loadingOff();

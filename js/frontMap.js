@@ -78,7 +78,8 @@ function ready(error, world, names) {
  
  // IDENTIFY THE FOCUS COUNTRIES
  function countrySpecific(d, i) {
-   if (d.name == 'Bolivia' || d.name == 'Kenya' || d.name == 'Malawi' || d.name == 'Nepal') return 'mmcountry countrySelected'
+   //if (d.name == 'Bolivia' || d.name == 'Kenya' || d.name == 'Malawi' || d.name == 'Nepal') return 'mmcountry countrySelected'
+   if (d.name == 'Bolivia' || d.name == 'Malawi' || d.name == 'Nepal') return 'mmcountry countrySelected';
    else return 'mmcountry';
  }
 

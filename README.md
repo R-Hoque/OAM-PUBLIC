@@ -13,8 +13,8 @@ data which can be generated here: http://csv2iati.iatistandard.org/
 
 
 In order for data to show up on the map, you must have the mininium data fields including:
-Project Title
-5-Digit IATI Sector codes for each activity
+Project Title,
+5-Digit IATI Sector codes for each activity,
 Funding Organiation for each activity
 
 Legal stuff: http://go.worldbank.org/OS6V7NIUD0
