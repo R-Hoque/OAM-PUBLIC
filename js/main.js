@@ -28,11 +28,11 @@ _SPDEV.loadApp = function(dg){
 	// Add Basemaps
 	var mapsControl = _SPDEV.MapsControl.init(_SPDEV.map, '#controls', _SPDEV.Config.ControlPanel.SECTION_HEADER.replace('###label###', 'MAPS'), '#mapView', dg.toString());
 	
-	if(dg == 'Malawi') {
+	/* if(dg == 'Malawi') {
 		
 		$(mapsControl.contextLayersMenu).prev().hide();
 		$(mapsControl.contextLayersMenu).hide();
-	} 
+	} */
 	// Add DataSources
 	_SPDEV.DataSources.init(_SPDEV.map, '#controls');
 	
