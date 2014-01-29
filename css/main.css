@@ -1372,7 +1372,8 @@ img.lb {
   top: 122px;
   width: 225px;
   background-color: #ffffff;
-  display: none; }
+  display: none;
+  z-index: 100; }
   #infoBox > header {
     font-family: 'Gotham-Bold';
     font-size: 9px;
@@ -1398,7 +1399,7 @@ img.lb {
     cursor: pointer;
     padding: 15px 0px;
     height: 28px;
-    z-index: 1; }
+    z-index: 101; }
     #infoBox footer > div {
       width: 28px;
       height: 28px; }
