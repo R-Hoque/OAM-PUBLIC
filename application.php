@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+ <?php require_once("php/session.inc"); ?>
+ <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -19,7 +21,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/login.css">
         <!--CSSMIN-END-->
-        <?php require_once("php/session.inc"); ?>
+       
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
         <script>

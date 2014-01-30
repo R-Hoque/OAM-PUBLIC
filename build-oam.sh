@@ -53,6 +53,8 @@ cp $1/php/db.inc $2/php/
 cp $1/php/user.inc $2/php/
 cp $1/php/login.php $2/php/
 cp $1/php/login_salted.php $2/php/
+cp $1/php/logout.php $2/php/
+cp $1/php/session.inc $2/php/
 #cp $1/spatialdev.pem $2/
 
 # adjust db.inc for type of deploy

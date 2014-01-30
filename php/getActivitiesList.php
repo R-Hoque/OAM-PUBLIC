@@ -7,6 +7,7 @@
 	
 	  $sectorcode = $_POST['sectorcode'];
 	  $src = $_POST['src'];
+	  $country = $_POST['country'];
 	  $offset = $_POST['offset'];
 	  $orderby = $_POST['orderby'];
 	  $order = $_POST['order'];
@@ -28,9 +29,9 @@
 		return;	
 	}
 	
-	$records = getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $language);
+	$records = getRecords($sectorcode, $src, $country, $sectors, $orgs, $orderby, $order, $offset, $language);
 	
-	$cnt = getCount($src, $sectors, $orgs, $orderby, $order, $offset);
+	$cnt = getCount($src, $country, $sectors, $orgs, $orderby, $order, $offset);
 	
 	$page = $offset/100 + 1;
 	$totalpages = ceil($cnt/100)+1;
@@ -38,12 +39,12 @@
 	echo json_encode($a, JSON_NUMERIC_CHECK);
 	
 	
-	function getRecords($sectorcode, $src, $sectors, $orgs, $orderby, $order, $offset, $lang) {
+	function getRecords($sectorcode, $src, $country, $sectors, $orgs, $orderby, $order, $offset, $lang) {
 	      global $dbPostgres, $sectorDictionary;
 	      // Get the data
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
-		    $sql = "SELECT * FROM pmt_activity_listview('".$src.$sectors."','".$orgs."',null, null, null, '".$sectorcode."','".$orderby." ".$order."', 100, ".$offset.")";
+		    $sql = "SELECT * FROM pmt_activity_listview('".$src.$country.$sectors."','".$orgs."',null, null, null, '".$sectorcode."','".$orderby." ".$order."', 100, ".$offset.")";
 		    // echo $sql;
 		    
 		    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
@@ -101,9 +102,9 @@
 	  return $tmpString;
 	}
 	
-	function getCount($src, $sectors, $orgs) {
+	function getCount($src, $country, $sectors, $orgs) {
 	    global $dbPostgres;
-	    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.$sectors."','".$orgs."','', null, null)";
+	    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.$country.$sectors."','".$orgs."','', null, null)";
 	    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 	    $rows = pg_fetch_object($result);
 	    pg_free_result($result);
