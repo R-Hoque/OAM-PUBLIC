@@ -1,6 +1,125 @@
 _SPDEV.DataSources = {};
 
 
+//The top portion of the datasources contains the configurations needed to add new datagroups (countries)
+//and to add new indicator layers (WMS url's)
+
+_SPDEV.DataSources.ContextualLayers = {
+      
+	'Bolivia': [
+	    {
+		    alias: 'Total Poblacion 2001',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Total_Poblacion_2001',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+		    
+	    },
+		    {
+		    alias: 'Total Poblacion 2010',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Total_Poblacion_2010',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+		    {
+		    alias: 'Percent Extreme Pobreza',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Percent_Extreme_Pobreza',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    }],
+	'Kenya': [
+	    {
+		    alias: 'Infant Mortality',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Kenya_InfantMortality',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+	    {
+		    alias: 'Malnutrition',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Kenya_Malnutrition',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    }],
+	'Nepal': [
+	    {
+		    alias: 'Poverty 2010',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Nepal_pov_district_2010',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    }],
+	 'Malawi': [
+	    {
+		    alias: 'Malawi Malnutrition',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Malawi_Malnutrition',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+	     {
+		    alias: 'Malawi Pop Density',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Malawi_Pop_Density',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+	     {
+		    alias: 'Malawi Pct Poverty',
+		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    layers: 'oam:Malawi_pct_poverty',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    }]
+};
 //For data to show up on the map you must load the IATI data into the database
 //and then configure a new 'data group' here.
 
@@ -124,6 +243,47 @@ _SPDEV.DataSources.DataGroups  = {
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
 		initialMapView: {lat:0.386, lng:37.97, zoom: 6}
+	},
+	
+	'Haiti' : {
+		ID: 'Haiti',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
+		FILTER_TAXONOMY_IDS: '15',
+		UPDATE_CHANNEL: 'updateGovData',
+		DATAGROUP_IDS: [786],
+		COUNTRY_IDS: [119],
+				ORG_ROLE_ID: 496,
+		displayOnLoad: true,
+		filterStore: null,
+		mapLayerId: 'haitiLocations',
+		locationsObj: null,
+		taxonomyClassifications: null,
+		isActive: true,
+		clusterLayerManager: null,
+		facetFilterWrapper: null,
+		overviewChartWrapper:null,
+		initialMapView: {lat:-71.6, lng:18.0, zoom: 6}
+	},
+	
+		
+	'Honduras' : {
+		ID: 'Haiti',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
+		FILTER_TAXONOMY_IDS: '15',
+		UPDATE_CHANNEL: 'updateGovData',
+		DATAGROUP_IDS: [787],
+		COUNTRY_IDS: [122],
+				ORG_ROLE_ID: 496,
+		displayOnLoad: true,
+		filterStore: null,
+		mapLayerId: 'haitiLocations',
+		locationsObj: null,
+		taxonomyClassifications: null,
+		isActive: true,
+		clusterLayerManager: null,
+		facetFilterWrapper: null,
+		overviewChartWrapper:null,
+		initialMapView: {lat:-89.3, lng:13.9, zoom: 6}
 	}
 };
 
@@ -139,7 +299,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 	});
 	
 	// Add a "Charts" section to control panel
-	var chartsContentWrapper = _SPDEV.ActivityChart.chartControl('#controls', _SPDEV.Config.ControlPanel.SECTION_HEADER.replace('###label###', 'CHARTS')) 
+	var chartsContentWrapper = _SPDEV.ActivityChart.chartControl('#controls', _SPDEV.Config.ControlPanel.SECTION_HEADER.replace('###label###', 'CHARTS')); 
 
 	sectorLanguage = 'english'; 
 		
@@ -294,7 +454,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 	
 					
 					//  Reference the cluster layer manager
-					dataSource.clusterLayerManager = dataSource.locationsObj.clusterLayerManager
+					dataSource.clusterLayerManager = dataSource.locationsObj.clusterLayerManager;
 					
 					_loadingCtr('--');
 
@@ -398,119 +558,3 @@ _SPDEV.DataSources.countdownThenCall = function(fn){
 	};
 };
 
-_SPDEV.DataSources.ContextualLayers = {
-      
-	'Bolivia': [
-	    {
-		    alias: 'Total Poblacion 2001',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Total_Poblacion_2001',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-		    {
-		    alias: 'Total Poblacion 2010',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Total_Poblacion_2010',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    },
-		    {
-		    alias: 'Percent Extreme Pobreza',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Percent_Extreme_Pobreza',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	'Kenya': [
-	    {
-		    alias: 'Infant Mortality',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Kenya_InfantMortality',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    },
-	    {
-		    alias: 'Malnutrition',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Kenya_Malnutrition',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	'Nepal': [
-	    {
-		    alias: 'Poverty 2010',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Nepal_pov_district_2010',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	 'Malawi': [
-	    {
-		    alias: 'Malawi Malnutrition',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Malnutrition',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    },
-	     {
-		    alias: 'Malawi Pop Density',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Pop_Density',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    },
-	     {
-		    alias: 'Malawi Pct Poverty',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_pct_poverty',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }]
-};
