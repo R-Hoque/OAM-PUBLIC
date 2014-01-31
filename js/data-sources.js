@@ -276,14 +276,14 @@ _SPDEV.DataSources.DataGroups  = {
 				ORG_ROLE_ID: 496,
 		displayOnLoad: true,
 		filterStore: null,
-		mapLayerId: 'haitiLocations',
+		mapLayerId: 'hondurasLocations',
 		locationsObj: null,
 		taxonomyClassifications: null,
 		isActive: true,
 		clusterLayerManager: null,
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
-		initialMapView: {lat:-89.3, lng:13.9, zoom: 6}
+		initialMapView: {lat:14.1, lng:-86.5, zoom: 7}
 	}
 };
 
