@@ -13,7 +13,7 @@
 		
        	$sql= "SELECT * FROM pmt_locations_by_org(".$orgRole . ", " . $dataGroup . ", '" . $countryIds . "');";
 
-		echo $sql;
+		//echo $sql;
 		
 		// Prepare a query for execution
 		$result = pg_prepare($dbPostgres, "my_query", $sql);
