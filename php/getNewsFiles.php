@@ -1,7 +1,7 @@
 <?php
 
     //The directory (relative to this file) that holds the html files
-    $dir = "../news";
+    $dir = "../content/news";
 
 
     //This array will hold all the file addresses
