@@ -10,7 +10,7 @@ _SPDEV.DataSources.Data = {
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateWorldBankData',
 		DATAGROUP_IDS: [773],
-		COUNTRY_IDS: [50],
+		COUNTRY_IDS: [],
 		mapLayerId: 'wbLocations',
 		displayOnLoad: false,
 		prefilters: null,
@@ -155,7 +155,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 		dataSource.filterStore = new _SPDEV.FilterSelectionStore(dataSource.DEFAULT_CLUSTER_TAXONOMY_ID,
 			  																 dataSource.UPDATE_CHANNEL, {classificationPrefilters: [ dataSource.DATAGROUP_IDS, dataSource.COUNTRY_IDS]});
 		
-		dataSource.listView = new _SPDEV.ListView.Manager(dataSource.UPDATE_CHANNEL, dataSource.DATAGROUP_IDS[0], sectorLanguage);
+		dataSource.listView = new _SPDEV.ListView.Manager(dataSource.UPDATE_CHANNEL, dataSource.DATAGROUP_IDS[0], dataSource.COUNTRY_IDS[0], sectorLanguage);
 		
 		$('#listView').append(dataSource.listView.el);
 		
