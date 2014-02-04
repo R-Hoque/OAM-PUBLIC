@@ -11,6 +11,7 @@ _SPDEV.DataSources.Data = {
 		UPDATE_CHANNEL: 'updateWorldBankData',
 		DATAGROUP_IDS: [773],
 		COUNTRY_IDS: [],
+		ORG_ROLE_ID: 496,
 		mapLayerId: 'wbLocations',
 		displayOnLoad: false,
 		prefilters: null,
@@ -52,6 +53,7 @@ _SPDEV.DataSources.DataGroups  = {
 		UPDATE_CHANNEL: 'updateGovData',
 		DATAGROUP_IDS: [769],
 		COUNTRY_IDS: [50],
+		ORG_ROLE_ID: 496,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'boliviaLocations',
@@ -71,6 +73,7 @@ _SPDEV.DataSources.DataGroups  = {
 		UPDATE_CHANNEL: 'updateGovData',
 		DATAGROUP_IDS: [772],
 		COUNTRY_IDS: [179],
+				ORG_ROLE_ID: 496,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'boliviaLocations',
@@ -90,6 +93,7 @@ _SPDEV.DataSources.DataGroups  = {
 		UPDATE_CHANNEL: 'updateGovData',
 		DATAGROUP_IDS: [771],
 		COUNTRY_IDS: [157],
+				ORG_ROLE_ID: 496,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'boliviaLocations',
@@ -109,6 +113,7 @@ _SPDEV.DataSources.DataGroups  = {
 		UPDATE_CHANNEL: 'updateGovData',
 		DATAGROUP_IDS: [770],
 		COUNTRY_IDS: [139],
+				ORG_ROLE_ID: 496,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'kenyaLocations',
@@ -174,7 +179,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 				}),
 			$.ajax({
 				'type': 'POST',
-				data: {dataGroupId: dataSource.DATAGROUP_IDS.toString(), countryIds: dataSource.COUNTRY_IDS.toString()},
+				data: {dataGroupId: dataSource.DATAGROUP_IDS.toString(), countryIds: dataSource.COUNTRY_IDS.toString(), orgRole: dataSource.ORG_ROLE_ID},
 				'dataType': "json",
 			  	'url': 'php/getOrgs.php',
 			  	}),
@@ -259,7 +264,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 					
 					dataSource.facets['org'] = facet;				
 					
-					postData = {'dataGroupId': dataSource.DATAGROUP_IDS.toString(), 'countryIds': dataSource.COUNTRY_IDS.toString()};
+					postData = {'dataGroupId': dataSource.DATAGROUP_IDS.toString(), 'countryIds': dataSource.COUNTRY_IDS.toString(), orgRole: dataSource.ORG_ROLE_ID};
 						
 					chart = new _SPDEV.ActivityChart.Chart(null, 'php/getLocationsByOrg.php', postData, 'php/filterLocationsReportByOrg.php', facet, dataSource.chartsWrapper, dataSource.UPDATE_CHANNEL);
 								

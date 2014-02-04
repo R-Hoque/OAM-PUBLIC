@@ -251,8 +251,12 @@ _SPDEV.ActivityChart.Chart.prototype.makeChart = function(points){
 						'alias': 'Not assigned'
 						};
 					}
+				} 
+				else if(typeof facetValues[rId] === 'undefined') {
+					
 				}
 				else {
+					
 					// if this is the first time we see this id, create an object property and start the counter
 					data[rId] = {
 						'count': 1,

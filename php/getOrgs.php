@@ -6,6 +6,7 @@
 	
 	$dataGroup = $_POST['dataGroupId'];
 	$countryIds = $_POST['countryIds'];
+	$orgRole = $_POST['orgRole'];
 	
 	$tmpFilters = $dataGroup ."," . $countryIds;
 
@@ -24,8 +25,8 @@
 	// Get the data
 	try {
 
-		$sql = "select * from pmt_org_inuse('" . $preFilters . "');";
-
+		$sql = "select * from pmt_org_inuse('" . $orgRole . "," . $preFilters . "');";
+		
 		// Prepare a query for execution
 		$result = pg_prepare($dbPostgres, "my_query", $sql);
 		

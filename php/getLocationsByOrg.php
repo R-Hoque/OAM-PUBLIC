@@ -6,12 +6,15 @@
 
 	$dataGroup = $_POST['dataGroupId'];
 	$countryIds = $_POST['countryIds'];
+	$orgRole = $_POST['orgRole'];
 
 	// Get the data
 	try {
 		
-       	$sql= "SELECT * FROM pmt_locations_by_org(null," . $dataGroup . ", '" . $countryIds . "');";
+       	$sql= "SELECT * FROM pmt_locations_by_org(".$orgRole . ", " . $dataGroup . ", '" . $countryIds . "');";
 
+		echo $sql;
+		
 		// Prepare a query for execution
 		$result = pg_prepare($dbPostgres, "my_query", $sql);
 		
