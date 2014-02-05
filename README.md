@@ -17,4 +17,21 @@ Project Title,
 5-Digit IATI Sector codes for each activity,
 Funding Organiation for each activity
 
+_Uploading Data_
+----------------
+The OAM application supports uploading new IATI files but does have the following limitations:
+
+1) If the location element is missing or is 0,0 the activity record is skipped.
+
+  _The applicaiton needs a coordinate locaiton for each activity to show up on the map. Without that,
+  the application doesn't know where to place the activity or which country the activity belongs to._
+
+2) The OAM supports valid DAC-3 sector categories and DAC 5 digit sector codes. 
+
+  _Custom sector vocabularies do not have valid IATI code lists associated with them_ 
+  
+3) For the upload to work the XML must be well structured and valid.
+
+4) The OAM does support well structured XML that doesn't validate against the IATI schema, but unexpected behavior may occur.
+  
 Legal stuff: http://go.worldbank.org/OS6V7NIUD0
