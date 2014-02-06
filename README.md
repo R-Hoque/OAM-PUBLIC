@@ -23,7 +23,7 @@ The OAM application supports uploading new IATI files but does have the followin
 
 1) If the location element is missing or is 0,0 the activity record is skipped.
 
-  _The applicaiton needs a coordinate locaiton for each activity to show up on the map. Without that,
+  _The applicaiton needs a coordinate location for each activity to show up on the map. Without that,
   the application doesn't know where to place the activity or which country the activity belongs to._
 
 2) The OAM supports valid DAC-3 sector categories and DAC 5 digit sector codes. 
