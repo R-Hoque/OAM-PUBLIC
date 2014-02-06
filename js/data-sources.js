@@ -262,12 +262,12 @@ _SPDEV.DataSources.DataGroups  = {
 		clusterLayerManager: null,
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
-		initialMapView: {lat:-71.6, lng:18.0, zoom: 6}
+		initialMapView: {lat:18.9, lng:-73.1, zoom: 8}
 	},
 	
 		
 	'Honduras' : {
-		ID: 'Haiti',
+		ID: 'Honduras',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateGovData',
