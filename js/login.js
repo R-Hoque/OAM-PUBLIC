@@ -104,4 +104,4 @@ _SPDEV.Login.logout = function() {
 		  console.error(response);
 	    }
     });
-}
+};

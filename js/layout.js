@@ -43,7 +43,7 @@ _SPDEV.Layout.init = function(){
 		$('#controls').slideToggle(function(){
 			$(self).toggleClass('opened');
 		});
-	})
+	});
 	
 	$('#uxLogin_submit').on('click', _SPDEV.Login.authenticate);
 	
@@ -70,7 +70,7 @@ _SPDEV.Layout.controlPanelResize = function(){
 	var controlP = _SPDEV.Config.CONTROL_PANEL;
 	var controls = _SPDEV.Config.CONTROLS;
 	
-	var cpMaxHeight = $(controlP).offsetParent().height() - $(controlP).position().top - parseInt($(controlP).css('margin-bottom'), 10)
+	var cpMaxHeight = $(controlP).offsetParent().height() - $(controlP).position().top - parseInt($(controlP).css('margin-bottom'), 10);
 	
 	$(controls).css('max-height', cpMaxHeight - $(controls).position().top);
 	
@@ -97,8 +97,8 @@ _SPDEV.Layout.setLanguage = function() {
   $('#wms_layer_label').html(_lang.wms_layer);
   $('#wms_submit').html(_lang.wms_submit);
   $('#wms_dialog_title').html(_lang.wms_dialog_title);
-  $('#footerContainer').html(_lang.copyright);
-  $('#footerContainer').html(_lang.copyright);
+  $('#footercopyright').html(_lang.copyright);
+  $('#footercopyright').html(_lang.copyright);
   $('#infoBoxPanelCollapser').html(_lang.hide);
   $('.allNone > a').each(function() {
       $(this).text(_lang.allnone);
@@ -113,4 +113,4 @@ _SPDEV.Layout.setLanguage = function() {
   $('#controlPanel > header > span').text(_lang.hide);
   $('#uploadIATI').html(_lang.upload);
   $('#edit_sector').html(_lang.se_editsector_button);
-}
+};

@@ -45,7 +45,8 @@
 					<li id="locationButton" class="region-select dropdown"></li>
 					<li id='menu_associations'>ASSOCIATIONS</li>
 					<li id='menu_news'>NEWS</li>
-					<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>
+					<!--attempting to move login to applicaiton page footer-->
+					<!--<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>-->
 					
 				</ul>
 			</nav>
@@ -112,7 +113,7 @@
         	</div>
         </div>
         
-		<footer id="footerContainer"></footer>
+		<footer id="footerContainer"><div id="footercopyright"></div></div><div id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></div></footer>
 		
 		
 		<div id="wrapperLogin">
