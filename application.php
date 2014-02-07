@@ -115,10 +115,11 @@
         </div>
         
 		<footer id="footerContainer">
-            <div id="footercopyright"></div>
             <div id="login" class="dropdown login">
                 <a id="login_name" title="Login">LOGIN</a>
             </div>
+            <div id="footercopyright"></div>
+
             
         </footer>
 		
