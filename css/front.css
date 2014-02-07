@@ -1026,3 +1026,6 @@ span.bottomtitle {
 
 .mmtitle a, .mmactivities a {
   color: inherit; }
+
+#qsnewsStories .fulltext {
+  display: none; }
