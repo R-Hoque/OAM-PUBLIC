@@ -31,7 +31,7 @@ _SPDEV.FrontNews.init = function(allstories,filter){
 									// set article source to an url query
 									$(linkedStory.find('.article_source')[0]).attr('href','news.html?article='+thestory.slice(13));
 									// append the story
-									$('#qsnewsStories').append(story);
+									$('#qsnewsStories').append(linkedStory);
 									// hide the overview snippet
 									$($('#qsnewsStories').find('.snippet')[0]).hide();
 									// show the full story
@@ -67,7 +67,7 @@ _SPDEV.FrontNews.init = function(allstories,filter){
 								// set article source to an url query
 								$(linkedStory.find('.article_source')[0]).attr('href','news.html?article='+thestory.slice(13));
 								// append the story
-								$('#qsnewsStories').append(story);
+								$('#qsnewsStories').append(linkedStory);
 							});
 						}());
 					}
