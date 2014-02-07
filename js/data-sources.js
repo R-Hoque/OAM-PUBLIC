@@ -184,6 +184,25 @@ _SPDEV.DataSources.DataGroups  = {
 		overviewChartWrapper:null,
 		initialMapView: {lat:-16.5, lng: -67, zoom: 5}
 	},
+		'Colombia' : {
+		ID: 'Colombia',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
+		FILTER_TAXONOMY_IDS: '15',
+		UPDATE_CHANNEL: 'updateGovData',
+		DATAGROUP_IDS: [810],
+		COUNTRY_IDS: [72],
+		ORG_ROLE_ID: 496,
+		displayOnLoad: true,
+		filterStore: null,
+		mapLayerId: 'colombiaLocations',
+		locationsObj: null,
+		taxonomyClassifications: null,
+		isActive: true,
+		clusterLayerManager: null,
+		facetFilterWrapper: null,
+		overviewChartWrapper:null,
+		initialMapView: {lat:-4.2, lng: -75.5, zoom: 5}
+	},
 	
 	'Nepal' : {
 		ID: 'Nepal',
