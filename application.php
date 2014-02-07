@@ -134,7 +134,7 @@
             <div id="wrapperViewHelp" class="blocker wall-to-wall">
 						<div id="viewHelp" class="absolute-center" >
                             <div id="viewHelpClose" class="icon-close-01"></div>
-                            <p>The difference between views explained here.</p>
+                            <p>Switching between 'donors' and 'government' allows you to view development assistance data as reported in donor systems/databases (in terms of what they give) and in country systems/databases (in terms of what they receive). While these data should match in theory, significant discrepancies currently exist due to lack of reporting or differences in reporting practices.</p>
                         </div>
                 </div>
 		
