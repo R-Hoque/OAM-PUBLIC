@@ -417,6 +417,12 @@ span.bottomtitle {
   color: #4d4b4b;
 }
 
- .mmtitle  a, .mmactivities a {
-      color:inherit;
+.mmtitle  a, .mmactivities a {
+    color:inherit;
+}
+
+#qsnewsStories {
+  .fulltext {
+    display: none;
   }
+}
