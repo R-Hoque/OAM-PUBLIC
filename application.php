@@ -43,7 +43,7 @@
 			<nav class="header-nav right">
 				<ul class="clearfix">
 					<li id="locationButton" class="region-select dropdown"></li>
-					<li id='menu_associations'>ASSOCIATIONS</li>
+					<li id='menu_associations'>PARTNERSHIPS</li>
 					<li id='menu_news'>NEWS</li>
 					<!--attempting to move login to applicaiton page footer-->
 					<!--<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>-->
