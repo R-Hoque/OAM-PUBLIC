@@ -21,16 +21,21 @@ $oamGreen: #9DBB2D;
         margin: 0;
         padding: 0 20px;
         font-family: 'Gotham-Book';
+        font-size: 13px;       
         cursor: pointer;
 
         a {
           text-decoration: none;
+          color: inherit;
         }
 
         &:hover {
           a {
             text-decoration: none;
+                        //color: inherit;
           }
+          
+                    
         }
 
        
@@ -47,7 +52,7 @@ $oamGreen: #9DBB2D;
     #locationButton {
       background-color: $oamGreen;
       color: #FFF;
-      font-family: 'Gotham-Bold';
+      //font-family: 'Gotham-Bold';
       width: 218px;
       text-align: center;
     }

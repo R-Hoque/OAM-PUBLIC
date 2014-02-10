@@ -1,11 +1,15 @@
-
-#contactsBox > li, #secretariatContact {
-
-        list-style: none;
-        float:left;
-    padding: 0 25px;
-    font-family: 'Gotham-Book';
-font-size: 11px;
-color: #4d4b4b;
-
+#footerContainer {
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  font-family: Gotham-Book;
+  background-color: $bgcolor1;
+  font-size: 11px;
+  color: #4d4b4b;
+  height: $footerHeight;
+  line-height: $footerHeight;
+  padding-left: 30px;
+  z-index: 100;
 }
+

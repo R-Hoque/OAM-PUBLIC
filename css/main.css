@@ -1,4 +1,4 @@
-/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
+/* normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -996,9 +996,11 @@ body {
       margin: 0;
       padding: 0 20px;
       font-family: 'Gotham-Book';
+      font-size: 13px;
       cursor: pointer; }
       #appHeader .header-nav ul li a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: inherit; }
       #appHeader .header-nav ul li:hover a {
         text-decoration: none; }
       #appHeader .header-nav ul li.separator {
@@ -1008,13 +1010,11 @@ body {
   #appHeader .header-nav #locationButton {
     background-color: #9dbb2d;
     color: #FFF;
-    font-family: 'Gotham-Bold';
     width: 218px;
     text-align: center; }
   #appHeader .header-nav #login {
     font-family: 'Gotham-Book';
-    font-size: 12px; 
-    }
+    font-size: 12px; }
 
 #logo {
   line-height: 38px; }
@@ -1038,7 +1038,6 @@ img.lb {
   line-height: 40px;
   padding-left: 30px;
   z-index: 100; }
-
 
 .q-marker-cluster {
   background-color: white;

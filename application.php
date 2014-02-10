@@ -1,5 +1,5 @@
 
- <?php require_once("php/session.inc"); ?>
+ <?php //require_once("php/session.inc"); ?>
  <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -43,8 +43,8 @@
 			<nav class="header-nav right">
 				<ul class="clearfix">
 					<li id="locationButton" class="region-select dropdown"></li>
-					<li id='menu_associations'>PARTNERSHIPS</li>
-					<li id='menu_news'>NEWS</li>
+					<li><a id='menu_associations' href="partnership.html">PARTNERSHIPS</a></li>
+					<li><a id='menu_news' href="news.html">NEWS</a></li>
 					<!--attempting to move login to applicaiton page footer-->
 					<!--<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>-->
 					

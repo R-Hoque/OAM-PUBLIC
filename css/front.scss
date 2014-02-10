@@ -427,4 +427,13 @@ span.bottomtitle {
   }
 }
 
-@import "footer";
+#contactsBox > li, #secretariatContact {
+
+        list-style: none;
+        float:left;
+    padding: 0 25px;
+    font-family: 'Gotham-Book';
+font-size: 11px;
+color: #4d4b4b;
+
+}
