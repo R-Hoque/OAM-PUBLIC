@@ -105,6 +105,7 @@
 					      <div class="viewControl_text" id="viewControl_donor"></div>
 					      <div id="viewControl_toggle"></div>
 					      <div class="viewControl_text VCactive" id="viewControl_gov"></div>
+                        <div id="viewHelpTrigger">?</div>
             		</div>
 	          		<div id="controls">
 	          			
@@ -130,6 +131,12 @@
 		  <!-- <div class="sub_notes right" id="uxLoginRegistration">Registration</div> -->
 		</div>
 		
+            <div id="wrapperViewHelp" class="blocker wall-to-wall">
+						<div id="viewHelp" class="absolute-center" >
+                            <div id="viewHelpClose" class="icon-close-01"></div>
+                            <p>The difference between views explained here.</p>
+                        </div>
+                </div>
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
