@@ -172,13 +172,13 @@ textarea {
   }
   .mmtitle {
     font-family: 'Gotham-Bold';
-    font-size: 1.2em;
+    font-size: 0.6em;
     color: #81a33b; 
     clear: both;
         
                 
         img {
-            margin-top: -3px;
+            margin: -3px 0 0 4px;
             width: 11px;
             height: 11px;
         }
@@ -224,7 +224,7 @@ textarea {
     width: 101px;
     height: 39px;
   }
-  
+
   
   .mminfo:hover {
     opacity:0.8;
