@@ -201,7 +201,7 @@ _SPDEV.DataSources.DataGroups  = {
 		clusterLayerManager: null,
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
-		initialMapView: {lat:-4.2, lng: -75.5, zoom: 5}
+		initialMapView: {lat:-2.2, lng: -75.5, zoom: 5}
 	},
 	
 	'Nepal' : {
