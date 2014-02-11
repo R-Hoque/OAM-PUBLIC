@@ -9,7 +9,7 @@
     
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>World Bank - Open Aid Map</title>
+        <title>Open Aid Map</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
