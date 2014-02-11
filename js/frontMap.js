@@ -33,7 +33,7 @@ _SPDEV.FrontMap.init = function(){
 
 	// PLACE THEM ON THE MAP RELATIVE TO THE MAP SIZE, THEN POPULATE THEM
   tt_Bolivia.attr("style", "left:" + width/5.05 + "px;top:" + height/1.52 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>6,568 ACTIVITIES</div>");
-	tt_Haiti.attr("style", "left:" + width/4 + "px;top:" + height/2.68 + "px").html("<div class='mmtitle'><a href='application.php?dg=Haiti'>HAITI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>1,500 ACTIVITIES</div>");
+	tt_Haiti.attr("style", "left:" + width/4.05 + "px;top:" + height/2.68 + "px").html("<div class='mmtitle'><a href='application.php?dg=Haiti'>HAITI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>1,500 ACTIVITIES</div>");
 	tt_Honduras.attr("style", "left:" + width/7 + "px;top:" + height/2.15 + "px").html("<div class='mmtitle'><a href='application.php?dg=Honduras'>HONDURAS<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>3,238 ACTIVITIES</div>");
 	tt_Colombia.attr("style", "left:" + width/3.2 + "px;top:" + height/1.9 + "px").html("<div class='mmtitle'><a href='application.php?dg=Coloumbia'>COLOMBIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>x,xxxACTIVITIES</div>");
 	//Remove Kenya For now
