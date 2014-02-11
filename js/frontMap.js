@@ -24,12 +24,18 @@ _SPDEV.FrontMap.init = function(){
 	// CONSTRUCT THE STATIC COUNTRY INFOBOXES
   var tt_Bolivia = d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Bolivia").attr("title", "Bolivia");
 	//remove Kenya for now
+	var tt_Haiti = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Haiti").attr("title", "Haiti");
+	var tt_Honduras= d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Honduras").attr("title", "Honduras");
+	var tt_Colombia= d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Colombia").attr("title", "Colombia");
 	//var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
 	var tt_Nepal = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Nepal").attr("title", "Nepal");
 	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo left").attr("id","tt_Malawi").attr("title", "Malawi");
 
 	// PLACE THEM ON THE MAP RELATIVE TO THE MAP SIZE, THEN POPULATE THEM
   tt_Bolivia.attr("style", "left:" + width/4.7 + "px;top:" + height/2.2 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA <img src='img/mmLogo.png'/></a></div><div class='mmactivities'>6,568 ACTIVITIES</div>");
+	tt_Haiti.attr("style", "left:" + width/2.9 + "px;top:" + height/2.8 + "px").html("<div class='mmtitle'><a href='application.php?dg=Haiti'>HAITI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>1,500 ACTIVITIES</div>");
+	tt_Honduras.attr("style", "left:" + width/2.7 + "px;top:" + height/1.7 + "px").html("<div class='mmtitle'><a href='application.php?dg=Honduras'>HONDURAS <img src='img/mmLogo.png'/></a></div><div class='mmactivities'>3,238 ACTIVITIES</div>");
+	tt_Colombia.attr("style", "left:" + width/3.1 + "px;top:" + height/1.9 + "px").html("<div class='mmtitle'><a href='application.php?dg=Coloumbia'>COLOMBIA <img src='img/mmLogo.png'/></a></div><div class='mmactivities'>x,xxxACTIVITIES</div>");
 	//Remove Kenya For now
 	//tt_Kenya.attr("style", "left:" + width/2 + "px;top:" + height/2.75 + "px").html("<div class='mmtitle'><a href='application.php?dg=Kenya'>KENYA <img src='img/mmLogo.png'/></a></div><div class='mmactivities'>2,243 ACTIVITIES</div>");
 	tt_Nepal.attr("style", "left:" + width/1.58 + "px;top:" + height/5.3 + "px").html("<div class='mmtitle'><a href='application.php?dg=Nepal'>NEPAL <img src='img/mmLogo.png'/></a></div><div class='mmactivities'>21,600 ACTIVITIES</div>");
