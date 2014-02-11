@@ -140,21 +140,30 @@ textarea {
 @media (min-width: 992px) {
   .mminfo {
     color: #222; 
-    font-size: 1.3em;
-    width: 200px;
-    height: 88px;
+    font-size: 0.6em;
+    width: 97px;
+    height: 43px;
     position: absolute;
-    line-height: 26px;
+    padding: 9px 10px 8px;
   }
   .mminfo.top {
-    padding: 12px 15px 13px 15px;
-      background: url('../img/bubble-light.png');
+      background: url('../img/popup-top.png');
+      padding-top: 12px;
   }  
   .mminfo.bottom {
-    background: url('../img/bubble2-light.png');
-    padding: 22px 15px 3px 15px;
+    background: url('../img/popup-bottom.png');
+    padding-top: 8px;
   }
-  
+  .mminfo.left {
+    background: url('../img/popup-left.png');
+            width: 101px;
+    height: 39px;
+  }
+  .mminfo.right {
+    background: url('../img/popup-right.png');
+    width: 101px;
+    height: 39px;
+  }
   .mminfo:hover {
     opacity:0.8;
     filter:alpha(opacity=80);
@@ -166,10 +175,17 @@ textarea {
     font-size: 1.2em;
     color: #81a33b; 
     clear: both;
+        
+                
+        img {
+            margin-top: -3px;
+            width: 11px;
+            height: 11px;
+        }
   }
   .mmactivities {
     font-family: 'Gotham-Book';
-    font-size: 0.75em;
+    font-size: 6px;
     color: #333333; 
     padding-top: 3px;
     float: left;
@@ -183,29 +199,32 @@ textarea {
 @media (max-width: 991px) {
   .mminfo {
     color: #222; 
-    font-size: 1.1em;
-    /*width: 170px;
-    height: 88px;*/
-    padding: 12px 15px 13px 15px;
-    background: url('../img/bubble-light.png');
-    background-size:170px 74px;
+    font-size: 0.6em;
+    padding: 9px 10px 8px;
     background-repeat:no-repeat;
+    width: 97px;
+    height: 43px;
     position: absolute;
-    line-height: 22px;
   }
-  
   .mminfo.top {
-    padding: 12px 15px 13px 15px;
-      background: url('../img/bubble-light.png');
-      background-size:170px 74px;
-    background-repeat:no-repeat;
+      background: url('../img/popup-top.png');
+      padding-top: 12px;
   }  
   .mminfo.bottom {
-    background: url('../img/bubble2-light.png');
-    background-size:170px 74px;
-    background-repeat:no-repeat;
-    padding: 22px 15px 3px 15px;
+    background: url('../img/popup-bottom.png');
+    padding-top: 8px;
   }
+  .mminfo.left {
+    background: url('../img/popup-left.png');
+            width: 101px;
+    height: 39px;
+  }
+  .mminfo.right {
+    background: url('../img/popup-right.png');
+    width: 101px;
+    height: 39px;
+  }
+  
   
   .mminfo:hover {
     opacity:0.8;
@@ -215,13 +234,19 @@ textarea {
   }
   .mmtitle {
     font-family: 'Gotham-Bold';
-    font-size: 1.1em;
+    font-size: 0.6em;
     color: #81a33b; 
     clear: both;
+        
+        img {
+            margin-top: -3px;
+            width: 11px;
+            height: 11px;
+        }
   }
   .mmactivities {
     font-family: 'Gotham-Book';
-    font-size: 0.6em;
+    font-size: 8px;
     color: #333333; 
     padding-top: 3px;
     float: left;
