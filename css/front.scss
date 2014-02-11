@@ -137,27 +137,28 @@ textarea {
   stroke-linejoin: round;
 }
 
+
 @media (min-width: 992px) {
   .mminfo {
     color: #222; 
-    font-size: 0.6em;
+    font-size: 1.2em;
     width: 97px;
     height: 43px;
     position: absolute;
-    padding: 9px 10px 8px;
+    padding: 4px;
   }
   .mminfo.top {
       background: url('../img/popup-top.png');
-      padding-top: 12px;
+      padding-top: 7px;
   }  
   .mminfo.bottom {
     background: url('../img/popup-bottom.png');
-    padding-top: 8px;
   }
   .mminfo.left {
     background: url('../img/popup-left.png');
-            width: 101px;
+    width: 101px;
     height: 39px;
+        padding-left: 9px;
   }
   .mminfo.right {
     background: url('../img/popup-right.png');
@@ -185,7 +186,7 @@ textarea {
   }
   .mmactivities {
     font-family: 'Gotham-Book';
-    font-size: 6px;
+    font-size: 9px;
     color: #333333; 
     padding-top: 3px;
     float: left;
@@ -199,25 +200,24 @@ textarea {
 @media (max-width: 991px) {
   .mminfo {
     color: #222; 
-    font-size: 0.6em;
-    padding: 9px 10px 8px;
-    background-repeat:no-repeat;
+    font-size: 1.2em;
     width: 97px;
     height: 43px;
     position: absolute;
+    padding: 4px;
   }
   .mminfo.top {
       background: url('../img/popup-top.png');
-      padding-top: 12px;
+      padding-top: 7px;
   }  
   .mminfo.bottom {
     background: url('../img/popup-bottom.png');
-    padding-top: 8px;
   }
   .mminfo.left {
     background: url('../img/popup-left.png');
             width: 101px;
     height: 39px;
+                padding-left: 9px;
   }
   .mminfo.right {
     background: url('../img/popup-right.png');
@@ -246,7 +246,7 @@ textarea {
   }
   .mmactivities {
     font-family: 'Gotham-Book';
-    font-size: 8px;
+    font-size: 9px;
     color: #333333; 
     padding-top: 3px;
     float: left;
