@@ -105,7 +105,7 @@
 					      <div class="viewControl_text" id="viewControl_donor"></div>
 					      <div id="viewControl_toggle"></div>
 					      <div class="viewControl_text VCactive" id="viewControl_gov"></div>
-                        <div id="viewHelpTrigger">?</div>
+                        <div id="viewHelpTrigger"><img src="img/icon_info.png" /></div>
             		</div>
 	          		<div id="controls">
 	          			

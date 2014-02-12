@@ -996,12 +996,15 @@ body {
 
 #viewHelpTrigger {
   padding: 0 0 0 5px;
-  float: left; }
+  float: left;
+  width: 12px;
+  height: 12px; }
 
 #viewHelpClose {
   position: absolute;
   right: 5px;
-  top: 5px; }
+  top: 5px;
+  cursor: pointer; }
 
 #appHeader {
   height: 38px;
@@ -1280,7 +1283,7 @@ img.lb {
 
 #viewControl {
   background-color: #fff;
-  padding: 5px 15px;
+  padding: 5px 10px;
   font-size: 11px;
   color: #aaa;
   font-family: 'Gotham-Bold';
