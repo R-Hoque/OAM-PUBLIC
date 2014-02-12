@@ -9,8 +9,8 @@ _SPDEV.DataSources.ContextualLayers = {
 	'Bolivia': [
 	    {
 		    alias: 'Total Poblacion 2001',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Total_Poblacion_2001',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:BolivianIndicators2001',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -22,8 +22,8 @@ _SPDEV.DataSources.ContextualLayers = {
 	    },
 		    {
 		    alias: 'Total Poblacion 2010',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Total_Poblacion_2010',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:BolivianIndicators2010',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -34,8 +34,8 @@ _SPDEV.DataSources.ContextualLayers = {
 	    },
 		    {
 		    alias: 'Percent Extreme Pobreza',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Percent_Extreme_Pobreza',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:BolivianIndicatorsPov',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -111,11 +111,12 @@ _SPDEV.DataSources.ContextualLayers = {
 		    showLegend: true,
 	    	
 	    }],
+	    //NEPAL WMS Indicators
 	'Nepal': [
 	    {
-		    alias: 'Poverty 2010',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Nepal_pov_district_2010',
+		    alias: 'Malnutrition 2011',
+		    serviceURL: 'http://54.226.197.17/:8080/geoserver/oam/wms',
+		    layers: 'oam:Nepal_mal_2011',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -124,6 +125,8 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    }],
+	    
+	    //Malawi WMS Indicators
 	 'Malawi': [
 	    {
 		    alias: 'Malawi Malnutrition',
@@ -161,6 +164,8 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    }]
+	    
+	
 };
 //For data to show up on the map you must load the IATI data into the database
 //and then configure a new 'data group' here.
