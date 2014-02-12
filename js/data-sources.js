@@ -8,7 +8,7 @@ _SPDEV.DataSources.ContextualLayers = {
       
 	'Bolivia': [
 	    {
-		    alias: 'Total Poblacion 2001',
+		    alias: 'Total Poblacion (2001)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:BolivianIndicators2001',
 		    state: false,
@@ -21,7 +21,7 @@ _SPDEV.DataSources.ContextualLayers = {
 		    
 	    },
 		    {
-		    alias: 'Total Poblacion 2010',
+		    alias: 'Total Poblacion (2010)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:BolivianIndicators2010',
 		    state: false,
@@ -33,7 +33,7 @@ _SPDEV.DataSources.ContextualLayers = {
 		    showLegend: true,
 	    },
 		    {
-		    alias: 'Percent Extreme Pobreza',
+		    alias: 'Percent Extreme Pobreza (%, 2001)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:BolivianIndicatorsPov',
 		    state: false,
