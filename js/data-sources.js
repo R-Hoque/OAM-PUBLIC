@@ -69,6 +69,48 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    }],
+	   
+	   //WMS Inidcators for Honduras
+	   'Honduras': [
+	    {
+		    alias: 'Poverty 2010',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:Honduras_socioeco',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+	    {
+	    	
+	    	alias: 'Malnutrition 2010',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:honduras_dhs_2005_wgs84',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },	
+	        {
+	    	
+	    	alias: 'Population 2011',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:Honduras_socioeco_Population',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    	
+	    }],
 	'Nepal': [
 	    {
 		    alias: 'Poverty 2010',
