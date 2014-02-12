@@ -46,9 +46,9 @@ _SPDEV.DataSources.ContextualLayers = {
 	    }],
 	'Kenya': [
 	    {
-		    alias: 'Infant Mortality',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Kenya_InfantMortality',
+		    alias: 'Population 2010',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:kenya_population',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -58,9 +58,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    showLegend: true,
 	    },
 	    {
-		    alias: 'Malnutrition',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Kenya_Malnutrition',
+		    alias: 'Poverty 2010',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:kenya_poverty',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
