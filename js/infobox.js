@@ -84,6 +84,8 @@ _SPDEV.Infobox.Manager.prototype.prev = function() {
 		return;
 	} else {
 		
+            this.activityCollection.forEach(function(collModel){ collModel.set({active: false})});
+        
 		// Get the model at this index	
 		collModel = this.activityCollection.at(prevIndex);
 		
@@ -118,6 +120,7 @@ _SPDEV.Infobox.Manager.prototype.next = function() {
 		return;
 	}
 	
+    this.activityCollection.forEach(function(collModel){ collModel.set({active: false})});
 	var modelMatches = this.activityCollection.where({'activity_id': this.activityIds[nextIndex]});
 	
 	// if a model with this activity id already exists
@@ -272,7 +275,7 @@ _SPDEV.Infobox.ModelView = Backbone.View.extend({
 		    c--;
 		}
 		
-		var content = "";
+		var content = '<div class="infoBoxName">' + data.title+ '</div>'; 
 		content += data.desc ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.description+': </div>'+data.desc+'</div>' : '';
 		content += data.sector ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">Sector: </div>'+data.sector+'</div>' : '';
 		content += data.amount ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.cost+': </div>'+parseInt(data.amount).formatMoney(2,'.',',') + ' USD</div>' : '';
