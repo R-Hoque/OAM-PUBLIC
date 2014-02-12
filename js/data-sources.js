@@ -130,7 +130,7 @@ _SPDEV.DataSources.ContextualLayers = {
 	 'Malawi': [
 	    {
 		    alias: 'Malawi Malnutrition',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:Malawi_Malnutrition',
 		    state: false,
 		    mapLayer : null,
@@ -142,8 +142,8 @@ _SPDEV.DataSources.ContextualLayers = {
 	    },
 	     {
 		    alias: 'Malawi Pop Density',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Pop_Density',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:Malawi_Population',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -151,18 +151,8 @@ _SPDEV.DataSources.ContextualLayers = {
 		    type: "WMS",
 		    mapServer: 'GeoServer',
 		    showLegend: true,
-	    },
-	     {
-		    alias: 'Malawi Pct Poverty',
-		    serviceURL: 'http://54.227.245.32:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_pct_poverty',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
+	   
+
 	    }]
 	    
 	
