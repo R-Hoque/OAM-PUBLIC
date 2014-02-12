@@ -111,6 +111,32 @@ _SPDEV.DataSources.ContextualLayers = {
 		    showLegend: true,
 	    	
 	    }],
+	   'Haiti': [
+	    {
+		    alias: 'Haiti Malnutrition',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:HaitiMalnutrition',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    },
+	    {
+	    	
+	    	alias: 'Haiti Population',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:HaitiPopulation',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+	    }],
 	    //NEPAL WMS Indicators
 	'Nepal': [
 	    {
