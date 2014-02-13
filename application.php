@@ -1,5 +1,5 @@
 
- <?php require_once("php/session.inc"); ?>
+ <?php //require_once("php/session.inc"); ?>
  <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,7 +9,7 @@
     
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>World Bank - Open Aid Map</title>
+        <title>Open Aid Map</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,8 +43,8 @@
 			<nav class="header-nav right">
 				<ul class="clearfix">
 					<li id="locationButton" class="region-select dropdown"></li>
-					<li id='menu_associations'>ASSOCIATIONS</li>
-					<li id='menu_news'>NEWS</li>
+					<li><a id='menu_associations' href="partnership.html">PARTNERSHIP</a></li>
+					<li><a id='menu_news' href="news.html">NEWS</a></li>
 					<!--attempting to move login to applicaiton page footer-->
 					<!--<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>-->
 					
@@ -105,6 +105,7 @@
 					      <div class="viewControl_text" id="viewControl_donor"></div>
 					      <div id="viewControl_toggle"></div>
 					      <div class="viewControl_text VCactive" id="viewControl_gov"></div>
+                        <div id="viewHelpTrigger"><img src="img/icon_info.png" /></div>
             		</div>
 	          		<div id="controls">
 	          			
@@ -113,7 +114,14 @@
         	</div>
         </div>
         
-		<footer id="footerContainer"><div id="footercopyright"></div></div><div id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></div></footer>
+		<footer id="footerContainer">
+            <div id="login" class="dropdown login">
+                <a id="login_name" title="Login">LOGIN</a>
+            </div>
+            <div id="footercopyright"></div>
+
+            
+        </footer>
 		
 		
 		<div id="wrapperLogin">
@@ -124,6 +132,12 @@
 		  <!-- <div class="sub_notes right" id="uxLoginRegistration">Registration</div> -->
 		</div>
 		
+            <div id="wrapperViewHelp" class="blocker wall-to-wall">
+						<div id="viewHelp" class="absolute-center" >
+                            <div id="viewHelpClose" class="icon-close-01"></div>
+                            <p>Switching between 'donors' and 'government' allows you to view development assistance data as reported in donor systems/databases (in terms of what they give) and in country systems/databases (in terms of what they receive). While these data should match in theory, significant discrepancies currently exist due to lack of reporting or differences in reporting practices.</p>
+                        </div>
+                </div>
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>

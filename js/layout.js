@@ -60,8 +60,17 @@ _SPDEV.Layout.init = function(){
 	    $('#login').on('click', _SPDEV.Login.loginToggle);
 	}
 	
+	$('#viewHelpClose').on('click', function(){
+    
+        $('#wrapperViewHelp').hide();
+    
+    });
 	
-	
+    $('#viewHelpTrigger').on('click', function(){
+    
+        $('#wrapperViewHelp').show();
+    
+    });
 	
 };
 

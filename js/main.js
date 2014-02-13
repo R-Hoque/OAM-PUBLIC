@@ -84,7 +84,7 @@ $(document).ready(function(){
 	if(queryPars.dg === 'Bolivia') {
 		langFile = "js/lang/es.json";
 	} else {
-		langFile =  "js/lang/en.json"
+		langFile =  "js/lang/en.json";
 	}
 	
 	$.getJSON( langFile, function( data ) {

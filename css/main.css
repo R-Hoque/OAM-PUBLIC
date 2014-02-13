@@ -1,4 +1,4 @@
-/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
+/* normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -983,6 +983,29 @@ body {
   border-radius: 0;
   border-bottom: none; }
 
+#wrapperViewHelp {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001; }
+
+#viewHelp {
+  width: 500px;
+  height: 300px;
+  background-color: #FFF;
+  padding: 10px 15px 15px; }
+
+#viewHelpTrigger {
+  padding: 0 0 0 5px;
+  float: left;
+  width: 12px;
+  height: 12px; }
+
+#viewHelpClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer; }
+
 #appHeader {
   height: 38px;
   padding-left: 20px;
@@ -996,9 +1019,11 @@ body {
       margin: 0;
       padding: 0 20px;
       font-family: 'Gotham-Book';
+      font-size: 13px;
       cursor: pointer; }
       #appHeader .header-nav ul li a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: inherit; }
       #appHeader .header-nav ul li:hover a {
         text-decoration: none; }
       #appHeader .header-nav ul li.separator {
@@ -1011,10 +1036,6 @@ body {
     font-family: 'Gotham-Bold';
     width: 218px;
     text-align: center; }
-  #appHeader .header-nav #login {
-    font-family: 'Gotham-Book';
-    font-size: 12px; 
-    }
 
 #logo {
   line-height: 38px; }
@@ -1039,6 +1060,14 @@ img.lb {
   padding-left: 30px;
   z-index: 100; }
 
+#login {
+  font-family: 'Gotham-Book';
+  font-size: 12px;
+  float: left;
+  padding: 0 10px; }
+
+#footercopyright {
+  float: left; }
 
 .q-marker-cluster {
   background-color: white;
@@ -1132,7 +1161,7 @@ img.lb {
 
 #controlPanel {
   position: absolute;
-  width: 225px;
+  width: 300px;
   left: 25px;
   top: 20px;
   margin-bottom: 20px;
@@ -1254,7 +1283,7 @@ img.lb {
 
 #viewControl {
   background-color: #fff;
-  padding: 5px 15px;
+  padding: 5px 10px;
   font-size: 11px;
   color: #aaa;
   font-family: 'Gotham-Bold';
@@ -1439,7 +1468,7 @@ img.lb {
   position: absolute;
   background-color: #f6f7f7;
   z-index: 1;
-  margin-left: 262px;
+  margin-left: 340px;
   margin-right: 48px;
   background-color: #f6f7f7; }
 

@@ -6,9 +6,9 @@ usage="
 $(basename "$0") <git-repo-dir> <build-directory> <deploy type>[-h]
 
 where:
-    <git-repo-dir> : path to the git repository
-    <build-directory> : path to the build directory
-    <deploy type> : dev, prod, local
+    <git-repo-dir> : path to the local git repository
+    <build-directory> : path to the local build directory
+    <deploy type> : dev, prod, local 
     <pem file> : path to pem file (if necessary)
     -h : show this help text
 
@@ -51,11 +51,9 @@ echo "Exported from git repo."
 # copy in .gitignore files
 cp $1/php/db.inc $2/php/
 cp $1/php/user.inc $2/php/
-# cp $1/php/login.php $2/php/
 cp $1/php/login_salted.php $2/php/
 cp $1/php/logout.php $2/php/
 cp $1/php/session.inc $2/php/
-#cp $1/spatialdev.pem $2/
 
 # adjust db.inc for type of deploy
 if [ "$3" == "prod" ]; then
@@ -77,8 +75,8 @@ tar -zcf $2.tar.gz $2
 
 # deliver to the appropriate server
 if [ "$3" == "prod" ]; then
-	scp -i $4 $2.tar.gz ubuntu@54.225.122.47:oam-public
+	scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
 
 elif [ "$3" == "dev" ]; then
-  scp -i $4 $2.tar.gz ubuntu@23.23.164.192:oam-public
+  scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
 fi
