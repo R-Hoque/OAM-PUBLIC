@@ -162,7 +162,7 @@
 		
 		<form id="wrapperLogin" action="php/login_salted.php"  method="post">
 		  <div class="user"></div><input class="txtfield" id="uxLogin_email" name="email" type="text" value="" />
-		  <div class="pass"></div><input class="txtfield" id="uxLogin_pass" name="password" type="password" value="" />
+		  <div class="pass"></div><input class="txtfield" id="uxLogin_pass" name="password" type="password" value="" AUTOCOMPLETE="off"/>
 		  <input type="submit" class="submit" id="uxLogin_submit" value="LOG IN"/>
           <input id="uxLogin_country" type="hidden" name="country" value="">
 		  <div class="sub_notes" id="uxLoginForgot">Forgot password?</div>
