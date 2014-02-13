@@ -171,7 +171,7 @@ _SPDEV.DataSources.ContextualLayers = {
 		
 	    {
 		    alias: 'Malnutrition (% underweight children under 5 years, 2011)',
-		    serviceURL: 'http://54.226.197.17/:8080/geoserver/oam/wms',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:Nepal_mal_2011',
 		    state: false,
 		    mapLayer : null,
