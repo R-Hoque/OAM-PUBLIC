@@ -26,16 +26,16 @@ _SPDEV.FrontMap.init = function(){
 	//remove Kenya for now
 	var tt_Haiti = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Haiti").attr("title", "Haiti");
 	var tt_Honduras= d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Honduras").attr("title", "Honduras");
-	var tt_Colombia= d3.select("#mmmap").append("div").attr("class", "mminfo left").attr("id","tt_Colombia").attr("title", "Colombia");
+	//var tt_Colombia= d3.select("#mmmap").append("div").attr("class", "mminfo left").attr("id","tt_Colombia").attr("title", "Colombia");
 	//var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
 	var tt_Nepal = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Nepal").attr("title", "Nepal");
 	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Malawi").attr("title", "Malawi");
 
 	// PLACE THEM ON THE MAP RELATIVE TO THE MAP SIZE, THEN POPULATE THEM
-  tt_Bolivia.attr("style", "left:" + width/5.05 + "px;top:" + height/1.52 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>6,568 Activities</div>");
-	tt_Haiti.attr("style", "left:" + width/4.05 + "px;top:" + height/2.68 + "px").html("<div class='mmtitle'><a href='application.php?dg=Haiti'>HAITI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>8,11 Activities</div>");
+    tt_Bolivia.attr("style", "left:" + width/5.05 + "px;top:" + height/1.52 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>6,568 Activities</div>");
+	tt_Haiti.attr("style", "left:" + width/4.05 + "px;top:" + height/2.68 + "px").html("<div class='mmtitle'><a href='application.php?dg=Haiti'>HAITI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>811 Activities</div>");
 	tt_Honduras.attr("style", "left:" + width/7 + "px;top:" + height/2.15 + "px").html("<div class='mmtitle'><a href='application.php?dg=Honduras'>HONDURAS<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>3,238 Activities</div>");
-	tt_Colombia.attr("style", "left:" + width/3.2 + "px;top:" + height/1.9 + "px").html("<div class='mmtitle'><a href='application.php?dg=Coloumbia'>COLOMBIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>x,xxx  Activities</div>");
+	//tt_Colombia.attr("style", "left:" + width/3.2 + "px;top:" + height/1.9 + "px").html("<div class='mmtitle'><a href='application.php?dg=Coloumbia'>COLOMBIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>x,xxx  Activities</div>");
 	//Remove Kenya For now
 	//tt_Kenya.attr("style", "left:" + width/2 + "px;top:" + height/2.75 + "px").html("<div class='mmtitle'><a href='application.php?dg=Kenya'>KENYA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>2,243  Activities</div>");
 	tt_Nepal.attr("style", "left:" + width/1.44 + "px;top:" + height/2.26 + "px").html("<div class='mmtitle'><a href='application.php?dg=Nepal'>NEPAL<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>17,318  Activities</div>");
@@ -85,7 +85,7 @@ function ready(error, world, names) {
  // IDENTIFY THE FOCUS COUNTRIES
  function countrySpecific(d, i) {
    //if (d.name == 'Bolivia' || d.name == 'Kenya' || d.name == 'Malawi' || d.name == 'Nepal') return 'mmcountry countrySelected'
-   if (d.name == 'Bolivia' || d.name == 'Colombia' || d.name == 'Malawi' || d.name == 'Haiti' ||d.name == 'Honduras' ||d.name == 'Nepal') return 'mmcountry countrySelected';
+   if (d.name == 'Bolivia' || d.name == 'Malawi' || d.name == 'Haiti' ||d.name == 'Honduras' ||d.name == 'Nepal') return 'mmcountry countrySelected';
    else return 'mmcountry';
  }
 
