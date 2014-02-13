@@ -1161,7 +1161,7 @@ img.lb {
 
 #controlPanel {
   position: absolute;
-  width: 250px;
+  width: 300px;
   left: 25px;
   top: 20px;
   margin-bottom: 20px;
@@ -1468,7 +1468,7 @@ img.lb {
   position: absolute;
   background-color: #f6f7f7;
   z-index: 1;
-  margin-left: 262px;
+  margin-left: 340px;
   margin-right: 48px;
   background-color: #f6f7f7; }
 
