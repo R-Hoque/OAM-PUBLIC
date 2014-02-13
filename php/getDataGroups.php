@@ -1,7 +1,5 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
 	
 	// Get the data
@@ -20,7 +18,8 @@
 		echo json_encode($rows, JSON_NUMERIC_CHECK);	
 			
 	} catch(Exception $e) {  
-	      die( print_r( $e->getMessage() ) );  
+   	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+ 	    die();
 	}
 	
 	pg_close($dbPostgres);

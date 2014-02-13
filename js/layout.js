@@ -45,8 +45,9 @@ _SPDEV.Layout.init = function(){
 		});
 	});
 	
-	$('#uxLogin_submit').on('click', _SPDEV.Login.authenticate);
+//	$('#uxLogin_submit').on('click', _SPDEV.Login.authenticate);
 	
+	/*
 	if(typeof _oamuser != 'undefined') {
 	    _oamuser = jQuery.parseJSON(_oamuser);
 	    $('#login').html("LOGOUT");
@@ -59,7 +60,11 @@ _SPDEV.Layout.init = function(){
 	    $('#login').unbind('click');
 	    $('#login').on('click', _SPDEV.Login.loginToggle);
 	}
-	
+	*/
+
+    $('#logout').on('click', _SPDEV.Login.logout);
+    $('#login').on('click', _SPDEV.Login.loginToggle);
+
 	$('#viewHelpClose').on('click', function(){
     
         $('#wrapperViewHelp').hide();

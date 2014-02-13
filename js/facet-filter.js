@@ -106,7 +106,7 @@ _SPDEV.FacetFilter.Collection = Backbone.Collection.extend({
 			});
 			
 			if(this.selectedFacetValues.length === 0) {
-					this.selectedFacetValues.push('~~~999~~~');
+					this.selectedFacetValues.push('-999999');
 			}
 			
 			// Fire the 'scrape up' function of the filter

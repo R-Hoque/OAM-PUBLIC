@@ -1,15 +1,51 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
+	require('utils.inc');
 
-	$summaryTax = $_POST['summaryTaxonomyId'];
-	$dataGroup = $_POST['dataGroupId'];
-	$countryIds = $_POST['countryIds'];
+	$dataGroup = null;
+	$countryIds = null;
+	$summaryTax = null;
 
-	// Get the data
 	try {
+
+	    if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+	      throw new Exception('Bad Request', 400);
+	    }
+	    
+		if (isset($_POST['summaryTaxonomyId'])) {
+	    	
+	    	$summaryTax = intval($_POST['summaryTaxonomyId']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($summaryTax) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+		
+		if (isset($_POST['dataGroupId'])) {
+	    	
+	    	$dataGroup = intval($_POST['dataGroupId']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($dataGroup) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+
+		if (isset($_POST['countryIds'])) {
+
+	    	$countryIds = $_POST['countryIds'];
+	    	
+	    	if(validateCommaDelimitedIntString($countryIds) == false) {
+	    		throw new Exception('Bad Request ', 400);
+	    	}
+
+		}
 		
        	$sql= "SELECT l_id, x, y, r_ids FROM pmt_locations_by_tax(" . $summaryTax .", " . $dataGroup . ", '" . $countryIds . "');";
 		
@@ -26,7 +62,8 @@
 		
 		
 	} catch(Exception $e) {  
-	      die( print_r( $e->getMessage() ) );  
+   	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+ 	    die(); 
 	}
 	
 	pg_close($dbPostgres);

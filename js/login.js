@@ -2,6 +2,7 @@ _SPDEV.Login = {};
 _SPDEV.Login.user = {};
 
 // function is called on "LOG IN" button click
+/*
 _SPDEV.Login.authenticate = function () {
     $('#uxLogin_submit').html('<img src="img/loading-mini.gif"/>');	
     var postData = {'email': $('#uxLogin_email').val(), 'password': $('#uxLogin_pass').val()};
@@ -13,7 +14,6 @@ _SPDEV.Login.authenticate = function () {
 	    'success': function(data){
 		if (data.status != 200) {
 		    $('#uxLogin_submit').html('LOG IN');
-		    alert(data.message);
 		} else {
 		   _SPDEV.Login.user = data.data;
 		   $('#login').unbind('click');
@@ -33,7 +33,7 @@ _SPDEV.Login.authenticate = function () {
     });
 
   };
-  
+  */
 // Toggle the login drop down
 _SPDEV.Login.loginToggle = function() {
     $('#wrapperLogin').toggle();
@@ -83,6 +83,7 @@ _SPDEV.Login.registration = function() {
     });  
 };
 
+/*
 _SPDEV.Login.logout = function() {
     $.ajax({
 	    'type': 'POST',
@@ -104,4 +105,4 @@ _SPDEV.Login.logout = function() {
 		  console.error(response);
 	    }
     });
-};
+}; */

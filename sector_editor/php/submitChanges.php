@@ -1,6 +1,5 @@
 <?php
-ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
+
 	require('../../php/session_handlers.inc');
 	require('../../php/db.inc');
 
@@ -15,7 +14,7 @@ ini_set('display_errors', 'On');
 			  
 			
 	} catch(Exception $e) {  
-	      die( print_r( $e->getMessage() ) );  
+	      die( );  
 	}
 	pg_close($dbPostgresWrite);
 	

@@ -59,11 +59,11 @@ cp $1/php/session.inc $2/php/
 if [ "$3" == "prod" ]; then
 
   perl -pi -e 's/PROD_DEPLOY=FALSE/PROD_DEPLOY=TRUE/' $2/"php/db.inc"
-
- 	perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
+      perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
 
 elif [ "$3" == "stage" ]; then
-	perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
+  perl -pi -e 's/STAGE_DEPLOY=FALSE/STAGE_DEPLOY=TRUE/' $2/"php/db.inc"
+        perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
 
 fi
 
