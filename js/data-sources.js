@@ -599,6 +599,11 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 
 // Manage a toggle in data source
 _SPDEV.DataSources.switchSource = function(from, to, map){
+		
+		if(Object.keys(_SPDEV.DataSources.Data.Donor.locationsObj.allLocs).length === 0) {
+			return;
+		}
+
 		var dsFrom = _SPDEV.DataSources.Data[from];
 		
 		dsFrom.isActive = false;
