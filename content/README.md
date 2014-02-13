@@ -7,3 +7,5 @@ Content repository for [OAM-PUBLIC](https://github.com/spatialdev/OAM-PUBLIC) dy
 
 
 This repo is managed as a subtree in the OAM-PUBLIC project.
+
+Legal stuff: http://go.worldbank.org/OS6V7NIUD0
