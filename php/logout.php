@@ -22,7 +22,7 @@
 
     $country = $_POST['country'];
 
-    header('Location: ../application.php?dg=' . $country);//echo json_encode($r);
+    header('Location: ../application.php?dg=' . $country, true, 302);//echo json_encode($r);
 	   
 	
 ?>
