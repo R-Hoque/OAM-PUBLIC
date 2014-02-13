@@ -50,7 +50,7 @@
 
       // SFTP transfer the file from the APPLICATION SERVER to the DATABASE SERVER
       $r = $sftp->put($db_directory.$filename, $ap_directory.$filename, NET_SFTP_LOCAL_FILE);
-
+  }
   
   function loadFile($country, $filename) {
     // Purge the existing data and load the new file with the appropriate country name.
@@ -67,3 +67,4 @@
     }
     return $r;
  }
+?>
