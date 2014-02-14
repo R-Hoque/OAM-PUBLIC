@@ -87,7 +87,7 @@ _SPDEV.DataSources.ContextualLayers = {
 	    },
 	    {
 	    	
-	    	alias: 'Malnutrition (% underweight children under 5 years, 2011)',
+	    	alias: 'Malnutrition (%, 2011)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:honduras_dhs_2005_wgs84',
 		    state: false,
