@@ -12,7 +12,7 @@ where:
     <pem file> : path to pem file (if necessary)
     -h : show this help text
 
-example: ./build-oam.sh ./ ../oam-public-build stage ../spatialdev.pem"
+example: ./build-oam.sh ./ ../oam-public-build stage ../wbkey.pem"
 
 while getopts ':hs:' option; do
   case "$option" in
