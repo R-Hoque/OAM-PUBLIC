@@ -140,7 +140,7 @@ _SPDEV.DataSources.ContextualLayers = {
 		    
 	    },
 	    {
-	    	alias: 'Malnutrition (% underweight children under 5 years, 2011)',
+	    	alias: 'Malnutrition (%, 2011)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:HaitiMalnutrition',
 		    state: false,
@@ -168,9 +168,23 @@ _SPDEV.DataSources.ContextualLayers = {
 		    showLegend: true,
 		    
 	    },
+	    
+	    {
+		    alias: 'Total Population (2011)',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:Nepal_Pop_2011',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+		    
+	    },
 		
 	    {
-		    alias: 'Malnutrition (% underweight children under 5 years, 2011)',
+		    alias: 'Malnutrition (%, 2011)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:Nepal_mal_2011',
 		    state: false,
@@ -199,7 +213,7 @@ _SPDEV.DataSources.ContextualLayers = {
 	    },
 	     {
 		    
-		alias: 'Malnutrition (% underweight children under 5 years, 2011)',
+		alias: 'Malnutrition (%, 2011)',
 		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
 		    layers: 'oam:Malawi_Malnutrition',
 		    state: false,
