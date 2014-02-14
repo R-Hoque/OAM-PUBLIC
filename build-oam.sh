@@ -8,11 +8,11 @@ $(basename "$0") <git-repo-dir> <build-directory> <deploy type>[-h]
 where:
     <git-repo-dir> : path to the local git repository
     <build-directory> : path to the local build directory
-    <deploy type> : dev, prod, local 
+    <deploy type> : stage, prod, local 
     <pem file> : path to pem file (if necessary)
     -h : show this help text
 
-example: ./build-oam.sh ./ ../oam-public-build dev ../spatialdev.pem"
+example: ./build-oam.sh ./ ../oam-public-build stage ../spatialdev.pem"
 
 while getopts ':hs:' option; do
   case "$option" in
@@ -62,7 +62,7 @@ if [ "$3" == "prod" ]; then
 
  	perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
 
-elif [ "$3" == "dev" ]; then
+elif [ "$3" == "stage" ]; then
 	perl -pi -e 's/LOCAL_DEPLOY=TRUE/LOCAL_DEPLOY=FALSE/' $2/"php/db.inc"
 
 fi
@@ -75,8 +75,8 @@ tar -zcf $2.tar.gz $2
 
 # deliver to the appropriate server
 if [ "$3" == "prod" ]; then
-	scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
+	scp -i $4 $2.tar.gz ubuntu@54.83.0.35:oam-public
 
-elif [ "$3" == "dev" ]; then
+elif [ "$3" == "stage" ]; then
   scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
 fi
