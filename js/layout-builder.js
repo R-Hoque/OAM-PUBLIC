@@ -7,9 +7,9 @@ _SPDEV.FrontBuilder.init = function(){
 	
 	$.get("partials/header.html", function(data){ 
 		var theHeader = $(data);
-		if (thisPage == "news.html"||thisPage == "partnership.html"){
-			theHeader.find('#locationMenu').remove();
-		}
+		//if (thisPage == "news.html"||thisPage == "partnership.html"){
+			//theHeader.find('#locationMenu').remove();
+		//}
 		$('body').prepend(theHeader);
 		
 		

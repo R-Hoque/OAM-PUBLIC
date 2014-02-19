@@ -21,7 +21,8 @@ bottom: 0;
 top: 0;
 left: 0;
 right: 0;
-overflow-y: auto;  
+overflow-y: auto; 
+font-family: 'Gotham-Book';
 }
 
 #wrapper0 {
@@ -289,10 +290,15 @@ font-size: 24px;
 #viewHelp {
 
     width: 500px;
-    height: 300px;
+    height: 330px;
     background-color: #FFF;
-
+    font-size: 12px;
     padding: 10px 15px 15px;
+    
+    h3, p {
+    
+        margin: .5em 0;
+    }
 }
 
 #viewHelpTrigger {
@@ -311,6 +317,21 @@ font-size: 24px;
     cursor: pointer;
 }
 
+#viewHelpCluster, #viewHelpClusterText {
+
+    float:left;
+
+}
+
+#viewHelpCluster {
+    padding-top: 15px;
+}
+
+#viewHelpClusterText {
+    width: 330px;
+margin: 0 10px;
+}
+    
 @import "header";
 @import "footer";
 @import "clusters";
