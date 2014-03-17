@@ -6,6 +6,11 @@
 
 	try{
 		
+		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+			throw new Exception('Bad Request', 400);
+		}
+
+
 		if (isset($_GET['id'])) {
 	    	
 	    	$activity_id = intval($_GET['id']);

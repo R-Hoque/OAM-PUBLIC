@@ -2,32 +2,40 @@
 
   session_set_cookie_params ( 3600, null, null, null, true);
   session_start();
-  if (isset($_SESSION['oamuser'])) {
-      require_once 'user.inc';
-      $oamuser = unserialize($_SESSION['oamuser']);
-      $country = $oamuser->data_group;
-  } else {
-      echo "Permission denied.  User must be logged in to execute this function.";
-  }
-
   //The IATI upload through the UI overwrites the existing data for a specific data group with new data.
   include('db.inc');
 
-  // Change the uploaded file name to reflect the country as well as the current timestamp
-  $filename = $country."-".time().".xml";
-  move_uploaded_file( $_FILES["iati"]["tmp_name"], "/usr/local/pmt_iati/" . $filename);
+  try {
+    if (isset($_SESSION['oamuser'])) {
+        require_once 'user.inc';
+        $oamuser = unserialize($_SESSION['oamuser']);
+        $country = $oamuser->data_group;
+    } else {
+        throw new Exception('Access Denied', 403);
+    }
 
-  // Execute the upload.  Database server name comes from the db.inc file
-  
- // if (sendFile($dbserver, $filename) == 1) {
+    if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+      throw new Exception('Bad Request', 400);
+    }
 
+    // Change the uploaded file name to reflect the country as well as the current timestamp
+    $filename = $country."-".time().".xml";
+    move_uploaded_file( $_FILES["iati"]["tmp_name"], "/usr/local/pmt_iati/" . $filename);
+
+    // Execute the upload.  Database server name comes from the db.inc file
+    
     // Execute the PostGres data load query
     $resp = loadFile($country, $filename);
+    
     if ($resp == "t")
       echo true;
     else
       echo false;
- //  }
+
+  } catch(Exception $e) {  
+      header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+      die();
+  }
 
   // Only necessary if DB is on another server
   function sendFile($dbserver, $filename) {

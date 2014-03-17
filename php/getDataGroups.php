@@ -5,6 +5,10 @@
 	// Get the data
 	try {
 
+		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+			throw new Exception('Bad Request', 400);
+		}
+
 		$sql = "select * from pmt_data_groups();";
 
 		// Prepare a query for execution

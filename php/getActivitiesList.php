@@ -25,7 +25,7 @@
 
 		//echo "Ref: " . $_SERVER['HTTP_REFERER'];
 
-		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === false) {
 			throw new Exception('Bad Request', 400);
 		}
 

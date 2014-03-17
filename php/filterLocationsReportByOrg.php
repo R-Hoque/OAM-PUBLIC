@@ -13,6 +13,11 @@
 	$summaryTax = null;
 
 	try{
+
+		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+			throw new Exception('Bad Request', 400);
+		}
+
 		if (isset($_POST['summaryTaxId'])) {
 	    	
 	    	$summaryTax = intval($_POST['summaryTaxId']);
