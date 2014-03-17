@@ -63,6 +63,8 @@ if [ "$3" == "prod" ]; then
 elif [ "$3" == "stage" ]; then
   perl -pi -e 's/STAGE_DEPLOY=FALSE/STAGE_DEPLOY=TRUE/' $2/"php/db.inc"
 
+else ; then
+    perl -pi -e 's/LOCAL_DEPLOY=FALSE/LOCAL_DEPLOY=TRUE/' $2/"php/db.inc"
 fi
 
 # remove old tar package if its there

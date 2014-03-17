@@ -4,7 +4,7 @@
 
         $IS_PROD_DEPLOY=FALSE; // Prod v. Dev
         $IS_STAGE_DEPLOY=FALSE; // Prod v. Dev
-        $IS_LOCAL_DEPLOY=TRUE; //Local v. Server
+        $IS_LOCAL_DEPLOY=FALSE; //Local v. Server
 
         $host = null;
         $serverSubstring;
