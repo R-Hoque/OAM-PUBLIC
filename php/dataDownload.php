@@ -29,7 +29,7 @@
 	
 	$orgArr = explode(",", $organizations);
 	
-	$impossibleId = "~~~999~~~";
+	$impossibleId = "-999999";
 	
 	
 	// client wants no selection === no data returned; but our db function thinks no classification or org ids mean 'all data'; so this is a work around

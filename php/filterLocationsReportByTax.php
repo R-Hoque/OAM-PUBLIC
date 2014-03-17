@@ -17,7 +17,7 @@
 	
 	$endDate = $_POST['endDate'];
 	
-	$impossibleId = "~~~999~~~";
+	$impossibleId = "-999999";
 	
 	$classificationsArr = explode(",", $classifications);
 	

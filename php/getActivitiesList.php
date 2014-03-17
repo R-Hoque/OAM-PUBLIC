@@ -5,17 +5,17 @@
 	require('db.inc');
 	require('translate.inc');
 	
-	  $sectorcode = $_POST['sectorcode'];
-	  $src = $_POST['src'];
-	  $country = $_POST['country'];
-	  $offset = $_POST['offset'];
-	  $orderby = $_POST['orderby'];
-	  $order = $_POST['order'];
-	  $sectors = $_POST['sector'];
-	  $orgs = $_POST['orgs'];
-	  $language = $_POST['language'];
+	$sectorcode = $_POST['sectorcode'];
+	$src = $_POST['src'];
+	$country = $_POST['country'];
+	$offset = $_POST['offset'];
+	$orderby = $_POST['orderby'];
+	$order = $_POST['order'];
+	$sectors = $_POST['sector'];
+	$orgs = $_POST['orgs'];
+	$language = $_POST['language'];
 	  
-	$impossibleId = "~~~999~~~";
+	$impossibleId = "-999999";
 	
 	$classificationsArr = explode(",", $sectors);
 	
