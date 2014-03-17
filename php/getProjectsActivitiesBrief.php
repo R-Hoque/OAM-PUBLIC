@@ -1,13 +1,22 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
 	
-	$l_ids = $_POST['l_ids'];
-	
-	// Get the data
-	try {
+	$l_ids = null;
+
+	try{
+		
+		if (isset($_POST['l_ids'])) {
+	    	
+	    	$l_ids = intval($_POST['l_ids']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($l_ids) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
 		
 		$sql="select * from pmt_infobox_menu('" . $l_ids . "')";
 		
@@ -28,7 +37,8 @@
 		echo json_encode($a_ids, JSON_NUMERIC_CHECK);	
 			
 	} catch(Exception $e) {  
-	      die( print_r( $e->getMessage() ) );  
+   	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+ 	    die(); 
 	}
 	
 	pg_close($dbPostgres);

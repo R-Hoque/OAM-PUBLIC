@@ -6,9 +6,9 @@
 
 	try{
 		
-		if (isset($_POST['id'])) {
+		if (isset($_GET['id'])) {
 	    	
-	    	$activity_id = intval($_POST['id']);
+	    	$activity_id = intval($_GET['id']);
 	    	
 	    	// Validate that this is an integer
 			if(is_int($activity_id) == false) {
