@@ -1,14 +1,7 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
 	require('translate.inc');
-	
-	$taxonomies = '15';//$_POST['taxonomyIds'];
-	$dataGroup = 768; //$_POST['dataGroupId'];
-	$countryIds = '';//$_POST['countryIds'];
-	$language =  'spanish';//$_POST['language'];
 	
 	$taxonomies = $_POST['taxonomyIds'];
 	$dataGroup = $_POST['dataGroupId'];
