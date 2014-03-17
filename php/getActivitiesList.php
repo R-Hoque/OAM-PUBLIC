@@ -1,52 +1,165 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
+	require('utils.inc');
 	require('translate.inc');
 	
-	$sectorcode = $_POST['sectorcode'];
-	$src = $_POST['src'];
-	$country = $_POST['country'];
+	$sectorcode = null;
+	$src = null;
+	$country = null;
 	$offset = $_POST['offset'];
-	$orderby = $_POST['orderby'];
-	$order = $_POST['order'];
+	$orderby = null;
+	$escapedOrderBy = null;
+	$order = null;
+	$sectors = null;
+	$orgs = null;
+	$language = null;
+	$impossibleId = "-999999";
+	$classificationsArr = null;
+	$orgArr = null;
+
 	$sectors = $_POST['sector'];
 	$orgs = $_POST['orgs'];
-	$language = $_POST['language'];
+
+	try {
+
+		if (isset($_POST['sectorcode'])) {
+	    	
+	    	$sectorcode = intval($_POST['sectorcode']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($sectorcode) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+
+		if (isset($_POST['src'])) {
+	    	
+	    	$src = intval($_POST['src']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($src) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+
+		if (isset($_POST['country'])) {
+	    	
+	    	$country = intval($_POST['country']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($country) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request ', 400);
+		}
+
+		if (isset($_POST['offset'])) {
+	    	
+	    	$offset = intval($_POST['offset']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($offset) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request ', 400);
+		}
+
+		if (isset($_POST['orderby'])) {
+	    	
+	    	$orderBy = $_POST['orderby'];
+
+	    	$escapedOrderBy = pg_escape_string($orderBy);
 	  
-	$impossibleId = "-999999";
+		} else {
+			
+			throw new Exception('Bad Request ', 400);
+		
+		}
+
+
+		if (isset($_POST['order'])) {
+	    	
+	    	$order = strtolower($_POST['order']);
+
+	    	if(!($order == 'asc' || $order == 'desc')) {
+	    		throw new Exception('Bad Request ', 400);
+	    	}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+
+		if (isset($_POST['language'])) {
+	    	
+	    	$language = strtolower($_POST['language']);
+
+	    	if($language == 'spanish' || $language == 'english') {}
+	    	else{
+	    		throw new Exception('Bad Request', 400);
+	    	}
+		} else {
+			throw new Exception('Bad Request ', 400);
+		}
+
+		if (isset($_POST['sectors'])) {
+
+	    	$sectors = $_POST['sectors'];
+	    	
+	    	if(validateCommaDelimitedIntString($sectors) == false) {
+	    		throw new Exception('Bad Request ', 400);
+	    	}
+
+		}
+
+		if (isset($_POST['orgs'])) {
+
+	    	$sectors = $_POST['orgs'];
+	    	
+	    	if(validateCommaDelimitedIntString($orgs) == false) {
+	    		throw new Exception('Bad Request ', 400);
+	    	}
+
+		} 
+
+		$classificationsArr = explode(",", $sectors);
+		
+		$formattedSectors = null;
+
+		if(count($sectors)  && trim($sectors)==='') {
+			$formattedSectors = $sectors;
+		} else {
+			$formattedSectors = ',' . $sectors;
+		}
+		
+		$orgArr = explode(",", $orgs);
+		
+		// client wants no selection === no data returned; but our db function thinks no classification or org ids mean 'all data'; so this is a work around
+		if(in_array ( $impossibleId, $classificationsArr ) || in_array($impossibleId, $orgArr)) {
+		  
+			echo json_encode(null, JSON_NUMERIC_CHECK);
+			pg_close($dbPostgres);
+			return;	
+		}
+		
+		$records = getRecords($sectorcode, $src, $country, $formattedSectors, $orgs, $escapedOrderBy, $order, $offset, $language);
+		
+		$cnt = getCount($src, $country, $formattedSectors , $orgs, $orderby, $order, $offset);
+		
+		$page = $offset/100 + 1;
+		$totalpages = ceil($cnt/100)+1;
+		$a = array('rows'=>$records,'count'=>$cnt, 'page'=>$page, 'tot'=>$totalpages);
+		echo json_encode($a, JSON_NUMERIC_CHECK);
 	
-	$classificationsArr = explode(",", $sectors);
-	
-	$formattedSectors = null;
-	if(count($sectors)  && trim($sectors)==='') {
-		$formattedSectors = $sectors;
-	} else {
-		$formattedSectors = ',' . $sectors;
+	} catch(Exception $e) {  
+   	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+ 	    die();
 	}
-	
-	//echo $formattedSectors;
-	
-	$orgArr = explode(",", $orgs);
-	
-	// client wants no selection === no data returned; but our db function thinks no classification or org ids mean 'all data'; so this is a work around
-	if(in_array ( $impossibleId, $classificationsArr ) || in_array($impossibleId, $orgArr)) {
-	  
-		echo json_encode(null, JSON_NUMERIC_CHECK);
-		pg_close($dbPostgres);
-		return;	
-	}
-	
-	$records = getRecords($sectorcode, $src, $country, $formattedSectors, $orgs, $orderby, $order, $offset, $language);
-	
-	$cnt = getCount($src, $country, $formattedSectors , $orgs, $orderby, $order, $offset);
-	
-	$page = $offset/100 + 1;
-	$totalpages = ceil($cnt/100)+1;
-	$a = array('rows'=>$records,'count'=>$cnt, 'page'=>$page, 'tot'=>$totalpages);
-	echo json_encode($a, JSON_NUMERIC_CHECK);
-	
 	
 	function getRecords($sectorcode, $src, $country, $sectors, $orgs, $orderby, $order, $offset, $lang) {
 	      global $dbPostgres, $sectorDictionary;
@@ -120,9 +233,6 @@
 	    pg_free_result($result);
 	    return $rows->pmt_activity_listview_ct;
 	}
-	
-	
-	
 	
 	function buildFilters($sector, $orgs) {
 		$filters = "";
