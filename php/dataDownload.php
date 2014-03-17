@@ -83,7 +83,8 @@
 		echo json_encode($response[0]);
 			
 	} catch(Exception $e) {  
-	      die( print_r( $e->getMessage() ) );  
+ 	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+ 	    die();  
 	}
 	
 	pg_close($dbPostgresWrite);
