@@ -6,7 +6,7 @@
 	@date: January 2014
 	@description: makes sure user is authorized
 	*/
-	session_set_cookie_params ( 3600, null, null, null, true);
+	session_set_cookie_params ( 1800, null, null, null, true);
 	session_start();
 	if (isset($_SESSION['oamuser'])) {
 	    require_once 'user.inc';
