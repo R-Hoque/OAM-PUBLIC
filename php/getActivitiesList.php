@@ -23,6 +23,12 @@
 
 	try {
 
+		//echo "Ref: " . $_SERVER['HTTP_REFERER'];
+
+		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
+			throw new Exception('Bad Request', 400);
+		}
+
 		if (isset($_POST['sectorcode'])) {
 	    	
 	    	$sectorcode = intval($_POST['sectorcode']);

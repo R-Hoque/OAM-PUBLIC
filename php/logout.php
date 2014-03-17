@@ -1,5 +1,6 @@
 <?php
 	//start the session
+	session_set_cookie_params ( 3600, null, null, null, true);
 	session_start();
 
 	$_SESSION = array();

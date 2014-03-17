@@ -1,4 +1,5 @@
 <?php
+	session_set_cookie_params ( 3600, null, null, null, true);
 	session_start();
 	if (isset($_SESSION['oamuser'])) {
 	    ini_set('display_errors', 'On');
