@@ -197,7 +197,7 @@
 		    return $r;
 			      
 	      } catch(Exception $e) {  
-		    die( print_r( $e->getMessage() ) );  
+		    die( /*print_r( $e->getMessage() ) */);  
 	      }
 		  
 		  pg_close($dbPostgres);
@@ -226,12 +226,21 @@
 	
 	function getCount($src, $country, $sectors, $orgs) {
 	    global $dbPostgres;
+
+	    $rows = null;
 		
-	    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.','.$country.$sectors."','".$orgs."','', null, null)";
-	    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
-	    $rows = pg_fetch_object($result);
-	    pg_free_result($result);
-	    return $rows->pmt_activity_listview_ct;
+		try {
+		    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.','.$country.$sectors."','".$orgs."','', null, null)";
+		    $result = pg_query($dbPostgres, $sql);
+		    $rows = pg_fetch_object($result);
+		    pg_free_result($result);
+		} catch(Exception $e) {  
+			die( /*print_r( $e->getMessage() ) */);  
+		}
+		if($rows != null)  {
+		    return $rows->pmt_activity_listview_ct;
+		}
+
 	}
 	
 	function buildFilters($sector, $orgs) {

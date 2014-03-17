@@ -1,20 +1,31 @@
 <?php
 
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
 	require('db.inc');
 	
-	if(isset($_GET['id'])) {
-	      $activity_id = $_GET['id'];
-	      // Get the data	
-	      try {
+	$activity_id = null;
 
-		      $sql="SELECT * FROM pmt_activity_details(".$activity_id.");";
+	try{
+		
+		if (isset($_POST['id'])) {
+	    	
+	    	$activity_id = intval($_POST['id']);
+	    	
+	    	// Validate that this is an integer
+			if(is_int($activity_id) == false) {
+				throw new Exception('Bad Request', 400);
+			}
+		} else {
+			throw new Exception('Bad Request', 400);
+		}
+
+		$sql="SELECT * FROM pmt_activity_details(".$activity_id.");";
+
+		$result = pg_query($dbPostgres, $sql) or die("error");
 		      
-		      $result = pg_query($dbPostgres, $sql) or die("error");
-		      
-		      while($rows = pg_fetch_object($result)) {
+		while($rows = pg_fetch_object($result)) {
+			
 			$r2 = array();
+			
 			foreach(json_decode($rows->response) as $key=>$val) {
 			  if (is_array($val))
 			    $r2[$key] = $val;
@@ -24,12 +35,15 @@
 			    $r2[$key] = ucfirst(strtolower($val));
 			    
 			}
+			
 			(Object)$r2;
-		      }	
-		      echo json_encode($r2);
-			      
-	      } catch(Exception $e) {  
-		    die( print_r( $e->getMessage() ) );  
-	      }
-	}
+
+	    }	
+		
+		echo json_encode($r2);
+		  
+		} catch(Exception $e) {  
+			header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
+		}
+
 ?>
