@@ -121,6 +121,7 @@ div.sub_notes  {
     margin-top:-37px;
     cursor: pointer;
     display: none;
+    text-decoration: none;
 }
 .upload_form {
   z-index: 1000;

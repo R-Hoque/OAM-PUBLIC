@@ -1,6 +1,6 @@
 <?php
 
-  session_set_cookie_params ( 1800, null, null, null, true);
+  ini_set("session.cookie_httponly", 1);
   session_start();
   //The IATI upload through the UI overwrites the existing data for a specific data group with new data.
   include('db.inc');

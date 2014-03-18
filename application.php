@@ -1,6 +1,24 @@
 
  <?php 
+    session_start();
 
+    $_SESSION = array();
+
+    //check to make sure the session variable is registered
+    if (isset($_SESSION['oamuser'])) {
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+        
+        //session variable is registered, the user is ready to logout
+        session_unset();
+        session_destroy();
+    } 
 
  ?>
  <!DOCTYPE html>
@@ -63,7 +81,7 @@
         		</ul>
         		<div id="downloadBTN" title="Download IATI"><span>DOWNLOAD</span><div class="downloadElement" id="downloadSpacer"></div></div>
         		<div id="uploadIATI" title="Replace existing data with new IATI File">UPLOAD IATI</div>
-			<a id="edit_sector" href="sector_editor.php" title="Edit the Sector Values" >SECTOR EDITOR</a>
+			     <a id="edit_sector" href="sector_editor.php" target="_self" title="Edit the Sector Values" >SECTOR EDITOR</a>
                 <div  class="downloadElement" id="downloadFORM">
         		
                 <div id="downloadFORM">

@@ -3,7 +3,7 @@
     
     require('../../php/db.inc');
 	
-	session_set_cookie_params ( 1800, null, null, null, true);
+	ini_set("session.cookie_httponly", 1);
 	session_start();
 
 	// Get the data
