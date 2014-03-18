@@ -13,7 +13,6 @@ _SPDEV.Login.authenticate = function () {
 	    'success': function(data){
 		if (data.status != 200) {
 		    $('#uxLogin_submit').html('LOG IN');
-		    alert(data.message);
 		} else {
 		   _SPDEV.Login.user = data.data;
 		   $('#login').unbind('click');
