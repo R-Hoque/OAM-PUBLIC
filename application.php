@@ -1,20 +1,6 @@
 
  <?php 
 
-    session_set_cookie_params ( 1800, null, null, null, true);
-    session_start();
-    //session_regenerate_id(true);
-    
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', 1800,
-            null, null,
-            null, $params["httponly"]
-        );
-    }
-    
-    session_unset();
-    session_destroy();
 
  ?>
  <!DOCTYPE html>
