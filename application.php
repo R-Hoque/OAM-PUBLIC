@@ -3,7 +3,7 @@
 
     session_set_cookie_params ( 1800, null, null, null, true);
     session_start();
-    session_regenerate_id(true);
+    //session_regenerate_id(true);
     
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
@@ -13,7 +13,6 @@
         );
     }
     
-    //session variable is registered, the user is ready to logout
     session_unset();
     session_destroy();
 
