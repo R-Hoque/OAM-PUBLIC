@@ -78,7 +78,7 @@
         		</ul>
         		<div id="downloadBTN" title="Download IATI"><span>DOWNLOAD</span><div class="downloadElement" id="downloadSpacer"></div></div>
         		<div id="uploadIATI" title="Replace existing data with new IATI File">UPLOAD IATI</div>
-			<div id="edit_sector" title="Edit the Sector Values">SECTOR EDITOR</div>
+			<a id="edit_sector" href="sector_editor.php" title="Edit the Sector Values" >SECTOR EDITOR</a>
                 <div  class="downloadElement" id="downloadFORM">
         		
                 <div id="downloadFORM">
