@@ -10,14 +10,10 @@
 		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === FALSE) {
 			throw new Exception('Bad Request', 400);
 		}
-		
+
 		if(isset($_POST['dg'])) {
-			$dg = intval($_POST['dg']);
-	    	
-	    	// Validate that this is an integer
-			if(is_int($dg) == false) {
-				throw new Exception('Bad Request', 400);
-			}
+			$dg = pg_escape_string($_POST['dg']);
+
 		} else {
 			throw new Exception('Bad Request', 400);
 		}
