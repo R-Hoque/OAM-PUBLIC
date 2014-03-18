@@ -4,7 +4,7 @@
   @client = World Bank Open Aid Partnership
   @functionality = Main file for the Sector Editor (HTML/PHP)
   =========================================================== -->
- <?php require_once("php/session.inc"); ?>
+ <?php require("php/session.inc"); ?>
   <!DOCTYPE html>
   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
   <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
