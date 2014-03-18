@@ -1,5 +1,23 @@
 
- <?php //require_once("php/session.inc"); ?>
+ <?php 
+
+    session_set_cookie_params ( 1800, null, null, null, true);
+    session_start();
+    session_regenerate_id(true);
+    
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', 1800,
+            null, null,
+            null, $params["httponly"]
+        );
+    }
+    
+    //session variable is registered, the user is ready to logout
+    session_unset();
+    session_destroy();
+
+ ?>
  <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
