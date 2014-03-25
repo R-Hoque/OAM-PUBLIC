@@ -56,7 +56,7 @@
 	    'dataType': "json",
 	    'url': 'php/logout.php',
 	    'success': function(data){
-		  window.location = "index.html";
+		  window.location = "index.php";
 	    },
 	    'error': function(response) {
 		  console.error(response);

@@ -74,10 +74,10 @@ $(document).ready(function(){
 	var queryPars = $.parseParams( url.split('?')[1] || '' );
 	
 	if(typeof queryPars.dg === 'undefined') {
-		window.location = './index.html';
+		window.location = './index.php';
 		return;
 	} else if (typeof _SPDEV.DataSources.DataGroups[queryPars.dg] === 'undefined') {
-		window.location = './index.html';
+		window.location = './index.php';
 		return;
 	}
 	

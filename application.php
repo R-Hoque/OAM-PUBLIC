@@ -2,11 +2,14 @@
  <?php 
     session_start();
 
-    $_SESSION = array();
+//check to make sure the session variable is registered
+    if (!isset($_SESSION['oamuser'])) {
 
-    //check to make sure the session variable is registered
-    if (isset($_SESSION['oamuser'])) {
+       // Unset all of the session variables.
+        $_SESSION = array();
 
+        // If it's desired to kill the session, also delete the session cookie.
+        // Note: This will destroy the session, and not just the session data!
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -14,11 +17,12 @@
                 $params["secure"], $params["httponly"]
             );
         }
-        
-        //session variable is registered, the user is ready to logout
-        session_unset();
+
+        // Finally, destroy the session.
         session_destroy();
     } 
+
+    
 
  ?>
  <!DOCTYPE html>
@@ -57,7 +61,7 @@
         <!-- Add your site or application content here -->
 		<header id="appHeader" class="clearfix">
 			<div id="logo" class="left">
-				<a href="index.html" ><img src="img/oamLogo.png" alt="Open Aid Partnership" /></a>
+				<a href="index.php" ><img src="img/oamLogo.png" alt="Open Aid Partnership" /></a>
 			</div>
 			
 			<!-- Application navigation-->

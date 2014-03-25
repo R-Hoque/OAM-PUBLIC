@@ -15,7 +15,7 @@
 		echo "<script>var _oamuser='".json_encode($oamuser)."';</script>";
 	} else {
 	    //if(strpos($_SERVER['PHP_SELF'], "application.php") == 0)
-		header('Location: index.html');
+		header('Location: index.php');
 	}
 
  ?>
