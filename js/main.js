@@ -81,6 +81,9 @@ $(document).ready(function(){
 		return;
 	}
 	
+	$('#uxLogin_country').val(queryPars.dg);
+	$('#uxLogout_country').val(queryPars.dg);
+
 	if(queryPars.dg === 'Bolivia') {
 		langFile = "js/lang/es.json";
 	} else {

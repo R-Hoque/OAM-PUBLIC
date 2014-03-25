@@ -14,12 +14,16 @@
 }
 
 
-    #login  {
-      font-family: 'Gotham-Book';
-      font-size: 12px;
-            float:left;
-    padding: 0 10px;
-    }
+#login, #logout{
+  font-family: 'Gotham-Book';
+  font-size: 12px;
+  float: left;
+  padding: 0 10px;
+  background-color: transparent;
+  border: none;
+  line-height: 40px;
+  cursor: pointer;
+}
 
 #footercopyright {
     float:left;

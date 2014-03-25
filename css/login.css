@@ -63,7 +63,7 @@ div.login_forgot_submit {
   float:left;
   
 }
-#wrapperLogin > div.submit {
+ #uxLogin_submit {
   width: 254px;
   padding:10px 0px;
   float:left;
@@ -75,7 +75,7 @@ div.login_forgot_submit {
   border-radius: 2px;
   margin-bottom: 15px;
 }
-#wrapperLogin > div.submit:hover {
+ #uxLogin_submit:hover {
   background-color: #cccccc;
   color: #ec7721;
 }
@@ -106,7 +106,7 @@ div.sub_notes  {
     background-position: 104px 9px;
     margin-top:-37px;
     cursor: pointer;
-    display: none;
+    
 }
 #edit_sector {
     background-color: #ea7820;
@@ -120,7 +120,6 @@ div.sub_notes  {
     z-index:2;
     margin-top:-37px;
     cursor: pointer;
-    display: none;
     text-decoration: none;
 }
 .upload_form {

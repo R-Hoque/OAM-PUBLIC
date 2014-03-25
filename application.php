@@ -2,7 +2,7 @@
  <?php 
     session_start();
 
-//check to make sure the session variable is registered
+    //check to make sure the session variable is registered
     if (!isset($_SESSION['oamuser'])) {
 
        // Unset all of the session variables.
@@ -84,8 +84,13 @@
 	        		<li id="listViewTab" href="#listView">LIST</li>
         		</ul>
         		<div id="downloadBTN" title="Download IATI"><span>DOWNLOAD</span><div class="downloadElement" id="downloadSpacer"></div></div>
-        		<div id="uploadIATI" title="Replace existing data with new IATI File">UPLOAD IATI</div>
-			     <a id="edit_sector" href="sector_editor.php" target="_self" title="Edit the Sector Values" >SECTOR EDITOR</a>
+        		<?php 
+                    if (isset($_SESSION['oamuser'])) {
+                        echo '<div id="uploadIATI" title="Replace existing data with new IATI File">UPLOAD IATI</div>
+                        <a id="edit_sector" href="sector_editor.php" target="_self" title="Edit the Sector Values" >SECTOR EDITOR</a>';
+
+                    }
+                ?>
                 <div  class="downloadElement" id="downloadFORM">
         		
                 <div id="downloadFORM">
@@ -140,22 +145,29 @@
         </div>
         
 		<footer id="footerContainer">
-            <div id="login" class="dropdown login">
-                <a id="login_name" title="Login">LOGIN</a>
-            </div>
+                <?php 
+                    if (!isset($_SESSION['oamuser'])) {
+                        echo '<div id="login" class="dropdown login">LOGIN</div>';
+                    } else {
+                        echo '<form action="php/logout.php" method="post"><input id="uxLogout_country" type="hidden" name="country" value="">
+          <input type="submit"  id="logout" class="dropdown login" value="LOGOUT" /></form>';
+                    }
+                ?>
+            
             <div id="footercopyright"></div>
 
             
         </footer>
 		
 		
-		<div id="wrapperLogin">
-		  <div class="user"></div><input class="txtfield" id="uxLogin_email" type="text" value="" />
-		  <div class="pass"></div><input class="txtfield" id="uxLogin_pass" type="password" value="" />
-		  <div class="submit" id="uxLogin_submit">LOG IN</div>
+		<form id="wrapperLogin" action="php/login_salted.php"  method="post">
+		  <div class="user"></div><input class="txtfield" id="uxLogin_email" name="email" type="text" value="" />
+		  <div class="pass"></div><input class="txtfield" id="uxLogin_pass" name="password" type="password" value="" />
+		  <input type="submit" class="submit" id="uxLogin_submit" value="LOG IN"/>
+          <input id="uxLogin_country" type="hidden" name="country" value="">
 		  <div class="sub_notes" id="uxLoginForgot">Forgot password?</div>
 		  <!-- <div class="sub_notes right" id="uxLoginRegistration">Registration</div> -->
-		</div>
+		</form>
 		
             <div id="wrapperViewHelp" class="blocker wall-to-wall">
 						<div id="viewHelp" class="absolute-center" >
