@@ -77,6 +77,11 @@ _SPDEV.Layout.init = function(){
     
     });
 	
+	$('#viewHelpClusterLabel').html(_lang.helper_cluster_label);
+	$('#viewHelpClusterText').html(_lang.helper_clusters);
+	$('#viewHelpViewLabel').html(_lang.helper_view_label);
+	$('#viewHelpViewText').html(_lang.helper_views);
+	
 };
 
 _SPDEV.Layout.controlPanelResize = function(){

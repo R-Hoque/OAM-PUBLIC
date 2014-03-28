@@ -63,6 +63,8 @@
 "se_chooser_head": "Please choose a valid IATI Sector:",
 "se_assign_button": "ASSIGN THIS IATI SECTOR",
 "se_editsector_button": "SECTOR EDITOR",
+"helper_view_label": "Views",
 "helper_views": "Switching between 'Country System' and 'Donor System' allows you to view development assistance data as reported in country systems/databases (in terms of what they receive) and in donor systems/databases (interms of what they give). While these data should match in theory, significant discrepancies currently exist due to lack of reporting or differences in reporting practices.",
-"helper_clusters": "Map clusters represent groups of points that are close together with respect to the current zoom level of the map. The number in the center indicates the number of point locations clustered. Note that activites are composed of one or more locations.  Thus a cluster number may not be equal to the number of activites linked to a given cluster. The color wheel on the around theborder of the cluster is visual summary of the sectors assigned to the point locations within a cluster."
+"helper_cluster_label": "Map Clusters",
+helper_clusters": "<p>Map clusters represent groups of points that are close together with respect to the current zoom level of the map. The number in the center indicates the number of point locations clustered. Note that activites are composed of one or more locations.  Thus a cluster number may not be equal to the number of activites linked to a given cluster. </p><p>The color wheel on the around theborder of the cluster is visual summary of the sectors assigned to the point locations within a cluster.</p>"
 }

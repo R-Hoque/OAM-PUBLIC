@@ -172,10 +172,10 @@
             <div id="wrapperViewHelp" class="blocker wall-to-wall">
 						<div id="viewHelp" class="absolute-center" >
                             <div id="viewHelpClose" class="icon-close-01"></div>
-                            <h3>Views</h3>
-                            <p>Switching between 'Country System' and 'Donor System' allows you to view development assistance data as                                  reported in country systems/databases (in terms of what they receive) and in donor systems/databases (in                                terms of what they give). While these data should match in theory, significant discrepancies currently                                  exist due to lack of reporting or differences in reporting practices.</p>
+                            <h3 id="viewHelpViewLabel">Views</h3>
+                            <p id="viewHelpViewText">Switching between 'Country System' and 'Donor System' allows you to view development assistance data as                                  reported in country systems/databases (in terms of what they receive) and in donor systems/databases (in                                terms of what they give). While these data should match in theory, significant discrepancies currently                                  exist due to lack of reporting or differences in reporting practices.</p>
                             <div class="clearfix">
-                                <h3>Map CLusters</h3>
+                                <h3 id="viewHelpClusterLabel">Map CLusters</h3>
                                 <div id="viewHelpCluster">
                                     <img alt="Map cluster" title="Map cluster" src="img/clusterHelp.png"/>    
                                 </div>
