@@ -63,7 +63,7 @@
 		  location.reload();
 	    }
 	});
-  }
+  };
   
   _SPDEV.SectorEditor.loadStandardSectors = function(parent) {
       var cell, c, content = "";
@@ -87,7 +87,7 @@
 	    }
 	});
 
-  }
+  };
   
   // AJAX Call to read in DATA from FILE and DB
   _SPDEV.SectorEditor.readIATI = function() {
@@ -106,7 +106,7 @@
 	  	console.error(response);
 	  }
       });
-  }
+  };
   
   _SPDEV.SectorEditor.generateCells = function(data) {
       var cell1, cell2, c, content = "";
@@ -122,7 +122,7 @@
 	i++;
       }
       return content;
-  }
+  };
   
   _SPDEV.SectorEditor.afterload = function() {
       $('div.se_row').on('click',function() { 
@@ -130,7 +130,7 @@
       });
       
       _SPDEV.SectorEditor.loadingOff();
-  }
+  };
   
   
   _SPDEV.SectorEditor.rowClick = function(id) {
@@ -152,7 +152,7 @@
 	$('div.se_col.chooser').on('click',function() { 
 	  _SPDEV.SectorEditor.chooseClick(this.id);
 	});
-  }
+  };
 
   _SPDEV.SectorEditor.chooseClick = function(id) {
 	if (this.prevChooserSelect) {
@@ -168,7 +168,7 @@
 	$('#assign').on('click',function() { 
 	  _SPDEV.SectorEditor.updateSector();
 	});
-  }
+  };
   
   _SPDEV.SectorEditor.updateSector = function() {
 	_SPDEV.SectorEditor.loadingOn();
@@ -194,7 +194,7 @@
 		  _SPDEV.SectorEditor.loadingOff();
 	    }
 	});  
-  }
+  };
   _SPDEV.SectorEditor.submitChanges = function() {
 	_SPDEV.SectorEditor.loadingOn();
 	$.ajax({
@@ -211,19 +211,19 @@
 		  _SPDEV.SectorEditor.loadingOff();
 	    }
 	});  
-  }
+  };
   _SPDEV.SectorEditor.loadingOff = function() {
       $('#loading_bg').hide();
       $('#loading_main').hide();
-  }
+  };
   _SPDEV.SectorEditor.loadingOn = function() {
       $('#loading_bg').show();
       $('#loading_main').show();
-  }
+  };
   _SPDEV.SectorEditor.compare = function(a,b) {
     if (a.name < b.name)
       return -1;
     if (a.name > b.name)
       return 1;
     return 0;
-  }
+  };
