@@ -181,6 +181,9 @@ _SPDEV.Infobox.Manager.prototype.updateContent = function(locationIds){
 			    },
 	    
 			    error: function (jqXHR, textStatus, errorThrown) {
+
+			    	console.error(jqXHR.responseText);
+
 			    }
 				
 

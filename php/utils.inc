@@ -6,7 +6,7 @@
 
 
 		// Convert comma delimited string to array so we can validate
-/*			$ints = array_map("intval", explode(",", $commaDelimitedIntString));
+			$ints = array_map("intval", explode(",", $commaDelimitedIntString));
 
 			foreach ($ints as &$value) {
 				
@@ -15,7 +15,7 @@
 					return false;
 				}
 			}
-*/
+
 			return true;
 			
 	}

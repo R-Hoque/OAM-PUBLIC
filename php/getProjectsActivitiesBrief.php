@@ -1,6 +1,7 @@
 <?php
 
 	require('db.inc');
+	require('utils.inc');
 	
 	$l_ids = null;
 
@@ -12,18 +13,19 @@
     	
 		if (isset($_POST['l_ids'])) {
 	    	
-	    	$l_ids = intval($_POST['l_ids']);
+	    	$l_ids = $_POST['l_ids'];
 	    	
-	    	// Validate that this is an integer
-			if(is_int($l_ids) == false) {
-				throw new Exception('Bad Request', 400);
-			}
+	    	if(validateCommaDelimitedIntString($l_ids) == false) {
+	    		throw new Exception('Bad Request ', 400);
+	    	}
+
 		} else {
 			throw new Exception('Bad Request', 400);
 		}
 		
+
 		$sql="select * from pmt_infobox_menu('" . $l_ids . "')";
-		
+
 		$result = pg_query($dbPostgres, $sql);
 		
 		$rows = pg_fetch_all($result);
