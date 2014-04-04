@@ -32,14 +32,17 @@
     $line = fgets($f);
  //   fclose($f);
 
+
+
+    $fout = fopen("/usr/local/pmt_iati/" . $filename,'w');
+
     $writePath = "/usr/local/pmt_iati/" . $filename;
     $errMsg = "Cannot write to file" . $writePath;
     if (!is_writable($writePath)) { // Test if the file is writable
         header('HTTP/1.1 ' . '500' . " Cannot write to " . $writePath);
         die();//throw new Exception("Cannot write to file");
     }
-
-    $fout = fopen("/usr/local/pmt_iati/" . $filename,'w');
+    
     if (!strpos($line,"xml")) {
         fwrite($fout, $line);
     }
