@@ -22,9 +22,22 @@
     $filename = $country."-".time().".xml";
 //    move_uploaded_file( $_FILES["iati"]["tmp_name"], "/usr/local/pmt_iati/" . $filename);
 
+    if (!is_readable($_FILES["iati"]["tmp_name"])) { // Test if the file is writable 
+        header('HTTP/1.1 ' . '500' . " Cannot read uploaded file.");
+        die();
+        //throw new Exception("Cannot read uploaded file.", 400);
+    }
+
     $f = fopen($_FILES["iati"]["tmp_name"], 'r');
     $line = fgets($f);
  //   fclose($f);
+
+    $writePath = "/usr/local/pmt_iati/" . $filename;
+    $errMsg = "Cannot write to file" . $writePath;
+    if (!is_writable($writePath)) { // Test if the file is writable
+        header('HTTP/1.1 ' . '500' . " Cannot write to " . $writePath);
+        die();//throw new Exception("Cannot write to file");
+    }
 
     $fout = fopen("/usr/local/pmt_iati/" . $filename,'w');
     if (!strpos($line,"xml")) {
@@ -49,7 +62,8 @@
     else
       echo false;
 
-  } catch(Exception $e) {  
+  } catch(Exception $e) { 
+      echo  
       header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());
       die();
   }

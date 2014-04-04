@@ -62,21 +62,24 @@ _SPDEV.Upload.createForm = function() {
 	      // The url requires you submit a country via REST.
 	      var url = "php/uploadIATI.php";
 	      $.ajax({
-		  url: url,
-		  type: "POST",
-		  data: formdata,
-		  processData: false,
-		  contentType: false,
-		  success: function (res) {
-		      if (res == "1" or res == 1) {
-			  $("#upload_response").html(_lang.upload_success); 
-		      } else {
-			  $("#upload_response").html(_lang.upload_error);
-		      }
-		      // Ask the user to refresh the page one data is finished loading
-		      var btn = "<button id='btn_reload' onclick='location.reload();'>"+_lang.refresh_page+"</button>";
-		      $("#upload_response").append("<br/>"+btn); 
-		  }
+			  url: url,
+			  type: "POST",
+			  data: formdata,
+			  processData: false,
+			  contentType: false,
+			  success: function (res, textStatus, jqXHR) {
+			      if (res == "1" || res == 1) {
+				  $("#upload_response").html(_lang.upload_success); 
+			      } else {
+				  $("#upload_response").html(_lang.upload_error);
+			      }
+			      // Ask the user to refresh the page one data is finished loading
+			      var btn = "<button id='btn_reload' onclick='location.reload();'>"+_lang.refresh_page+"</button>";
+			      $("#upload_response").append("<br/>"+btn); 
+			  },
+			  error: function(jqXHR, textStatus, errorThrown){
+
+			  }
 	      });
 	    }
     });
