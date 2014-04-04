@@ -20,7 +20,24 @@
 
     // Change the uploaded file name to reflect the country as well as the current timestamp
     $filename = $country."-".time().".xml";
-    move_uploaded_file( $_FILES["iati"]["tmp_name"], "/usr/local/pmt_iati/" . $filename);
+//    move_uploaded_file( $_FILES["iati"]["tmp_name"], "/usr/local/pmt_iati/" . $filename);
+
+    $f = fopen($_FILES["iati"]["tmp_name"], 'r');
+    $line = fgets($f);
+ //   fclose($f);
+
+    $fout = fopen("/usr/local/pmt_iati/" . $filename,'w');
+    if (!strpos($line,"xml")) {
+        fwrite($fout, $line);
+    }
+    while (($buffer = fgets($f, 4096)) !== false) {
+          fwrite($fout, $buffer);
+    }
+    if (!feof($f)) {
+        echo "Error: unexpected fgets() fail\n";
+    }
+    fclose($f);
+    fclose($fout);
 
     // Execute the upload.  Database server name comes from the db.inc file
     

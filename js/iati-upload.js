@@ -68,7 +68,7 @@ _SPDEV.Upload.createForm = function() {
 		  processData: false,
 		  contentType: false,
 		  success: function (res) {
-		      if (res == "1") {
+		      if (res == "1" or res == 1) {
 			  $("#upload_response").html(_lang.upload_success); 
 		      } else {
 			  $("#upload_response").html(_lang.upload_error);
