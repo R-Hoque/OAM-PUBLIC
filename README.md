@@ -17,6 +17,30 @@ Project Title,
 5-Digit IATI Sector codes for each activity,
 Funding Organiation for each activity
 
+_Instalation Requirements_
+--------------------------
+sudo apt-get install apache2
+
+sudo apt-get install php5
+
+sudo apt-get install libapache2-mod-php5
+
+sudo apt-get install php5-pgsql
+
+sudo apt-get install php5-curl
+
+sudo /etc/init.d/apache2 restart
+
+
+_Change on the server to meet security requirements_
+
+sudo pico /etc/php5/apache2/php.ini
+
+Set "session.cookie_httponly"  option to "True"
+
+session.cookie_httponly = True;
+
+
 _Uploading Data_
 ----------------
 The OAM application supports uploading new IATI files but does have the following limitations:
