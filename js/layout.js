@@ -117,7 +117,6 @@ _SPDEV.Layout.setLanguage = function() {
   $('#wms_submit').html(_lang.wms_submit);
   $('#wms_dialog_title').html(_lang.wms_dialog_title);
   $('#footercopyright').html(_lang.copyright);
-  $('#footercopyright').html(_lang.copyright);
   $('#infoBoxPanelCollapser').html(_lang.hide);
   $('.allNone > a').each(function() {
       $(this).text(_lang.allnone);
@@ -127,8 +126,8 @@ _SPDEV.Layout.setLanguage = function() {
   $('#viewControl_gov').html(_lang.government);
   $('.listviewheadertitle')[0].innerHTML = _lang.name;
   $('.listviewheadertitle')[1].innerHTML = _lang.fundor;
-  $('.listviewheadertitle')[3].innerHTML = _lang.name;
-  $('.listviewheadertitle')[4].innerHTML = _lang.fundor;
+  //$('.listviewheadertitle')[3].innerHTML = _lang.name;
+  //$('.listviewheadertitle')[4].innerHTML = _lang.fundor;
   $('#controlPanel > header > span').text(_lang.hide);
   $('#uploadIATI').html(_lang.upload);
   $('#edit_sector').html(_lang.se_editsector_button);
