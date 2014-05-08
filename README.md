@@ -17,7 +17,7 @@ Project Title,
 5-Digit IATI Sector codes for each activity,
 Funding Organiation for each activity
 
-_Instalation Requirements_
+_Installation Requirements_
 --------------------------
 sudo apt-get install apache2
 
