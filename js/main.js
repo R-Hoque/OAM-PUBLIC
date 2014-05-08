@@ -9,7 +9,7 @@ _SPDEV.loadApp = function(dg){
 	_SPDEV.DownloadBtn.init();
 	
 	_SPDEV.DataSources.Data.Gov = _SPDEV.DataSources.DataGroups[dg];
-	_SPDEV.DataSources.Data.Donor.COUNTRY_IDS = _SPDEV.DataSources.Data.Gov.COUNTRY_IDS;
+	//_SPDEV.DataSources.Data.Donor.COUNTRY_IDS = _SPDEV.DataSources.Data.Gov.COUNTRY_IDS;
 	$('#locationButton').html(dg.toString().toUpperCase());
 
 	

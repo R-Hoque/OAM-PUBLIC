@@ -232,7 +232,7 @@ _SPDEV.DataSources.ContextualLayers = {
 //and then configure a new 'data group' here.
 
 _SPDEV.DataSources.Data = {
-	Donor : {
+	/*Donor : {
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
 		UPDATE_CHANNEL: 'updateWorldBankData',
@@ -249,7 +249,7 @@ _SPDEV.DataSources.Data = {
 		clusterLayerManager: null,
 		facetFilterWrapper: null,
 		overviewChartWrapper:null
-	},
+	},*/
 	Gov : null /*{
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
 		FILTER_TAXONOMY_IDS: '15',
@@ -291,7 +291,8 @@ _SPDEV.DataSources.DataGroups  = {
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
 		initialMapView: {lat:-16.5, lng: -67, zoom: 5}
-	},
+	}
+	/*,
 		'Colombia' : {
 		ID: 'Colombia',
 		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
@@ -412,6 +413,7 @@ _SPDEV.DataSources.DataGroups  = {
 		overviewChartWrapper:null,
 		initialMapView: {lat:14.1, lng:-86.5, zoom: 7}
 	}
+	*/
 };
 
 _SPDEV.DataSources.init = function(map, filterControlWrapper){

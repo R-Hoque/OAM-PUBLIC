@@ -144,15 +144,15 @@
         	</div>
         </div>
         
-		<footer id="footerContainer">
-                <?php 
+		<footer id="footerContainer" class="clearfix">
+                <!-- <?php 
                     if (!isset($_SESSION['oamuser'])) {
                         echo '<div id="login" class="dropdown login">LOGIN</div>';
                     } else {
                         echo '<form action="php/logout.php" method="post"><input id="uxLogout_country" type="hidden" name="country" value="">
           <input type="submit"  id="logout" class="dropdown login" value="LOGOUT" /></form>';
                     }
-                ?>
+                ?> -->
             
             <div id="footercopyright"></div>
 

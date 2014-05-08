@@ -1300,6 +1300,7 @@ img.lb {
             text-transform: capitalize; }
 
 #viewControl {
+  display: none;
   background-color: #fff;
   padding: 5px 10px;
   font-size: 11px;
