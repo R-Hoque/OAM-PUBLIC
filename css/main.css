@@ -813,7 +813,7 @@ body {
 
 #wrapper0 {
   position: absolute;
-  top: 38px;
+  top: 100px;
   bottom: 40px;
   left: 0;
   right: 0;
@@ -1020,7 +1020,7 @@ body {
   margin: 0 10px; }
 
 #appHeader {
-  height: 38px;
+  height: 100px;
   padding-left: 20px;
   background-color: #FFF;
   color: #676868; }
@@ -1051,7 +1051,10 @@ body {
     text-align: center; }
 
 #logo {
-  line-height: 38px; }
+  line-height: 38px;
+    margin: 0 auto;
+    width: 937px;
+}
   #logo a {
     display: block; }
 

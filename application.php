@@ -60,21 +60,12 @@
 
         <!-- Add your site or application content here -->
 		<header id="appHeader" class="clearfix">
-			<div id="logo" class="left">
-				<a href="index.php" ><img src="img/oamLogo.png" alt="Open Aid Partnership" /></a>
+			<div id="logo" class="">
+				<a href="http://www.vipfe.gob.bo/" target="_blank"><img src="img/banner_blanco_VIPFE.png" alt="Open Aid Partnership" /></a>
 			</div>
 			
 			<!-- Application navigation-->
-			<nav class="header-nav right">
-				<ul class="clearfix">
-					<li id="locationButton" class="region-select dropdown"></li>
-					<li><a id='menu_associations' href="partnership.html">PARTNERSHIP</a></li>
-					<li><a id='menu_news' href="news.html">NEWS</a></li>
-					<!--attempting to move login to applicaiton page footer-->
-					<!--<li id="login" class="dropdown login"><a id="login_name" title="Login">LOGIN</a></li>-->
-					
-				</ul>
-			</nav>
+
 		</header>
         
         <div id="wrapper0">
