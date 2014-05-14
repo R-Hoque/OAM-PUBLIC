@@ -78,7 +78,8 @@
 			$data[] =  json_decode($row["response"]);
 		}
 		
-		echo json_encode($data, JSON_NUMERIC_CHECK);	
+		$json = json_encode($data, JSON_NUMERIC_CHECK);
+        echo $json;
 			
 	} catch(Exception $e) {  
   	    header('HTTP/1.1 ' . $e->getCode() . ' ' . $e->getMessage());

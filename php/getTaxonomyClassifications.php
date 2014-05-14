@@ -73,8 +73,13 @@
 		$rows = pg_fetch_all($result);
 		
 		$data = array();
+
+        foreach($rows as $row) {
+
+            $data[] =  json_decode($row["response"]);
+        }
 		
-		
+		/*
 		if($language == 'spanish'){
 				
 			$rec = json_decode($rows[0]['response']);
@@ -102,7 +107,7 @@
 		} else {
 			 throw new Exception('Unsupported language translation requested.');
 		}
-		
+		*/
 		echo json_encode($data, JSON_NUMERIC_CHECK);	
 			
 	} catch(Exception $e) {  

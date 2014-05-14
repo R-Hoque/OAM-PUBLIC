@@ -275,12 +275,12 @@ _SPDEV.DataSources.DataGroups  = {
 	
 	'Bolivia' : {
 		ID: 'Bolivia',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 7,
+		FILTER_TAXONOMY_IDS: '7',
 		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [769],
-		COUNTRY_IDS: [50],
-		ORG_ROLE_ID: 496,
+		DATAGROUP_IDS: [824],
+		COUNTRY_IDS: [],
+		ORG_ROLE_ID: 1,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'boliviaLocations',
@@ -590,7 +590,7 @@ _SPDEV.DataSources.init = function(map, filterControlWrapper){
 				},
 			  	
 			  	// Failure	- stop the spinner
-		  		function(a1, a2){ 
+		  		function(a1, a2, a3){
 		  			
 		  			_loadingCtr('--');
 			  		

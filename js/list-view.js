@@ -27,8 +27,8 @@ _SPDEV.ListView.Manager = function(updateChannel, dataGroupId, countryIds, secto
 	this.params.filterOrg= "";
 	this.params.src = dataGroupId;
 	this.params.country = countryIds;
-	this.params.sectorcode = 15;
-	this.params.sector = 15; // Sector taxonomy ID
+	this.params.sectorcode = 7;
+	this.params.sector = 7; // Sector taxonomy ID
 	this.params.donor = 9; // Organisation taxonomy ID
 	this.params.sectorLanguage = sectorLanguage;
 	// Create the header

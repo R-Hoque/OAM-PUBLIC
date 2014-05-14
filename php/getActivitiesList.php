@@ -4,10 +4,12 @@
 	require('utils.inc');
 	require('translate.inc');
 	
+
+
 	$sectorcode = null;
 	$src = null;
 	$country = null;
-	$offset = $_POST['offset'];
+	$offset = null;
 	$orderby = null;
 	$escapedOrderBy = null;
 	$order = null;
@@ -16,18 +18,17 @@
 	$language = null;
 	$impossibleId = "-999999";
 	$classificationsArr = null;
+	$sectorArr = null;
 	$orgArr = null;
 
-	$sectors = $_POST['sector'];
-	$orgs = $_POST['orgs'];
 
 	try {
 
 		//echo "Ref: " . $_SERVER['HTTP_REFERER'];
 
-		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === false) {
-			throw new Exception('Bad Request', 400);
-		}
+//		if(stristr($_SERVER['HTTP_REFERER'], $serverSubstring) === false) {
+//			throw new Exception('Bad Request', 400);
+//		}
 
 		if (isset($_POST['sectorcode'])) {
 	    	
@@ -52,7 +53,7 @@
 		} else {
 			throw new Exception('Bad Request', 400);
 		}
-
+/*
 		if (isset($_POST['country'])) {
 	    	
 	    	$country = intval($_POST['country']);
@@ -64,7 +65,7 @@
 		} else {
 			throw new Exception('Bad Request ', 400);
 		}
-
+*/
 		if (isset($_POST['offset'])) {
 	    	
 	    	$offset = intval($_POST['offset']);
@@ -125,7 +126,7 @@
 
 		if (isset($_POST['orgs'])) {
 
-	    	$sectors = $_POST['orgs'];
+	    	$orgs = $_POST['orgs'];
 	    	
 	    	if(validateCommaDelimitedIntString($orgs) == false) {
 	    		throw new Exception('Bad Request ', 400);
@@ -133,7 +134,13 @@
 
 		} 
 
-		$classificationsArr = explode(",", $sectors);
+
+		if($sectors == '') {
+			$sectorArr = array();
+		} else {
+			$sectorArr = explode(",", $sectors);
+			
+		}
 		
 		$formattedSectors = null;
 
@@ -145,6 +152,12 @@
 		
 		$orgArr = explode(",", $orgs);
 		
+		if($country == null) {
+			$classificationsArr = array_merge(array($src), $sectorArr);
+		} else {
+			$classificationsArr = array_merge(array($src), $sectorArr, array($country));
+		}
+
 		// client wants no selection === no data returned; but our db function thinks no classification or org ids mean 'all data'; so this is a work around
 		if(in_array ( $impossibleId, $classificationsArr ) || in_array($impossibleId, $orgArr)) {
 		  
@@ -153,9 +166,11 @@
 			return;	
 		}
 		
-		$records = getRecords($sectorcode, $src, $country, $formattedSectors, $orgs, $escapedOrderBy, $order, $offset, $language);
+
+
+		$records = getRecords($sectorcode, implode(",", $classificationsArr), $orgs, $escapedOrderBy, $order, $offset, $language);
 		
-		$cnt = getCount($src, $country, $formattedSectors , $orgs, $orderby, $order, $offset);
+		$cnt = getCount(implode(",", $classificationsArr), $orgs, $orderby, $order, $offset);
 		
 		$page = $offset/100 + 1;
 		$totalpages = ceil($cnt/100)+1;
@@ -167,13 +182,12 @@
  	    die();
 	}
 	
-	function getRecords($sectorcode, $src, $country, $sectors, $orgs, $orderby, $order, $offset, $lang) {
+	function getRecords($sectorcode, $classifications, $orgs, $orderby, $order, $offset, $lang) {
 	      global $dbPostgres, $sectorDictionary;
 	      // Get the data
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
-		    $sql = "SELECT * FROM pmt_activity_listview('".$src.','.$country.$sectors."','".$orgs."',null, null, null, '".$sectorcode."','".$orderby." ".$order."', 100, ".$offset.")";
-		    //echo $sql;
+		    $sql = "SELECT * FROM pmt_activity_listview('". $classifications."','".$orgs."',null, null, null, '".$sectorcode."','".$orderby." ".$order."', 100, ".$offset.")";
 		    
 		    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 		    $r = array();
@@ -230,13 +244,13 @@
 	  return $tmpString;
 	}
 	
-	function getCount($src, $country, $sectors, $orgs) {
+	function getCount($classifications, $orgs) {
 	    global $dbPostgres;
 
 	    $rows = null;
 		
 		try {
-		    $sql = "SELECT * FROM pmt_activity_listview_ct('".$src.','.$country.$sectors."','".$orgs."','', null, null)";
+		    $sql = "SELECT * FROM pmt_activity_listview_ct('".$classifications."','".$orgs."','', null, null)";
 		    $result = pg_query($dbPostgres, $sql);
 		    $rows = pg_fetch_object($result);
 		    pg_free_result($result);
