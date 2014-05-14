@@ -16,3 +16,6 @@ php/login_salted.php
 php/db.inc
 php/login.php
 php/spatialdev.pem
+
+#phpWebStorm
+.idea/
