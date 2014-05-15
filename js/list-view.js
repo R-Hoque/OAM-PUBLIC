@@ -216,6 +216,28 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 		      content += data.locations[0] && data.locations[0].gaul1_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.department + ': </div>'+data.locations[0].gaul1_name +'</div>' : '';
 		      content += data.locations[0] && data.locations[0].gaul2_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.muni + ': </div>'+data.locations[0].gaul2_name +'</div>' : '';
 		      content += data.locations[0] && data.locations[0].lat && data.locations[0].long ? '<div class="listview_details"><div class="listview_lbl">' + _lang.coordinates+ ': </div>'+data.locations[0].lat + ', ' + data.locations[0].long +'</div>' : '';
+		      
+		      var taxonomyList = _.pluck(data.taxonomy, 'taxonomy');
+		      taxonomyList = _.uniq(taxonomyList);
+		      taxonomyList = _.without(taxonomyList, 'Data Group', 'Country', 'Organisation Role');
+
+		      _.each(taxonomyList, function(taxName){
+
+
+
+		      	var taxesToRender = _.where(data.taxonomy, {taxonomy: taxName});
+
+		      	content += '<div class="listview_details"><div class="listview_lbl">' + taxName +': </div>';
+
+		      	var classifications = _.pluck(taxesToRender, 'classification');
+
+		      	content += classifications.join(', ') + '</div>';
+
+
+		      });
+
+		      
+
 		      var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);
 		},
 		'error': function(response) {

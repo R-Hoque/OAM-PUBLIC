@@ -23,15 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="getActivitiesList.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="getActivitiesList.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/getActivitiesList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="-1.25" vertical-offset="30" max-vertical-offset="4230">
-              <folding>
-                <marker date="1400051595000" expanded="true" signature="344:1070" placeholder="..." />
-                <marker date="1400051595000" expanded="true" signature="5938:6249" placeholder="..." />
-                <marker date="1400051595000" expanded="true" signature="5938:6099" placeholder="..." />
-              </folding>
+            <state line="189" column="174" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.25787964" vertical-offset="2745" max-vertical-offset="4440">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,12 +35,12 @@
       <file leaf-file-name="list-view.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/list-view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="26" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="5205">
+            <state line="51" column="0" selection-start="1744" selection-end="1744" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="5505">
               <folding>
-                <marker date="1400050764000" expanded="true" signature="178:508" placeholder="..." />
-                <marker date="1400050764000" expanded="true" signature="268:492" placeholder="..." />
-                <marker date="1400050764000" expanded="true" signature="286:474" placeholder="..." />
-                <marker date="1400050764000" expanded="false" signature="5601:5636" placeholder="..." />
+                <marker date="1400174507000" expanded="true" signature="178:508" placeholder="..." />
+                <marker date="1400174507000" expanded="true" signature="268:492" placeholder="..." />
+                <marker date="1400174507000" expanded="true" signature="286:474" placeholder="..." />
+                <marker date="1400174507000" expanded="false" signature="5601:5636" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -68,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data-sources.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="data-sources.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/data-sources.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="281" column="22" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.41095892" vertical-offset="4095" max-vertical-offset="10500">
+            <state line="281" column="22" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="10500">
               <folding />
             </state>
           </provider>
@@ -127,8 +123,8 @@
         <option value="$PROJECT_DIR$/php/getOrgs.php" />
         <option value="$PROJECT_DIR$/php/getTaxonomyClassifications.php" />
         <option value="$PROJECT_DIR$/js/list-view.js" />
-        <option value="$PROJECT_DIR$/php/getActivitiesList.php" />
         <option value="$PROJECT_DIR$/js/data-sources.js" />
+        <option value="$PROJECT_DIR$/php/getActivitiesList.php" />
       </list>
     </option>
   </component>
@@ -151,8 +147,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="819" />
+    <option name="width" value="1280" />
+    <option name="height" value="639" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -288,23 +284,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="819" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="639" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18596491" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18194444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52533334" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2046875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23333333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -334,110 +330,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>38</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>50</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>53</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>41</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>62</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>65</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>74</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>77</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>88</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>98</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>101</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>110</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>113</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>121</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>131</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>2</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/php/getActivitiesList.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="54" />
+      <option name="time" value="57" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/php/getActivitiesList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="4200">
-          <folding>
-            <marker date="1400051595000" expanded="true" signature="344:1070" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6249" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6099" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -445,10 +352,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="26" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="5205">
           <folding>
-            <marker date="1400050764000" expanded="true" signature="178:508" placeholder="..." />
-            <marker date="1400050764000" expanded="true" signature="268:492" placeholder="..." />
-            <marker date="1400050764000" expanded="true" signature="286:474" placeholder="..." />
-            <marker date="1400050764000" expanded="false" signature="5601:5636" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="178:508" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="268:492" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="286:474" placeholder="..." />
+            <marker date="1400174507000" expanded="false" signature="5601:5636" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -505,11 +412,7 @@
     <entry file="file://$PROJECT_DIR$/php/getActivitiesList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="4230">
-          <folding>
-            <marker date="1400051595000" expanded="true" signature="344:1070" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6249" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6099" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -609,32 +512,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/getActivitiesList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="-1.25" vertical-offset="30" max-vertical-offset="4230">
-          <folding>
-            <marker date="1400051595000" expanded="true" signature="344:1070" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6249" placeholder="..." />
-            <marker date="1400051595000" expanded="true" signature="5938:6099" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/list-view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="26" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="5205">
+        <state line="51" column="0" selection-start="1744" selection-end="1744" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="5505">
           <folding>
-            <marker date="1400050764000" expanded="true" signature="178:508" placeholder="..." />
-            <marker date="1400050764000" expanded="true" signature="268:492" placeholder="..." />
-            <marker date="1400050764000" expanded="true" signature="286:474" placeholder="..." />
-            <marker date="1400050764000" expanded="false" signature="5601:5636" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="178:508" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="268:492" placeholder="..." />
+            <marker date="1400174507000" expanded="true" signature="286:474" placeholder="..." />
+            <marker date="1400174507000" expanded="false" signature="5601:5636" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/data-sources.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="22" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.41095892" vertical-offset="4095" max-vertical-offset="10500">
+        <state line="281" column="22" selection-start="6980" selection-end="6980" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="10500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/getActivitiesList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="174" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.25787964" vertical-offset="2745" max-vertical-offset="4440">
           <folding />
         </state>
       </provider>

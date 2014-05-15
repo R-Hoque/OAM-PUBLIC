@@ -188,7 +188,7 @@
 	      try {
 		    //INPUT: taxid (15 = sector), datagroup followed by sector ids, org ides, unassigned tax ids, order by, limit, offset.
 		    $sql = "SELECT * FROM pmt_activity_listview('". $classifications."','".$orgs."',null, null, null, '".$sectorcode."','".$orderby." ".$order."', 100, ".$offset.")";
-		    
+
 		    $result = pg_query($dbPostgres, $sql) or die(pg_last_error());
 		    $r = array();
 		    while($rows = pg_fetch_object($result)) {
