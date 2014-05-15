@@ -236,6 +236,9 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 
 		      });
 
+
+
+
 		      
 
 		      var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);

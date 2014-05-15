@@ -50,10 +50,10 @@ echo "Exported from git repo."
 
 # copy in .gitignore files
 cp $1/php/db.inc $2/php/
-cp $1/php/user.inc $2/php/
-cp $1/php/login_salted.php $2/php/
-cp $1/php/logout.php $2/php/
-cp $1/php/session.inc $2/php/
+#cp $1/php/user.inc $2/php/
+#cp $1/php/login_salted.php $2/php/
+#cp $1/php/logout.php $2/php/
+#cp $1/php/session.inc $2/php/
 
 # adjust db.inc for type of deploy
 if [ "$3" == "prod" ]; then

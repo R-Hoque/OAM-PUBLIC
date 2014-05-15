@@ -1678,7 +1678,8 @@ img.lb {
   background-image: url("../img/download_down.png");
   background-repeat: no-repeat;
   background-position: 100px 9px;
-  cursor: pointer; }
+  cursor: pointer;
+   display: none;}
 
 #downloadFORM {
   background-color: #ea7820;
