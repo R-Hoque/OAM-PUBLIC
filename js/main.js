@@ -73,7 +73,7 @@ $(document).ready(function(){
 	var url = document.URL;
 	var queryPars = $.parseParams( url.split('?')[1] || '' );
 	
-	if(typeof queryPars.dg === 'undefined') {
+	if(typeof queryPars.dg === 'Bolivia') {
 		window.location = './index.php';
 		return;
 	} else if (typeof _SPDEV.DataSources.DataGroups[queryPars.dg] === 'undefined') {
