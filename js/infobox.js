@@ -307,6 +307,14 @@ _SPDEV.Infobox.ModelView = Backbone.View.extend({
 
         });
 
+        var taxesToRender = _.where(data.taxonomy, {taxonomy: 'Organisation Role'});
+
+        content += '<div class="infoBoxDesc"><div class="infoBoxDescTitle">' + 'Organisation Role' +': </div>';
+
+        var orgsRole = _.pluck(taxesToRender, 'org');
+
+        content += orgsRole.join(', ') + '</div>';
+
 
 		var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);
 		

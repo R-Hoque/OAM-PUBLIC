@@ -236,6 +236,15 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 
 		      });
 
+            var taxesToRender = _.where(data.taxonomy, {taxonomy: 'Organisation Role'});
+
+            content += '<div class="listview_details"><div class="listview_lbl">' + 'Organisation Role' +': </div>';
+
+            var orgsRole = _.pluck(taxesToRender, 'org');
+
+            content += orgsRole.join(', ') + '</div>';
+
+
 
 
 
