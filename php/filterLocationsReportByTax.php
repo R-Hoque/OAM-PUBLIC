@@ -92,7 +92,9 @@
 
 			
 			$sql = "SELECT * FROM pmt_filter_locations(" . $summaryTax. ", '". $classifications ."', '" . $organizations ."', '', ". $startDate .", ".$endDate.")";
-	
+			
+			
+
 			$result = pg_query($dbPostgres, $sql);
 			
 			$rows = pg_fetch_all($result);

@@ -77,7 +77,7 @@
     _tileLayers.createLayer("http://54.227.245.32:8080/geoserver/oam/wms","oam:Total_Poblacion_2001","Total Poblacion 2001");
     _tileLayers.createLayer("http://54.227.245.32:8080/geoserver/oam/wms","oam:Total_Poblacion_2010","Total Poblacion 2010");
     _tileLayers.createLayer("http://54.227.245.32:8080/geoserver/oam/wms","oam:Percent_Extreme_Pobreza","Percent Extreme Pobreza");
-    
+
     
   }
   
