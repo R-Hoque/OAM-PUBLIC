@@ -119,7 +119,7 @@ _SPDEV.ListView.Manager.prototype.loadData = function(offset, orderby, order) {
 		'offset' : this.params.offset,
 		'orderby' : this.params.orderby,
 		'order' : this.params.order,
-		'sector' : this.params.filterSector,
+		'sectors' : this.params.filterSector,
 		'orgs' : this.params.filterOrg,
 		'src' : this.params.src,
 		'country': this.params.country,

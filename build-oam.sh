@@ -74,9 +74,11 @@ rm $2".tar.gz"
 tar -zcf $2.tar.gz $2
 
 # deliver to the appropriate server
-if [ "$3" == "prod" ]; then
-	scp -i $4 $2.tar.gz ubuntu@54.83.0.35:oam-public
+# if [ "$3" == "prod" ]; then
+# 	#scp -i $4 $2.tar.gz ubuntu@54.83.0.35:oam-public
+#   scp oam-local-build.tar.gz samuel@172.16.13.33:/var/www
 
-elif [ "$3" == "stage" ]; then
-  scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
-fi
+# elif [ "$3" == "stage" ]; then
+#   #scp -i $4 $2.tar.gz ubuntu@54.83.4.25:oam-public
+#   scp oam-local-build.tar.gz samuel@172.16.13.33:/var/www
+# fi
