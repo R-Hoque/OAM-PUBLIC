@@ -44,9 +44,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    },{
-		    alias: 'test1',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:BolivianIndicatorsPov',
+		    alias: 'Mun',
+		    serviceURL: 'http://geo.gob.bo/geoserver/mdpdd/wms',
+		    layers: 'mdpdd:NumeroHabitantes_muni02',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -55,9 +55,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    },{
-		    alias: 'test2',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:BolivianIndicatorsPov',
+		    alias: 'Veg',
+		    serviceURL: 'http://geo.gob.bo/geoserver/mdpdd/wms',
+		    layers: 'codveg7',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -66,9 +66,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    },{
-		    alias: 'test3',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:BolivianIndicatorsPov',
+		    alias: 'Estacion De Gas',
+		    serviceURL: 'http://geo.gob.bo/geoserver/mdpdd/wms',
+		    layers: 'EstaciondeGas',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -77,9 +77,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 	    },{
-		    alias: 'test4',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:BolivianIndicatorsPov',
+		    alias: 'Estacion De Gas',
+		    serviceURL: 'http://geo.gob.bo/geoserver/mdpdd/wms',
+		    layers: 'EstaciondeGas',
 		    state: false,
 		    mapLayer : null,
 		    format: 'img/png',
@@ -87,199 +87,9 @@ _SPDEV.DataSources.ContextualLayers = {
 		    type: "WMS",
 		    mapServer: 'GeoServer',
 		    showLegend: true,
-	    },{
-		    alias: 'test5',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:BolivianIndicatorsPov',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	'Kenya': [
-	    {
-		    alias: 'Poverty Headcount (%, 2006)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:kenya_poverty',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-	    	    {
-		    alias: 'Total Population (2009)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:kenya_population',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	   
-	   //WMS Inidcators for Honduras
-	   'Honduras': [
-	    {
-		    alias: 'Poverty Headcount (%, 2001)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Honduras_socioeco',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    },
-	    {
-	    alias: 'Total Population (2001)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Honduras_socioeco_Population',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,	
-	    
-	    },	
-	        {
-	    	
-	    	alias: 'Malnutrition (%, 2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:honduras_dhs_2005_wgs84',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    	
-	    }],
-	   'Haiti': [
-	    {
-		    alias: 'Poverty Headcount (%, 2001)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:HaitiPoverty',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-	    {
-		    alias: 'Total Population (2009)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:HaitiPopulation',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-	    {
-	    	alias: 'Malnutrition (%, 2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:HaitiMalnutrition',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    }],
-	    //NEPAL WMS Indicators
-	'Nepal': [
+	    }
 
-	    {
-		    alias: 'Total Population (2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Nepal_Pop_2011',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-		
-	    {
-		    alias: 'Malnutrition (%, 2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Nepal_mal_2011',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-	    }],
-	    
-	    //Malawi WMS Indicators
-	 'Malawi': [
-	 {
-		    alias: 'Poverty Headcounts (%, 2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Poverty',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-	    
-	    {
-		    alias: 'Total Population (2008)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Population',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-		    
-	    },
-	     {
-		    
-		alias: 'Malnutrition (%, 2011)',
-		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
-		    layers: 'oam:Malawi_Malnutrition',
-		    state: false,
-		    mapLayer : null,
-		    format: 'img/png',
-		    transparent: true,
-		    type: "WMS",
-		    mapServer: 'GeoServer',
-		    showLegend: true,
-
-	    }]
+	    ]
 	    
 	
 };
@@ -330,12 +140,12 @@ _SPDEV.DataSources.DataGroups  = {
 	
 	'Bolivia' : {
 		ID: 'Bolivia',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 7,
-		FILTER_TAXONOMY_IDS: '7',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 3,
+		FILTER_TAXONOMY_IDS: '3',
 		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [824],
+		DATAGROUP_IDS: [693],
 		COUNTRY_IDS: [],
-		ORG_ROLE_ID: 1,
+		ORG_ROLE_ID: 3,
 		displayOnLoad: true,
 		filterStore: null,
 		mapLayerId: 'boliviaLocations',
@@ -347,128 +157,6 @@ _SPDEV.DataSources.DataGroups  = {
 		overviewChartWrapper:null,
 		initialMapView: {lat:-16.5, lng: -67, zoom: 5}
 	}
-	/*,
-		'Colombia' : {
-		ID: 'Colombia',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [810],
-		COUNTRY_IDS: [72],
-		ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'colombiaLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:-2.2, lng: -75.5, zoom: 5}
-	},
-	
-	'Nepal' : {
-		ID: 'Nepal',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [772],
-		COUNTRY_IDS: [179],
-				ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'boliviaLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:28.3, lng:82.5, zoom: 7}
-	},
-	
-	'Malawi' : {
-		ID: 'Malawi',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [771],
-		COUNTRY_IDS: [157],
-				ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'boliviaLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:-13, lng:34, zoom: 6}
-	},
-	
-	'Kenya' : {
-		ID: 'Kenya',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [770],
-		COUNTRY_IDS: [139],
-				ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'kenyaLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:0.386, lng:37.97, zoom: 6}
-	},
-	
-	'Haiti' : {
-		ID: 'Haiti',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [786],
-		COUNTRY_IDS: [119],
-				ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'haitiLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:18.9, lng:-73.1, zoom: 8}
-	},
-	
-		
-	'Honduras' : {
-		ID: 'Honduras',
-		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
-		FILTER_TAXONOMY_IDS: '15',
-		UPDATE_CHANNEL: 'updateGovData',
-		DATAGROUP_IDS: [787],
-		COUNTRY_IDS: [122],
-				ORG_ROLE_ID: 496,
-		displayOnLoad: true,
-		filterStore: null,
-		mapLayerId: 'hondurasLocations',
-		locationsObj: null,
-		taxonomyClassifications: null,
-		isActive: true,
-		clusterLayerManager: null,
-		facetFilterWrapper: null,
-		overviewChartWrapper:null,
-		initialMapView: {lat:14.1, lng:-86.5, zoom: 7}
-	}
-	*/
 };
 
 _SPDEV.DataSources.init = function(map, filterControlWrapper){
