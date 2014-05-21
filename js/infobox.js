@@ -271,49 +271,20 @@ _SPDEV.Infobox.ModelView = Backbone.View.extend({
 		var data = this.model.attributes;
 		
 		
-		var c = data.taxonomy.length -1;
-		while(c >= 0) {
-		    if (data.taxonomy[c].taxonomy == "Sector")
-		      data.sector = data.taxonomy[c].classification;
-		    c--;
-		}
-		
-		var content = '<div class="infoBoxName">' + data.title+ '</div>'; 
-		content += data.desc ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.description+': </div>'+data.desc+'</div>' : '';
-		content += data.sector ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">Sector: </div>'+data.sector+'</div>' : '';
-		content += data.amount ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.cost+': </div>'+parseInt(data.amount).formatMoney(2,'.',',') + ' USD</div>' : '';
-		content += data.start_date && data.end_date ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.dates+': </div>'+data.start_date + ' - ' + data.end_date +'</div>' : '';
-		content += data.locations[0] && data.locations[0].gaul0_name ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.country+': </div>'+data.locations[0].gaul0_name +'</div>' : '';
-		content += data.locations[0] && data.locations[0].gaul1_name ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.department+': </div>'+data.locations[0].gaul1_name +'</div>' : '';
-		content += data.locations[0] && data.locations[0].gaul2_name ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.muni+': </div>'+data.locations[0].gaul2_name +'</div>' : '';
-		content += data.locations[0] && data.locations[0].lat && data.locations[0].long ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">'+_lang.coordinates+': </div>'+data.locations[0].lat + ', ' + data.locations[0].long +'</div>' : '';
+		var c = data.length -1;
+ 
 
-        var taxonomyList = _.pluck(data.taxonomy, 'taxonomy');
-        taxonomyList = _.uniq(taxonomyList);
-        taxonomyList = _.without(taxonomyList, 'Data Group', 'Country', 'Organisation Role');
+		var content = "";
 
-        _.each(taxonomyList, function(taxName){
+         _.each(data, function(value, label){
 
+		      if (label != "a_id"){
 
+		      content += label ? '<div class="infoBoxDesc"><div class="infoBoxDescTitle">' + label + ': </div>'+value+'</div>' : '';
 
-            var taxesToRender = _.where(data.taxonomy, {taxonomy: taxName});
+		  		}
 
-            content += '<div class="infoBoxDesc"><div class="infoBoxDescTitle">' + taxName +': </div>';
-
-            var classifications = _.pluck(taxesToRender, 'classification');
-
-            content += classifications.join(', ') + '</div>';
-
-
-        });
-
-        var taxesToRender = _.where(data.taxonomy, {taxonomy: 'Organisation Role'});
-
-        content += '<div class="infoBoxDesc"><div class="infoBoxDescTitle">' + 'Organisation Role' +': </div>';
-
-        var orgsRole = _.pluck(taxesToRender, 'org');
-
-        content += orgsRole.join(', ') + '</div>';
+		      });
 
 
 		var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);

@@ -23,7 +23,7 @@
 			throw new Exception('Bad Request', 400);
 		}
 
-		$sql="SELECT * FROM pmt_activity_details(".$activity_id.");";
+		$sql="SELECT * FROM bolivia_activity(".$activity_id.");";
 
 		$result = pg_query($dbPostgres, $sql) or die("error");
 		      

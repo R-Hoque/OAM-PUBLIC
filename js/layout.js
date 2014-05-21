@@ -125,7 +125,7 @@ _SPDEV.Layout.setLanguage = function() {
   $('#viewControl_donor').html(_lang.main_chart_dropdown1);
   $('#viewControl_gov').html(_lang.government);
   $('.listviewheadertitle')[0].innerHTML = _lang.name;
-  $('.listviewheadertitle')[1].innerHTML = _lang.fundor;
+  $('.listviewheadertitle')[1].innerHTML = _lang.implementor;
   //$('.listviewheadertitle')[3].innerHTML = _lang.name;
   //$('.listviewheadertitle')[4].innerHTML = _lang.fundor;
   $('#controlPanel > header > span').text(_lang.hide);

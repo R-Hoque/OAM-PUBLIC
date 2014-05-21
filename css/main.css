@@ -919,7 +919,9 @@ body {
     #wmsLegend > header > div {
       margin: 0 9px; }
   #wmsLegend .wms-legend-wrapper {
-    padding: 5px 9px 9px; }
+    padding: 5px 9px 9px;
+    max-height: 150px;
+    overflow: auto; }
     #wmsLegend .wms-legend-wrapper .legend-header {
       font-family: 'Gotham-Book'; }
 

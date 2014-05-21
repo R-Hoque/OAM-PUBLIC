@@ -27,9 +27,9 @@ _SPDEV.ListView.Manager = function(updateChannel, dataGroupId, countryIds, secto
 	this.params.filterOrg= "";
 	this.params.src = dataGroupId;
 	this.params.country = countryIds;
-	this.params.sectorcode = 7;
-	this.params.sector = 7; // Sector taxonomy ID
-	this.params.donor = 9; // Organisation taxonomy ID
+	this.params.sectorcode = 3;
+	this.params.sector = 3; // Sector taxonomy ID
+	this.params.donor = 2; // Organisation taxonomy ID
 	this.params.sectorLanguage = sectorLanguage;
 	// Create the header
 	 this.header = this.createHeader();
@@ -209,46 +209,17 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 		'url': 'php/getActivityDetailsNew.php',
 		'success': function(data){
 		      var content = "";
-		      content += data.desc ? '<div class="listview_details"><div class="listview_lbl">' + _lang.description + ': </div>'+data.desc+'</div>' : '';
-		      // content += data.amount ? '<div class="listview_details"><div class="listview_lbl">' + _lang.cost +': </div>'+parseInt(data.amount).formatMoney(2,'.',',')+' USD</div>' : '';
-		      content += data.start_date && data.end_date ? '<div class="listview_details"><div class="listview_lbl">' + _lang.dates + ': </div>'+data.start_date + ' - ' + data.end_date +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul0_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.country + ': </div>'+data.locations[0].gaul0_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul1_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.department + ': </div>'+data.locations[0].gaul1_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].gaul2_name ? '<div class="listview_details"><div class="listview_lbl">' + _lang.muni + ': </div>'+data.locations[0].gaul2_name +'</div>' : '';
-		      content += data.locations[0] && data.locations[0].lat && data.locations[0].long ? '<div class="listview_details"><div class="listview_lbl">' + _lang.coordinates+ ': </div>'+data.locations[0].lat + ', ' + data.locations[0].long +'</div>' : '';
-		      
-		      var taxonomyList = _.pluck(data.taxonomy, 'taxonomy');
-		      taxonomyList = _.uniq(taxonomyList);
-		      taxonomyList = _.without(taxonomyList, 'Data Group', 'Country', 'Organisation Role');
+		    
 
-		      _.each(taxonomyList, function(taxName){
+		      _.each(data, function(value, label){
 
+		      if (label != "a_id"){
 
+		      content += label ? '<div class="listview_details"><div class="listview_lbl">' + label + ': </div>'+value+'</div>' : '';
 
-		      	var taxesToRender = _.where(data.taxonomy, {taxonomy: taxName});
-
-		      	content += '<div class="listview_details"><div class="listview_lbl">' + taxName +': </div>';
-
-		      	var classifications = _.pluck(taxesToRender, 'classification');
-
-		      	content += classifications.join(', ') + '</div>';
-
+		  		}
 
 		      });
-
-            var taxesToRender = _.where(data.taxonomy, {taxonomy: 'Organisation Role'});
-
-            content += '<div class="listview_details"><div class="listview_lbl">' + 'Organisation Role' +': </div>';
-
-            var orgsRole = _.pluck(taxesToRender, 'org');
-
-            content += orgsRole.join(', ') + '</div>';
-
-
-
-
-
-		      
 
 		      var el = $('div[data-a_id='+data.a_id+']').find('.listViewDetails').html(content);
 		},
@@ -268,7 +239,7 @@ _SPDEV.ListView.Manager.prototype.render = function(data) {
 _SPDEV.ListView.Manager.prototype.createRow = function(row) {
       var record = "<div class='row data-row' data-a_id="+row.a_id+">";
       record += "<div class='cell' >"+row.a_name+"</div>";
-      record += "<div class='cell'>"+row.f_orgs+"</div>";
+      record += "<div class='cell'>"+row.i_orgs+"</div>";
       record += "<div class='cell'>"+row.tax1+"</div>";
       record += "</div>";
       return $(record);
@@ -278,7 +249,7 @@ _SPDEV.ListView.Manager.prototype.createRow = function(row) {
 _SPDEV.ListView.Manager.prototype.createHeader = function() {
       var record = "<div class='row rowheader' id='listview_header'>";
       record += "<div class='cell header name active'><div class='listviewheadertitle'>Nombre</div><div class='arrow'></div></div>";
-      record += "<div class='cell header org' id='listview_header_o'><div class='listviewheadertitle'>Financiadore</div><div class='arrow'></div></div>";
+      record += "<div class='cell header org' id='listview_header_o'><div class='listviewheadertitle'>Implementador</div><div class='arrow'></div></div>";
       record += "<div class='cell header sector' id='listview_header_s'><div class='listviewheadertitle'>Sector</div><div class='arrow'></div></div>";
       record += "</div>";
       return $(record);
@@ -316,7 +287,7 @@ _SPDEV.ListView.Manager.prototype.changeActiveHeader = function(orderByProp) {
       	case 'a_name':
       		$(this.header).find('.cell.header.name').addClass('active');
       		break;
-      	case 'f_orgs':
+      	case 'i_orgs':
       		$(this.header).find('.cell.header.org').addClass('active');
       		break;
       	case 'tax1':
