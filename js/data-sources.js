@@ -87,6 +87,17 @@ _SPDEV.DataSources.ContextualLayers = {
 		    type: "WMS",
 		    mapServer: 'GeoServer',
 		    showLegend: true,
+	    },{
+		    alias: 'Inuncaciones',
+		    serviceURL: 'http://geo.gob.bo/geoserver/mdpdd/wms',
+		    layers: 'Inundacion',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
 	    }
 
 	    ]
