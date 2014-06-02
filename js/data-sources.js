@@ -411,7 +411,28 @@ _SPDEV.DataSources.DataGroups  = {
 		facetFilterWrapper: null,
 		overviewChartWrapper:null,
 		initialMapView: {lat:14.1, lng:-86.5, zoom: 7}
+	},
+	
+		'Uganda' : {
+		ID: 'Uganda',
+		DEFAULT_CLUSTER_TAXONOMY_ID: 15,
+		FILTER_TAXONOMY_IDS: '15',
+		UPDATE_CHANNEL: 'updateGovData',
+		DATAGROUP_IDS: [807],
+		COUNTRY_IDS: [256],
+				ORG_ROLE_ID: 496,
+		displayOnLoad: true,
+		filterStore: null,
+		mapLayerId: 'ugandaLocations',
+		locationsObj: null,
+		taxonomyClassifications: null,
+		isActive: true,
+		clusterLayerManager: null,
+		facetFilterWrapper: null,
+		overviewChartWrapper:null,
+		initialMapView: {lat:0.46, lng:32.555, zoom: 7}
 	}
+
 };
 
 _SPDEV.DataSources.init = function(map, filterControlWrapper){
