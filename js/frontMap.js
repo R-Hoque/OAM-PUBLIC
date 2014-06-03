@@ -30,7 +30,7 @@ _SPDEV.FrontMap.init = function(){
 	//var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
 	var tt_Uganda = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Uganda").attr("title", "Uganda");
 	var tt_Nepal = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Nepal").attr("title", "Nepal");
-	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Malawi").attr("title", "Malawi");
+	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Malawi").attr("title", "Malawi");
 
 	// PLACE THEM ON THE MAP RELATIVE TO THE MAP SIZE, THEN POPULATE THEM
     tt_Bolivia.attr("style", "left:" + width/5.05 + "px;top:" + height/1.52 + "px").html("<div class='mmtitle'><a href='application.php?dg=Bolivia'>BOLIVIA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>6,568 Activities</div>");
