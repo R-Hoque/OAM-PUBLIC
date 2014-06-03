@@ -21,14 +21,14 @@ _SPDEV.FrontMap.init = function(){
 	    .attr("width", width)
 	    .attr("height", height);
 
-	// CONSTRUCT THE STATIC COUNTRY INFOBOXES
+	// CONSTRUCT THE STYLE of the STATIC COUNTRY INFOBOXES
   var tt_Bolivia = d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Bolivia").attr("title", "Bolivia");
 	//remove Kenya for now
 	var tt_Haiti = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Haiti").attr("title", "Haiti");
 	var tt_Honduras= d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Honduras").attr("title", "Honduras");
 	//var tt_Colombia= d3.select("#mmmap").append("div").attr("class", "mminfo left").attr("id","tt_Colombia").attr("title", "Colombia");
 	//var tt_Kenya = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Kenya").attr("title", "Kenya");
-	var tt_Uganda = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Uganda").attr("title", "Uganda");
+	var tt_Uganda = d3.select("#mmmap").append("div").attr("class", "mminfo bottom").attr("id","tt_Uganda").attr("title", "Uganda");
 	var tt_Nepal = d3.select("#mmmap").append("div").attr("class", "mminfo top").attr("id","tt_Nepal").attr("title", "Nepal");
 	var tt_Malawi = d3.select("#mmmap").append("div").attr("class", "mminfo right").attr("id","tt_Malawi").attr("title", "Malawi");
 
@@ -40,8 +40,8 @@ _SPDEV.FrontMap.init = function(){
 	//Remove Kenya For now
 	//tt_Kenya.attr("style", "left:" + width/2 + "px;top:" + height/2.75 + "px").html("<div class='mmtitle'><a href='application.php?dg=Kenya'>KENYA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>2,243  Activities</div>");
 	tt_Nepal.attr("style", "left:" + width/1.44 + "px;top:" + height/2.26 + "px").html("<div class='mmtitle'><a href='application.php?dg=Nepal'>NEPAL<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>17,318  Activities</div>");
-	tt_Malawi.attr("style", "left:" + width/1.84 + "px;top:" + height/1.7 + "px").html("<div class='mmtitle'><a href='application.php?dg=Malawi'>MALAWI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>2,069  Activities</div>");
-	tt_Uganda.attr("style", "left:" + width/1.94 + "px;top:" + height/2.2 + "px").html("<div class='mmtitle'><a href='application.php?dg=Uganda'>UGANDA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>1,552  Activities</div>");
+	tt_Malawi.attr("style", "left:" + width/2.05 + "px;top:" + height/1.56 + "px").html("<div class='mmtitle'><a href='application.php?dg=Malawi'>MALAWI<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>2,069  Activities</div>");
+	tt_Uganda.attr("style", "left:" + width/1.84 + "px;top:" + height/2.1 + "px").html("<div class='mmtitle'><a href='application.php?dg=Uganda'>UGANDA<img src='img/mmLogo.png'/></a></div><div class='mmactivities'>1,552  Activities</div>");
 	
   // HOLD RENDERING UNTIL THE DATA LOADS
 	queue()
