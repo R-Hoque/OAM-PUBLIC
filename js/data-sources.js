@@ -224,8 +224,22 @@ _SPDEV.DataSources.ContextualLayers = {
 		    mapServer: 'GeoServer',
 		    showLegend: true,
 
+	    }],
+	       //Uganda WMS Indicators
+	 'Uganda': [
+	 	{	
+	 	alias: 'Poverty Headcounts (%, 2005)',
+		    serviceURL: 'http://54.226.197.17:8080/geoserver/oam/wms',
+		    layers: 'oam:Ug_Rural-Poverty2005_simp',
+		    state: false,
+		    mapLayer : null,
+		    format: 'img/png',
+		    transparent: true,
+		    type: "WMS",
+		    mapServer: 'GeoServer',
+		    showLegend: true,
+		
 	    }]
-	    
 	
 };
 //For data to show up on the map you must load the IATI data into the database
